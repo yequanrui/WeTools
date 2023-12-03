@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+  --card-radius: 8px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --modal-shadow: 0 2px 6px 0 rgba(37, 43, 58, 0.24);
+  }
+  #win {
+    background: #fffbf0; /* 象牙白 */
+    color: #161823; /* 漆黑 */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --modal-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.72);
+  }
+  #win {
+    background: #303030; /* 油烟墨 */
+    color: #f0f0f4; /* 铅白 */
+  }
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.no-select {
+  -webkit-user-select: none;
+}
+
+#win {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border-radius: var(--card-radius);
+  box-shadow: var(--modal-shadow);
+}
+
+.win-header {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  height: 50px;
+  padding: 2px 8px;
+  text-align: left;
+  position: relative;
+}

@@ -2,6 +2,10 @@
 // BrowserWindow负责创建和管理应用窗口
 const { app, BrowserWindow, Menu, MenuItem, Notification, Tray, dialog, ipcMain, nativeImage, nativeTheme } = require('electron');
 const path = require('node:path');
+// 当应用更新、卸除的时候，应用会自动退出
+if (require('electron-squirrel-startup')) {
+  app.quit();
+}
 // 处理文件打开
 async function handleFileOpen() {
   const { canceled, filePaths } = await dialog.showOpenDialog({});
@@ -13,16 +17,17 @@ async function handleFileOpen() {
 function showNotification(body = 'Start successfully.', title = app.getName()) {
   new Notification({ title, body }).show();
 }
+let win;
 // 创建浏览器窗口
 function createWindow() {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: undefined,
     resizable: false, // 是否可以改变大小
-    frame: false, // 无边框窗口
+    // frame: false, // 无边框窗口
+    // transparent: true, // 窗体是否透明
     titleBarStyle: 'hidden', // 隐藏标题栏和全尺寸内容窗口
     // titleBarOverlay: true,
-    transparent: true, // 窗体是否透明
     backgroundColor: '#00000000', // 窗体背景色
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'), // 预加载程序
@@ -36,47 +41,23 @@ function createWindow() {
     new MenuItem({
       label: app.getName(),
       submenu: [
-        {
-          label: 'Increment',
-          accelerator: 'CmdOrCtrl+Shift++',
-          click: () => win.webContents.send('update-counter', 1),
-        },
-        {
-          label: 'Decrement',
-          accelerator: 'CmdOrCtrl+Shift+-',
-          click: () => win.webContents.send('update-counter', -1),
-        },
-        {
-          role: 'reload',
-          accelerator: 'CmdOrCtrl+R',
-        },
-        {
-          role: 'forceReload',
-          accelerator: 'CmdOrCtrl+Shift+R',
-        },
-        {
-          role: 'toggleDevTools',
-          accelerator: 'F12',
-        },
+        { role: 'reload', accelerator: 'CmdOrCtrl+R' },
+        { role: 'forceReload', accelerator: 'CmdOrCtrl+Shift+R' },
+        { role: 'toggleDevTools', accelerator: 'F12' },
       ],
     })
   );
   Menu.setApplicationMenu(menus);
   // 打开开发者工具
   // win.webContents.openDevTools();
+  win.on('closed', () => (win = null));
 }
 // 从nativeTheme中获取主题颜色，使用IPC通道提供主题切换和重置控制
 ipcMain.handle('dark-mode:toggle', () => {
-  if (nativeTheme.shouldUseDarkColors) {
-    nativeTheme.themeSource = 'light';
-  } else {
-    nativeTheme.themeSource = 'dark';
-  }
+  nativeTheme.themeSource = nativeTheme.shouldUseDarkColors ? 'light' : 'dark';
   return nativeTheme.shouldUseDarkColors;
 });
-ipcMain.handle('dark-mode:system', () => {
-  nativeTheme.themeSource = 'system';
-});
+ipcMain.handle('dark-mode:system', () => (nativeTheme.themeSource = 'system'));
 let tray;
 // 在app模块的ready事件被激发后才能创建浏览器窗口
 app
@@ -95,14 +76,7 @@ app
     // ipcMain监听处理事件
     ipcMain.handle('app-version', () => app.getVersion());
     ipcMain.handle('dialog:openFile', handleFileOpen);
-    ipcMain.on('set-title', (event, title) => {
-      const webContents = event.sender;
-      const win = BrowserWindow.fromWebContents(webContents);
-      win.setTitle(title);
-    });
-    ipcMain.on('counter-value', (_event, value) => {
-      console.log(value);
-    });
+    ipcMain.on('set-title', (event, title) => BrowserWindow.fromWebContents(event.sender).setTitle(title));
     createWindow();
     // 如果没有窗口打开则打开一个窗口(macOS)
     app.on('activate', () => {

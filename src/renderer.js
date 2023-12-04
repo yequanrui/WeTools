@@ -1,14 +1,10 @@
-const initMain = async () => {
+const initVersions = async () => {
   const appVersion = await window.versions.app();
-  document.getElementById('app-info').innerText = `${appVersion}`;
-};
-initMain();
-
-const initAbout = () => {
   document.getElementById(
     'app-info'
-  ).innerText = `（当前工具版本：${appVersion}，使用了Chrome ${versions.chrome()}，Node.js ${versions.node()}，和Electron ${versions.electron()}）`;
+  ).innerText = `主题工具版本: ${appVersion} (Chrome ${versions.chrome()}, Node.js ${versions.node()}, Electron ${versions.electron()})`;
 };
+initVersions();
 
 document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
   const isDarkMode = await window.darkMode.toggle();
@@ -31,12 +27,4 @@ const filePathElement = document.getElementById('filePath');
 btn.addEventListener('click', async () => {
   const filePath = await window.electronAPI.openFile();
   filePathElement.innerText = filePath;
-});
-
-const counter = document.getElementById('counter');
-window.electronAPI.handleCounter((event, value) => {
-  const oldValue = Number(counter.innerText);
-  const newValue = oldValue + value;
-  counter.innerText = newValue;
-  event.sender.send('counter-value', newValue);
 });

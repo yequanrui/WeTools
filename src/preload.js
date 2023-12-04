@@ -2,7 +2,6 @@ const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('electronAPI', {
   setTitle: (title) => ipcRenderer.send('set-title', title), // 设置窗体标题
   openFile: () => ipcRenderer.invoke('dialog:openFile'), // 打开文件窗口
-  handleCounter: (callback) => ipcRenderer.on('update-counter', callback),
 });
 contextBridge.exposeInMainWorld('darkMode', {
   toggle: () => ipcRenderer.invoke('dark-mode:toggle'), // 切换深色/浅色主题

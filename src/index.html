@@ -12,27 +12,41 @@
 <body>
   <div id="win">
     <header class="win-header drag no-select">
-      <span class="win-title">WeLink主题设置工具</span>
-      <div class="win-btn"></div>
+      <div class="win-left">
+        <span class="win-logo">
+          <img width="20px" height="20px" src="../assets/logo/logo.png">
+        </span>
+        <span class="win-title">WeLink主题设置工具</span>
+      </div>
+      <div class="win-right">
+        <div id="min-btn" class="win-btn no-drag" title="最小化"></div>
+        <div id="max-btn" class="win-btn no-drag" title="最大化"></div>
+        <div id="close-btn" class="win-btn no-drag" title="关闭"></div>
+      </div>
     </header>
-    <section>
-      Title: <input id="title" />
-      <button id="set-title" type="button">Set</button>
+    <section class="win-content">
+      <div>
+        Title: <input id="title" />
+        <button id="set-title" type="button">Set</button>
+      </div>
+      <div>
+        <p>Current theme source: <strong id="theme-source">System</strong></p>
+        <button id="toggle-dark-mode">Toggle Dark Mode</button>
+        <button id="reset-to-system">Reset to System Theme</button>
+      </div>
+      <div>
+        <button id="open-file" type="button">Open a File</button>
+        File path: <strong id="filePath"></strong>
+      </div>
     </section>
-    <section>
-      <p>Current theme source: <strong id="theme-source">System</strong></p>
-      <button id="toggle-dark-mode">Toggle Dark Mode</button>
-      <button id="reset-to-system">Reset to System Theme</button>
-    </section>
-    <section>
-      <button id="open-file" type="button">Open a File</button>
-      File path: <strong id="filePath"></strong>
-    </section>
-    <section>
-      Current value: <strong id="counter">0</strong>
-    </section>
-    <footer>
+    <footer class="win-footer">
       <span id="app-info"></span>
+      <div class="win-contact">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/yequanrui/WeLink-Themes"
+          title="GitHub">GitHub</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://gitee.com/yequanrui/WeLink-Themes"
+          title="Gitee">Gitee</a>
+      </div>
     </footer>
   </div>
 </body>

@@ -1,25 +1,53 @@
 :root {
-  color-scheme: light dark;
-  --card-radius: 8px;
+  color-scheme: light dark; /* 页面配色方案 */
+  --common-border-radius: 4px; /* 一般圆角 */
+  --card-border-radius: 8px; /* 卡片圆角 */
+  --full-border-radius: 100px; /* 全圆角 */
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --modal-shadow: 0 2px 6px 0 rgba(37, 43, 58, 0.24);
-  }
-  #win {
-    background: #fffbf0; /* 象牙白 */
-    color: #161823; /* 漆黑 */
+    /* 全透明样式背景色 */
+    --transparent-overlay: rgba(255, 255, 255, 0);
+    /* 半透明样式背景色 */
+    --highlight-overlay: rgba(255, 255, 255, 0.5);
+    /* 全局背景色 */
+    --global-bg: #e2e1e4; /* 芡食白 */
+    /* 正文文本 */
+    --body-text: #161823; /* 漆黑 */
+    /* 辅助文本、帮助文本 */
+    --aide-text: #50616d; /* 墨色 */
+    /* 有色深色背景下文本颜色（固定） */
+    --light-text: #fffbf0; /* 象牙白 */
+    /* 主要背景色 */
+    --main-bg: #084495; /* 群青 */
+    /* 撞色、对比色、反衬色 */
+    --contrast-bg: #b84b48; /* 朱砂 */
+    /* 基础阴影 */
+    --base-shadow: 0 2px 6px 0 rgba(37, 43, 58, 0.24);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --modal-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.72);
-  }
-  #win {
-    background: #303030; /* 油烟墨 */
-    color: #f0f0f4; /* 铅白 */
+    /* 全透明样式背景色 */
+    --transparent-overlay: rgba(0, 0, 0, 0);
+    /* 半透明样式背景色 */
+    --highlight-overlay: rgba(0, 0, 0, 0.5);
+    /* 全局背景色 */
+    --global-bg: #303030; /* 油烟墨 */
+    /* 正文文本 */
+    --body-text: #f0f0f4; /* 铅白 */
+    /* 辅助文本、帮助文本 */
+    --aide-text: #c0c4c3; /* 月影白 */
+    /* 有色深色背景下文本颜色（固定） */
+    --light-text: #fffbf0; /* 象牙白 */
+    /* 主要背景色 */
+    --main-bg: #1772b4; /* 群青 */
+    /* 撞色、对比色、反衬色 */
+    --contrast-bg: #b84b48; /* 朱砂 */
+    /* 基础阴影 */
+    --base-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.72);
   }
 }
 
@@ -49,16 +77,79 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border-radius: var(--card-radius);
-  box-shadow: var(--modal-shadow);
+  background-color: var(--global-bg);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--base-shadow);
+  color: var(--body-text);
 }
 
 .win-header {
   display: flex;
   flex: 0 0 auto;
   flex-direction: row;
-  height: 50px;
-  padding: 2px 8px;
-  text-align: left;
-  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 4px 8px;
+  box-shadow: var(--base-shadow);
+}
+
+.win-left {
+  margin-left: 8px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--body-text);
+}
+
+.win-logo,
+.win-title {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.win-logo {
+  margin-top: 4px;
+}
+
+.win-right {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.win-btn {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--common-border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.win-btn svg {
+  fill: var(--body-text);
+}
+
+.win-btn:hover {
+  box-shadow: var(--base-shadow);
+}
+
+.win-btn#min-btn:hover,
+.win-btn#max-btn:hover {
+  background-color: var(--highlight-overlay);
+}
+
+.win-btn#close-btn:hover {
+  background-color: var(--contrast-bg);
+}
+
+.win-btn#close-btn:hover svg {
+  fill: var(--light-text);
+}
+
+.win-content {
+  flex: auto;
+  min-height: 0;
 }

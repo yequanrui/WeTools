@@ -124,6 +124,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: var(--common-border-radius);
+  text-align: center;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -152,4 +153,29 @@ body {
 .win-content {
   flex: auto;
   min-height: 0;
+}
+
+.win-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  color: var(--aide-text);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.win-contact a {
+  margin-left: 8px;
+  text-decoration: none;
+  color: var(--main-bg);
+}
+
+.win-contact a:hover {
+  text-decoration: underline;
+}
+
+.win-contact a:active {
+  color: var(--contrast-bg);
 }

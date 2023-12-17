@@ -36,4 +36,4 @@ const writeConfig = (config, theme) => {
   fs.writeFileSync(userConfig(theme, CONFIG_NAME), JSON.stringify(config, null, 2), { flag: 'w' });
 };
 
-module.exports = { readConfig, rriteConfig };
+module.exports = { readConfig, writeConfig };

@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite';
+import { defineConfig, externalizeDepsPlugin, splitVendorChunkPlugin } from 'electron-vite';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
       },
       extensions: ['.js', '.jsx', '.vue'],
     },
-    plugins: [vue()],
+    plugins: [splitVendorChunkPlugin(), vue()],
     define: {
       'process.env': { ...process.env },
     },

@@ -1,7 +1,8 @@
 # WeLink-Themes
-WeLink主题设置工具
 
-An Electron application with Vue
+WeLink涓婚璁剧疆宸ュ叿
+
+An [Electron-Vite](https://cn.electron-vite.org/) application with [TinyVue](https://opentiny.design/tiny-vue)
 
 ## Recommended IDE Setup
 
@@ -12,24 +13,24 @@ An Electron application with Vue
 ### Install
 
 ```bash
-$ pnpm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-$ pnpm dev
+pnpm dev
 ```
 
 ### Build
 
 ```bash
 # For windows
-$ pnpm build:win
+pnpm build:win
 
 # For macOS
-$ pnpm build:mac
+pnpm build:mac
 
 # For Linux
-$ pnpm build:linux
+pnpm build:linux
 ```

@@ -1,6 +1,6 @@
 // app负责着您应用程序的事件生命周期
 // BrowserWindow负责创建和管理应用窗口
-import { app, ipcMain, nativeTheme, shell, BrowserWindow, Menu, Tray } from 'electron';
+import { app, ipcMain, nativeImage, nativeTheme, shell, BrowserWindow, Menu, Tray } from 'electron';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { join } from 'path';
 import icon from '../../resources/icon.png?asset';
@@ -26,7 +26,6 @@ function createWindow() {
     show: false, // 窗口是否创建后就显示
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      nodeIntegration: true,
       sandbox: false,
     },
   });
@@ -78,7 +77,7 @@ app.whenReady().then(() => {
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron');
   // 创建托盘及其右键菜单
-  tray = new Tray(icon);
+  tray = new Tray(nativeImage.createFromPath(icon));
   tray.setTitle(app.getName());
   tray.setToolTip(app.getName());
   const contextMenu = Menu.buildFromTemplate([

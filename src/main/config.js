@@ -1,19 +1,21 @@
-const path = require('path');
-const fs = require('fs');
+import fs from 'node:fs';
+import path from 'node:path';
+
 const DEFAULT_ENCODING = 'utf-8';
 const CONFIG_NAME = 'config.json';
-const defaultConfig = (theme) => path.resolve(`./themes/${theme}/assets/js`, CONFIG_NAME);
-const userConfig = (theme, name = '') => path.resolve(`./themes/${theme}/assets`, name ? `${theme}.${name}` : '');
+const defaultConfig = path.resolve(`./assets/js`, CONFIG_NAME);
+const userConfig = (theme, name = '') => path.resolve(`./assets`, name ? `${theme}.${name}` : '');
+
 /**
  * 读取用户配置，若没有取默认配置克隆一份
  * @param theme 主题名
  * @param encoding 编码，默认utf-8
  */
-const readConfig = (theme, encoding = DEFAULT_ENCODING) => {
+function readConfig(theme, encoding = DEFAULT_ENCODING) {
   let config = {};
   try {
     if (!fs.existsSync(userConfig(theme, CONFIG_NAME))) {
-      config = fs.readFileSync(defaultConfig(theme), encoding);
+      config = fs.readFileSync(defaultConfig, encoding);
       writeConfig(JSON.parse(config), theme);
     } else {
       config = fs.readFileSync(userConfig(theme, CONFIG_NAME), encoding);
@@ -22,7 +24,8 @@ const readConfig = (theme, encoding = DEFAULT_ENCODING) => {
     console.log(err);
   }
   return JSON.parse(config);
-};
+}
+
 /**
  * 把新配置写入用户配置文件
  * @param config 当前配置
@@ -36,4 +39,4 @@ const writeConfig = (config, theme) => {
   fs.writeFileSync(userConfig(theme, CONFIG_NAME), JSON.stringify(config, null, 2), { flag: 'w' });
 };
 
-module.exports = { readConfig, writeConfig };
+export { readConfig, writeConfig };

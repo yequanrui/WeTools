@@ -7,6 +7,8 @@ const api = {
   min: () => ipcRenderer.send('min'), // 最小化窗口
   max: () => ipcRenderer.send('max'), // 最大化窗口
   close: () => ipcRenderer.send('close'), // 关闭窗口
+  getStoreValue: (key) => ipcRenderer.sendSync('get-store', key), // 获取配置
+  setStoreValue: (key, value) => ipcRenderer.send('set-store', key, value), // 设置配置
   toggleTheme: () => ipcRenderer.invoke('toggle-theme'), // 切换深色/浅色主题
   systemTheme: () => ipcRenderer.invoke('system-theme'), // 跟随系统主题
 };

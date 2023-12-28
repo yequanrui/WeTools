@@ -3,6 +3,7 @@
 import { app, ipcMain, nativeImage, nativeTheme, shell, BrowserWindow, Menu, Tray } from 'electron';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { join } from 'path';
+import Store from 'electron-store';
 import icon from '../../resources/icon.png?asset';
 
 let mainWin; // 存储主窗口实例
@@ -54,6 +55,24 @@ function createWindow() {
   });
   mainWin.on('closed', () => (mainWin = null));
 }
+// 初始化存储实例
+const option = {
+  // C:\Users\{userName}\AppData\Roaming\{projectName}\config.json
+  name: 'config', // 文件名称，默认config
+  fileExtension: 'json', // 文件后缀，默认json
+  cwd: app.getPath('userData'), // 文件位置,尽量不要动，默认情况下，它将通过遵循系统约定来选择最佳位置
+  // encryptionKey: 'aes-256-cbc', // 对配置文件进行加密
+  clearInvalidConfig: true, // 发生SyntaxError则清空配置
+};
+const store = new Store(option);
+// 获取配置
+ipcMain.on('get-store', (_, key) => {
+  let value = store.get(key);
+  _.returnValue = value || '';
+});
+// 设置配置
+ipcMain.on('set-store', (_, key, value) => store.set(key, value));
+store.set('version', app.getVersion());
 // 获取app版本
 ipcMain.handle('app-version', () => app.getVersion());
 // 最小化、最大化、关闭窗口

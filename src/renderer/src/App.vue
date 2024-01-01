@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import Button from '@opentiny/vue-button';
-import Versions from './components/Versions.vue';
-import About from './components/About.vue';
 import Container from '@opentiny/vue-container';
+import TreeMenu from '@opentiny/vue-tree-menu';
+import { about, versions } from './components';
 
 const winHandle = (opera) => window.api[opera]();
 const currentTheme = ref('System');
@@ -16,10 +16,16 @@ async function systemTheme() {
   await window.api.systemTheme();
   currentTheme.value = 'System';
 }
+const treeMenu = ref(null);
+const treeData = ref([
+  { id: 'welink-themes', label: 'WeLink主题' },
+  { id: 'app-setting', label: '设置' },
+]);
+// treeMenu.value.setCurrentKey('welink-themes');
 </script>
 
 <template>
-  <Container id="win" :pattern="'legend'" :footer-height="40">
+  <Container id="win" :pattern="'legend'" :aside-width="270" :footer-height="40">
     <template #header>
       <div class="win-header drag no-select">
         <div class="win-left">
@@ -68,7 +74,7 @@ async function systemTheme() {
       </div>
     </template>
     <template #aside>
-      <div>Aside</div>
+      <TreeMenu ref="treeMenu" class="win-menu" :data="treeData"></TreeMenu>
     </template>
     <section class="win-content">
       <div>
@@ -89,8 +95,8 @@ async function systemTheme() {
     </section>
     <template #footer>
       <footer class="win-footer">
-        <Versions></Versions>
-        <About></About>
+        <versions></versions>
+        <about></about>
       </footer>
     </template>
   </Container>

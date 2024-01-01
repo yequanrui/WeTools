@@ -7,7 +7,8 @@
     "welink",
     "themes",
     "electron",
-    "vite"
+    "vite",
+    "vue"
   ],
   "main": "./out/main/index.js",
   "scripts": {
@@ -20,8 +21,8 @@
     "build:win": "npm run build && electron-builder --win --config"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^2.0.0",
-    "@electron-toolkit/utils": "^2.0.1",
+    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/utils": "^3.0.0",
     "@opentiny/vue-button": "^3.12.0",
     "@opentiny/vue-container": "^3.12.0",
     "@opentiny/vue-dropdown": "^3.12.0",
@@ -31,6 +32,7 @@
     "@opentiny/vue-link": "^3.12.0",
     "@opentiny/vue-popover": "^3.12.0",
     "@opentiny/vue-tooltip": "^3.12.0",
+    "@opentiny/vue-tree-menu": "^3.12.0",
     "electron-store": "^8.1.0",
     "electron-updater": "^6.1.7",
     "vue-i18n": "^9.8.0"
@@ -39,7 +41,7 @@
     "@electron-toolkit/eslint-config": "^1.0.2",
     "@rushstack/eslint-patch": "^1.6.1",
     "@vitejs/plugin-vue": "^4.6.0",
-    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "electron": "^28.1.0",
     "electron-builder": "^24.9.1",
     "electron-vite": "^1.0.29",
@@ -51,7 +53,11 @@
     "vue": "^3.3.13"
   },
   "license": "MIT",
-  "author": "yequanrui",
+  "author": {
+    "name": "yequanrui",
+    "email": "yequanrui@qq.com",
+    "url": "https://yequanrui.github.io/WeLink-Themes"
+  },
   "homepage": "https://github.com/yequanrui/WeLink-Themes",
   "repository": {
     "type": "git",

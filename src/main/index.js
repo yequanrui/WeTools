@@ -89,6 +89,7 @@ ipcMain.handle('toggle-theme', () => {
 });
 ipcMain.handle('system-theme', () => (nativeTheme.themeSource = 'system'));
 let tray;
+app.disableHardwareAcceleration();
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.

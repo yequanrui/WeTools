@@ -6,14 +6,8 @@ import DropdownItem from '@opentiny/vue-dropdown-item';
 import IconInfo from '@opentiny/vue-icon';
 
 const options = ref([
-  {
-    label: 'GitHub',
-    url: 'https://github.com/yequanrui/WeLink-Themes',
-  },
-  {
-    label: 'Gitee',
-    url: 'https://gitee.com/yequanrui/WeLink-Themes',
-  },
+  { label: 'GitHub', url: 'https://github.com/yequanrui/WeLink-Themes' },
+  { label: 'Gitee', url: 'https://gitee.com/yequanrui/WeLink-Themes' },
 ]);
 
 function itemClick(data) {

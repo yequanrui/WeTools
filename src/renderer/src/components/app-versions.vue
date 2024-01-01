@@ -32,10 +32,10 @@ initVersions();
     font-size: 12px;
     opacity: 0.8;
     &:not(:first-child) {
-      padding-left: 20px;
+      padding-left: 12px;
     }
     &:not(:last-child) {
-      padding-right: 20px;
+      padding-right: 12px;
     }
     &:last-child {
       border: none;

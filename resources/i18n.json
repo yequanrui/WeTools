@@ -1,0 +1,18 @@
+{
+  "zh-CN": {
+    "default": "默认",
+    "light": "浅色",
+    "dark": "深色",
+    "restartWeLink": "重启WeLink",
+    "restartApp": "重启应用",
+    "quit": "退出"
+  },
+  "en-US": {
+    "default": "Default",
+    "light": "Light",
+    "dark": "Dark",
+    "restartWeLink": "Restart WeLink",
+    "restartApp": "Restart App",
+    "quit": "Quit"
+  }
+}

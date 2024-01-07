@@ -1,13 +1,103 @@
 // app负责着您应用程序的事件生命周期
 // BrowserWindow负责创建和管理应用窗口
-import { app, ipcMain, nativeImage, nativeTheme, shell, BrowserWindow, Menu, Tray } from 'electron';
-import { electronApp, optimizer, is } from '@electron-toolkit/utils';
-import { join } from 'path';
+import { app, ipcMain, nativeImage, nativeTheme, shell, BrowserWindow, Menu, Notification, Tray } from 'electron';
+import { optimizer, is } from '@electron-toolkit/utils';
+import { join, resolve } from 'path';
+import { execFile, execSync } from 'child_process';
 import Store from 'electron-store';
+import i18n from '../../resources/i18n.json';
 import icon from '../../resources/icon.png?asset';
 
+const protocolName = app.getName(); // 协议名
+let locale = 'System'; // 国际化键值，默认为System，即使用当前系统语言
 let mainWin; // 存储主窗口实例
 let mainWinId; // 用于标记主窗口Id
+let tray; // 托盘实例
+// 注册应用的协议处理器
+if (process.defaultApp) {
+  if (process.argv.length >= 2) {
+    app.setAsDefaultProtocolClient(protocolName, process.execPath, [resolve(process.argv[1])]);
+  }
+} else {
+  app.setAsDefaultProtocolClient(protocolName);
+}
+const gotTheLock = app.requestSingleInstanceLock();
+if (!gotTheLock) {
+  app.quit();
+} else {
+  app.on('second-instance', () => {
+    // 当尝试运行第二个实例时让焦点指向当前实例窗口
+    if (mainWin) {
+      mainWin.isMinimized() && mainWin.restore();
+      mainWin.show();
+      mainWin.focus();
+    }
+  });
+  // 开机是否自启动，注意非开发环境
+  if (process.env.NODE_ENV === 'production') {
+    const settings = {
+      openAtLogin: true, // 是否开机启动
+      openAsHidden: true, // 是否隐藏主窗体，保留托盘位置
+    };
+    if (process.platform !== 'darwin') {
+      settings.path = process.execPath;
+      settings.args = ['--processStart', `"${process.execPath}"`, '--process-start-args', `"--hidden"`];
+    }
+    app.setLoginItemSettings(settings);
+  }
+  // 创建主窗口
+
+  app
+    .whenReady()
+    .then(() => {
+      locale === 'System' && (locale = app.getSystemLocale());
+      // 对于Windows上的通知，需要设置一个AppUserModelID
+      app.setAppUserModelId(app.getName());
+      // 创建托盘及其右键菜单
+      tray = new Tray(nativeImage.createFromPath(icon));
+      tray.setTitle(app.getName());
+      tray.setToolTip(app.getName());
+      tray.on('right-click', () => {
+        const contextMenu = Menu.buildFromTemplate([
+          { label: i18n[locale].light, submenu: [{ label: i18n[locale].default }] },
+          { label: i18n[locale].dark, submenu: [{ label: i18n[locale].default }] },
+          { type: 'separator' },
+          {
+            label: i18n[locale].restartWeLink,
+            click: () => {
+              try {
+                execSync('taskkill/F /Im "WeLink.exe"');
+              } catch (error) {
+                /* empty */
+              } finally {
+                execFile('C:/Program Files (x86)/WeLink/WeLink.exe');
+              }
+            },
+          },
+          {
+            label: i18n[locale].restartApp,
+            click: () => {
+              app.relaunch();
+              app.quit();
+            },
+          },
+          { label: i18n[locale].quit, role: 'quit' },
+        ]);
+        tray.popUpContextMenu(contextMenu);
+      });
+      // 单击托盘图标时打开App
+      tray.on('click', () => {
+        if (mainWin) {
+          mainWin.restore();
+          mainWin.show();
+        }
+      });
+      // 开发中默认按F12打开或关闭DevTools，在生产中忽略CommandOrControl+R
+      app.on('browser-window-created', (_, window) => optimizer.watchWindowShortcuts(window));
+      createWindow();
+    })
+    .then(showNotification);
+}
 function createWindow() {
   // Create the browser window.
   mainWin = new BrowserWindow({
@@ -33,12 +123,15 @@ function createWindow() {
   !mainWinId && (mainWinId = mainWin.id); // 记录下主窗口Id
   mainWin.setTitle(app.getName()); // 设置窗口标题
   mainWin.on('ready-to-show', () => mainWin.show());
-  mainWin.webContents.setWindowOpenHandler((details) => {
-    shell.openExternal(details.url);
+  // 将预加载脚本附加到webview
+  mainWin.webContents.on('will-attach-webview', (e, webPreferences) => {
+    webPreferences.preload = join(__dirname, '../preload/index.js');
+  });
+  mainWin.webContents.setWindowOpenHandler(({ url }) => {
+    setImmediate(() => shell.openExternal(url));
     return { action: 'deny' };
   });
-  // HMR for renderer base on electron-vite cli.
-  // Load the remote URL for development or the local html file for production.
+  // 在渲染器中使用模块热替换（HMR）功能，需要使用环境变量来确定窗口浏览器是加载本地html文件还是本地URL
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWin.loadURL(process.env['ELECTRON_RENDERER_URL']);
     mainWin.webContents.openDevTools(); // 打开开发者工具
@@ -54,6 +147,9 @@ function createWindow() {
     }
   });
   mainWin.on('closed', () => (mainWin = null));
+}
+function showNotification(body = 'Start successfully.', title = 'Info') {
+  new Notification({ body, title }).show();
 }
 // 初始化存储实例
 const option = {
@@ -82,54 +178,24 @@ ipcMain.on('max', (e) => {
   win.isMaximized() ? win.unmaximize() : win.maximize();
 });
 ipcMain.on('close', (e) => BrowserWindow.fromWebContents(e.sender).close());
+// 监听页面切换语言事件，同时刷新窗口的语言
+ipcMain.handle('toggle-locale', (_, i18n) => {
+  locale = i18n;
+  return locale;
+});
+ipcMain.handle('system-locale', () => (locale = app.getSystemLocale()));
 // 从nativeTheme中获取主题颜色，使用IPC通道提供主题切换和重置控制
 ipcMain.handle('toggle-theme', () => {
   nativeTheme.themeSource = nativeTheme.shouldUseDarkColors ? 'light' : 'dark';
   return nativeTheme.shouldUseDarkColors;
 });
 ipcMain.handle('system-theme', () => (nativeTheme.themeSource = 'system'));
-let tray;
 app.disableHardwareAcceleration();
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
-  // Set app user model id for windows
-  electronApp.setAppUserModelId('com.electron');
-  // 创建托盘及其右键菜单
-  tray = new Tray(nativeImage.createFromPath(icon));
-  tray.setTitle(app.getName());
-  tray.setToolTip(app.getName());
-  const contextMenu = Menu.buildFromTemplate([
-    { label: '浅色', type: 'radio' },
-    { label: '深色', type: 'radio' },
-    { label: '退出', type: 'normal' },
-  ]);
-  tray.setContextMenu(contextMenu);
-  // 单击托盘图标时打开App
-  tray.on('click', () => {
-    if (mainWin) {
-      mainWin.restore();
-      mainWin.show();
-    }
-  });
-  // 开发中默认按F12打开或关闭DevTools，在生产中忽略CommandOrControl+R
-  app.on('browser-window-created', (_, window) => optimizer.watchWindowShortcuts(window));
-  createWindow();
-});
 // 关闭所有窗口时退出应用(Windows&Linux)
 app.on('window-all-closed', () => process.platform !== 'darwin' && app.quit());
-
 app.on('activate', () => {
   BrowserWindow.getAllWindows().length === 0 && createWindow(); // 如果没有窗口打开则打开一个窗口(macOS)
   // 首次启动应用程序、尝试在应用程序已运行时、单击应用程序的坞站或单击任务栏图标时，重新激活它
-  if (mainWin) {
-    mainWin.restore();
-    mainWin.show();
-  }
-});
-app.on('second-instance', () => {
-  // 避免启动多个主窗口
   if (mainWin) {
     mainWin.restore();
     mainWin.show();

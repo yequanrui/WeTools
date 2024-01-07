@@ -6,8 +6,19 @@ import TreeMenu from '@opentiny/vue-tree-menu';
 import { about, versions } from './components';
 
 const winHandle = (opera) => window.api[opera]();
+const currentLocale = ref('System');
 const currentTheme = ref('System');
-// 切换深色、浅色主题
+// 切换语言（zh-CN/en-US）
+async function toggleLocale() {
+  const next = currentLocale.value === 'zh-CN' ? 'en-US' : 'zh-CN';
+  const isZhCn = await window.api.toggleLocale(next);
+  currentLocale.value = isZhCn;
+}
+async function systemLocale() {
+  await window.api.systemLocale();
+  currentLocale.value = 'System';
+}
+// 切换主题（Dark/Light）
 async function toggleTheme() {
   const isDarkMode = await window.api.toggleTheme();
   currentTheme.value = isDarkMode ? 'Dark' : 'Light';
@@ -19,7 +30,8 @@ async function systemTheme() {
 const treeMenu = ref(null);
 const treeData = ref([
   { id: 'welink-themes', label: 'WeLink主题' },
-  { id: 'app-setting', label: '设置' },
+  { id: 'app-setting', label: '应用设置' },
+  { id: 'app-docs', label: '应用文档' },
 ]);
 // treeMenu.value.setCurrentKey('welink-themes');
 </script>
@@ -83,10 +95,17 @@ const treeData = ref([
       </div>
       <div>
         <p>
-          Current theme source: <strong id="theme-source">{{ currentTheme }}</strong>
+          Current Locale: <strong id="locale-source">{{ currentLocale }}</strong>
         </p>
-        <Button id="toggle-dark-mode" @click="toggleTheme">Toggle Dark Mode</Button>
-        <Button id="reset-to-system" @click="systemTheme">Reset to System Theme</Button>
+        <Button id="toggle-locale" @click="toggleLocale">Toggle Locale</Button>
+        <Button id="reset-to-system-locale" @click="systemLocale">Reset to System Locale</Button>
+      </div>
+      <div>
+        <p>
+          Current Theme: <strong id="theme-source">{{ currentTheme }}</strong>
+        </p>
+        <Button id="toggle-theme" @click="toggleTheme">Toggle Dark Mode</Button>
+        <Button id="reset-to-system-theme" @click="systemTheme">Reset to System Theme</Button>
       </div>
       <div>
         <Button id="open-file" type="button">Open a File</Button>

@@ -1,13 +1,13 @@
+import { defineConfig, bytecodePlugin, externalizeDepsPlugin, splitVendorChunkPlugin } from 'electron-vite';
 import { resolve } from 'path';
-import { defineConfig, externalizeDepsPlugin, splitVendorChunkPlugin } from 'electron-vite';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [externalizeDepsPlugin(), bytecodePlugin()],
   },
   preload: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [externalizeDepsPlugin(), bytecodePlugin()],
   },
   renderer: {
     resolve: {

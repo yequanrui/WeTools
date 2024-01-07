@@ -9,7 +9,9 @@ const api = {
   close: () => ipcRenderer.send('close'), // 关闭窗口
   getStoreValue: (key) => ipcRenderer.sendSync('get-store', key), // 获取配置
   setStoreValue: (key, value) => ipcRenderer.send('set-store', key, value), // 设置配置
-  toggleTheme: () => ipcRenderer.invoke('toggle-theme'), // 切换深色/浅色主题
+  toggleLocale: (i18n) => ipcRenderer.invoke('toggle-locale', i18n), // 切换语言（zh-CN/en-US）
+  systemLocale: () => ipcRenderer.invoke('system-locale'), // 跟随系统语言
+  toggleTheme: () => ipcRenderer.invoke('toggle-theme'), // 切换主题（Dark/Light）
   systemTheme: () => ipcRenderer.invoke('system-theme'), // 跟随系统主题
 };
 

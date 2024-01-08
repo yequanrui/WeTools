@@ -37,7 +37,7 @@ const treeData = ref([
 </script>
 
 <template>
-  <Container id="win" :pattern="'legend'" :aside-width="270" :footer-height="40">
+  <Container id="win" :pattern="'legend'" :header-height="48" :aside-width="270" :footer-height="40">
     <template #header>
       <div class="win-header drag no-select">
         <div class="win-left">
@@ -86,7 +86,7 @@ const treeData = ref([
       </div>
     </template>
     <template #aside>
-      <TreeMenu ref="treeMenu" class="win-menu" :data="treeData"></TreeMenu>
+      <TreeMenu ref="treeMenu" class="win-menu" :data="treeData" accordion :show-filter="false"></TreeMenu>
     </template>
     <section class="win-content">
       <div>

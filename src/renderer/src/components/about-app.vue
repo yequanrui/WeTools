@@ -3,12 +3,13 @@ import { ref } from 'vue';
 import Dropdown from '@opentiny/vue-dropdown';
 import DropdownMenu from '@opentiny/vue-dropdown-menu';
 import DropdownItem from '@opentiny/vue-dropdown-item';
-import IconInfo from '@opentiny/vue-icon';
+import { IconInfo } from '@opentiny/vue-icon';
 
 const options = ref([
   { label: 'GitHub', url: 'https://github.com/yequanrui/WeLink-Themes' },
   { label: 'Gitee', url: 'https://gitee.com/yequanrui/WeLink-Themes' },
 ]);
+const tinyIconInfo = IconInfo();
 
 function itemClick(data) {
   window.open(data.itemData.url);
@@ -16,7 +17,7 @@ function itemClick(data) {
 </script>
 
 <template>
-  <Dropdown title="" :suffix-icon="IconInfo" @item-click="itemClick">
+  <Dropdown title="" :suffix-icon="tinyIconInfo" @item-click="itemClick">
     <template #dropdown>
       <DropdownMenu>
         <DropdownItem v-for="(option, i) in options" :key="i" :label="option.label"></DropdownItem>

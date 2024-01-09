@@ -6,6 +6,7 @@ const api = {
   appVersion: () => ipcRenderer.invoke('app-version'), // 工具版本
   min: () => ipcRenderer.send('min'), // 最小化窗口
   max: () => ipcRenderer.send('max'), // 最大化窗口
+  isMaximized: false, // 是否最大化窗口
   close: () => ipcRenderer.send('close'), // 关闭窗口
   getStoreValue: (key) => ipcRenderer.sendSync('get-store', key), // 获取配置
   setStoreValue: (key, value) => ipcRenderer.send('set-store', key, value), // 设置配置
@@ -29,3 +30,7 @@ if (process.contextIsolated) {
   window.electron = electronAPI;
   window.api = api;
 }
+
+ipcRenderer.on('isMaximized', (_, status) => {
+  window.isMaximized = status;
+});

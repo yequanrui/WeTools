@@ -1,7 +1,7 @@
 // app负责着您应用程序的事件生命周期
 // BrowserWindow负责创建和管理应用窗口
 import { app, ipcMain, nativeImage, nativeTheme, shell, BrowserWindow, Menu, Notification, Tray } from 'electron';
-import { optimizer, is } from '@electron-toolkit/utils';
+import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { join, resolve } from 'path';
 import { execFile, execSync } from 'child_process';
 import Store from 'electron-store';
@@ -52,7 +52,7 @@ if (!gotTheLock) {
     .then(() => {
       locale === 'System' && (locale = app.getSystemLocale());
       // 对于Windows上的通知，需要设置一个AppUserModelID
-      app.setAppUserModelId(app.getName());
+      electronApp.setAppUserModelId(app.getName());
       // 创建托盘及其右键菜单
       tray = new Tray(nativeImage.createFromPath(icon));
       tray.setTitle(app.getName());
@@ -104,6 +104,7 @@ function createWindow() {
     icon,
     width: 800,
     height: 600,
+    show: false, // 窗口是否创建后就显示
     useContentSize: true,
     resizable: true, // 是否可以改变大小
     minimizable: true, // 是否可以最小化
@@ -114,7 +115,6 @@ function createWindow() {
     backgroundColor: '#00000000', // 窗口背景色
     opacity: 0.9, // 窗口初始透明度
     hasShadow: true, // 窗口是否有阴影
-    show: false, // 窗口是否创建后就显示
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,
@@ -138,6 +138,10 @@ function createWindow() {
   } else {
     mainWin.loadFile(join(__dirname, '../renderer/index.html'));
   }
+  // 监听主窗口是否最大化
+  mainWin.on('maximize', () => mainWin.webContents.send('isMaximized', true));
+  mainWin.on('unmaximize', () => mainWin.webContents.send('isMaximized', false));
+  // 页面准备好才显示窗口
   mainWin.on('ready-to-show', () => mainWin.show());
   mainWin.on('close', (e) => {
     // 如果关闭的是主窗口，阻止并隐藏主窗口
@@ -149,7 +153,7 @@ function createWindow() {
   mainWin.on('closed', () => (mainWin = null));
 }
 function showNotification(body = 'Start successfully.', title = 'Info') {
-  new Notification({ body, title }).show();
+  new Notification({ icon, body, title }).show();
 }
 // 初始化存储实例
 const option = {
@@ -176,7 +180,9 @@ ipcMain.on('min', (e) => BrowserWindow.fromWebContents(e.sender).minimize());
 ipcMain.on('max', (e) => {
   const win = BrowserWindow.fromWebContents(e.sender);
   win.isMaximized() ? win.unmaximize() : win.maximize();
+  return win.isMaximized();
 });
+ipcMain.on('isMaximized', (e) => BrowserWindow.fromWebContents(e.sender).isMaximized());
 ipcMain.on('close', (e) => BrowserWindow.fromWebContents(e.sender).close());
 // 监听页面切换语言事件，同时刷新窗口的语言
 ipcMain.handle('toggle-locale', (_, i18n) => {

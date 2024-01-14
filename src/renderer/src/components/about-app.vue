@@ -26,4 +26,4 @@ function itemClick(data) {
   </Dropdown>
 </template>
 
-<style lang="less"></style>
+<style lang="less" scoped></style>

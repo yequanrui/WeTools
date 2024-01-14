@@ -17,7 +17,7 @@ initVersions();
   </ul>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 .versions {
   float: left;
   clear: both;

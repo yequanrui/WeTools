@@ -1,19 +1,22 @@
 import { contextBridge, ipcRenderer } from 'electron';
 import { electronAPI } from '@electron-toolkit/preload';
 
+let isMaximized = false;
+ipcRenderer.on('isMaximized', (_, status) => {
+  isMaximized = status;
+});
+
 // Custom APIs for renderer
 const api = {
   appVersion: () => ipcRenderer.invoke('app-version'), // 工具版本
   min: () => ipcRenderer.send('min'), // 最小化窗口
   max: () => ipcRenderer.send('max'), // 最大化窗口
-  isMaximized: false, // 是否最大化窗口
+  isMaximized: () => isMaximized, // 是否最大化窗口
   close: () => ipcRenderer.send('close'), // 关闭窗口
   getStoreValue: (key) => ipcRenderer.sendSync('get-store', key), // 获取配置
   setStoreValue: (key, value) => ipcRenderer.send('set-store', key, value), // 设置配置
-  toggleLocale: (i18n) => ipcRenderer.invoke('toggle-locale', i18n), // 切换语言（zh-CN/en-US）
-  systemLocale: () => ipcRenderer.invoke('system-locale'), // 跟随系统语言
-  toggleTheme: () => ipcRenderer.invoke('toggle-theme'), // 切换主题（Dark/Light）
-  systemTheme: () => ipcRenderer.invoke('system-theme'), // 跟随系统主题
+  switchLang: (i18n) => ipcRenderer.invoke('switch-lang', i18n), // 切换语言（system/zh-CN/en-US）
+  changeTheme: (theme) => ipcRenderer.invoke('change-theme', theme), // 切换主题（system/dark/light）
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to
@@ -30,7 +33,3 @@ if (process.contextIsolated) {
   window.electron = electronAPI;
   window.api = api;
 }
-
-ipcRenderer.on('isMaximized', (_, status) => {
-  window.isMaximized = status;
-});

@@ -9,7 +9,7 @@ import i18n from '../../resources/i18n.json';
 import icon from '../../resources/icon.png?asset';
 
 const protocolName = app.getName(); // 协议名
-let locale = 'System'; // 国际化键值，默认为System，即使用当前系统语言
+let locale = 'system'; // 国际化键值，默认为system，即使用当前系统语言
 let mainWin; // 存储主窗口实例
 let mainWinId; // 用于标记主窗口Id
 let tray; // 托盘实例
@@ -50,7 +50,7 @@ if (!gotTheLock) {
   app
     .whenReady()
     .then(() => {
-      locale === 'System' && (locale = app.getSystemLocale());
+      locale === 'system' && (locale = app.getSystemLocale());
       // 对于Windows上的通知，需要设置一个AppUserModelID
       electronApp.setAppUserModelId(app.getName());
       // 创建托盘及其右键菜单
@@ -182,20 +182,12 @@ ipcMain.on('max', (e) => {
   win.isMaximized() ? win.unmaximize() : win.maximize();
   return win.isMaximized();
 });
-ipcMain.on('isMaximized', (e) => BrowserWindow.fromWebContents(e.sender).isMaximized());
 ipcMain.on('close', (e) => BrowserWindow.fromWebContents(e.sender).close());
 // 监听页面切换语言事件，同时刷新窗口的语言
-ipcMain.handle('toggle-locale', (_, i18n) => {
-  locale = i18n;
-  return locale;
-});
-ipcMain.handle('system-locale', () => (locale = app.getSystemLocale()));
-// 从nativeTheme中获取主题颜色，使用IPC通道提供主题切换和重置控制
-ipcMain.handle('toggle-theme', () => {
-  nativeTheme.themeSource = nativeTheme.shouldUseDarkColors ? 'light' : 'dark';
-  return nativeTheme.shouldUseDarkColors;
-});
-ipcMain.handle('system-theme', () => (nativeTheme.themeSource = 'system'));
+ipcMain.handle('switch-lang', (_, lang) => (locale = lang === 'system' ? app.getSystemLocale() : lang));
+// 使用nativeTheme切换主题
+ipcMain.handle('change-theme', (_, theme) => (nativeTheme.themeSource = theme));
+// 禁用GPU渲染
 app.disableHardwareAcceleration();
 // 关闭所有窗口时退出应用(Windows&Linux)
 app.on('window-all-closed', () => process.platform !== 'darwin' && app.quit());

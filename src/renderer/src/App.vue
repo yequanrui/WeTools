@@ -5,27 +5,6 @@ import Container from '@opentiny/vue-container';
 import TreeMenu from '@opentiny/vue-tree-menu';
 import { WinBtn, About, Versions } from './components';
 
-const currentLocale = ref('System');
-const currentTheme = ref('System');
-// 切换语言（zh-CN/en-US）
-async function toggleLocale() {
-  const next = currentLocale.value === 'zh-CN' ? 'en-US' : 'zh-CN';
-  const isZhCn = await window.api.toggleLocale(next);
-  currentLocale.value = isZhCn;
-}
-async function systemLocale() {
-  await window.api.systemLocale();
-  currentLocale.value = 'System';
-}
-// 切换主题（Dark/Light）
-async function toggleTheme() {
-  const isDarkMode = await window.api.toggleTheme();
-  currentTheme.value = isDarkMode ? 'Dark' : 'Light';
-}
-async function systemTheme() {
-  await window.api.systemTheme();
-  currentTheme.value = 'System';
-}
 const treeMenu = ref(null);
 const treeData = ref([
   { id: 'welink-themes', label: 'WeLink主题' },
@@ -59,20 +38,6 @@ const treeData = ref([
         <Button id="set-title" type="button">Set</Button>
       </div>
       <div>
-        <p>
-          Current Locale: <strong id="locale-source">{{ currentLocale }}</strong>
-        </p>
-        <Button id="toggle-locale" @click="toggleLocale">Toggle Locale</Button>
-        <Button id="reset-to-system-locale" @click="systemLocale">Reset to System Locale</Button>
-      </div>
-      <div>
-        <p>
-          Current Theme: <strong id="theme-source">{{ currentTheme }}</strong>
-        </p>
-        <Button id="toggle-theme" @click="toggleTheme">Toggle Dark Mode</Button>
-        <Button id="reset-to-system-theme" @click="systemTheme">Reset to System Theme</Button>
-      </div>
-      <div>
         <Button id="open-file" type="button">Open a File</Button>
         File path: <strong id="filePath"></strong>
       </div>
@@ -87,6 +52,70 @@ const treeData = ref([
 </template>
 
 <style lang="less">
-@import './assets/css/index.less';
 @import './assets/css/styles.less';
+#win {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--global-bg);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--base-shadow);
+  color: var(--body-text);
+  .win-header {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 4px 8px;
+    box-shadow: var(--base-shadow);
+    .win-left {
+      margin-left: 8px;
+      height: 32px;
+      font-size: 16px;
+      line-height: 32px;
+      color: var(--body-text);
+      .win-logo,
+      .win-title {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .win-logo {
+        margin-top: 4px;
+      }
+      .win-title {
+        margin-left: 8px;
+      }
+    }
+    .win-right {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  .win-menu {
+    display: contents;
+    .tiny-tree {
+      height: 100%;
+    }
+  }
+  .win-content {
+    flex: auto;
+    min-height: 0;
+  }
+  .win-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+    padding: 10px 20px;
+    color: var(--aide-text);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
 </style>

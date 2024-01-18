@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import Dropdown from '@opentiny/vue-dropdown';
-import DropdownMenu from '@opentiny/vue-dropdown-menu';
-import DropdownItem from '@opentiny/vue-dropdown-item';
+import TinyDropdown from '@opentiny/vue-dropdown';
+import TinyDropdownMenu from '@opentiny/vue-dropdown-menu';
+import TinyDropdownItem from '@opentiny/vue-dropdown-item';
 import { IconInfo } from '@opentiny/vue-icon';
 
 const options = ref([
@@ -17,13 +17,13 @@ function itemClick(data) {
 </script>
 
 <template>
-  <Dropdown title="" :suffix-icon="tinyIconInfo" @item-click="itemClick">
+  <TinyDropdown title="" :suffix-icon="tinyIconInfo" @item-click="itemClick">
     <template #dropdown>
-      <DropdownMenu>
-        <DropdownItem v-for="(option, i) in options" :key="i" :label="option.label"></DropdownItem>
-      </DropdownMenu>
+      <TinyDropdownMenu>
+        <TinyDropdownItem v-for="(option, i) in options" :key="i" :label="option.label"></TinyDropdownItem>
+      </TinyDropdownMenu>
     </template>
-  </Dropdown>
+  </TinyDropdown>
 </template>
 
 <style lang="less" scoped></style>

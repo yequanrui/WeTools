@@ -1,3 +1,30 @@
+<template>
+  <div id="lang-btn" class="win-btn no-drag" title="切换语言">
+    <DropDown :items="langs" :selected-item="currentLang" @item-click="switchLang">
+      <template #toggle>
+        <TinyIconLanguage></TinyIconLanguage>
+      </template>
+    </DropDown>
+  </div>
+  <div id="theme-btn" class="win-btn no-drag" title="切换主题">
+    <DropDown :items="themes" :selected-item="currentTheme" @item-click="changeTheme">
+      <template #toggle>
+        <TinyIconCustom></TinyIconCustom>
+      </template>
+    </DropDown>
+  </div>
+  <div id="min-btn" class="win-btn no-drag" title="最小化" @click="winHandle('min')">
+    <TinyIconPanelMini></TinyIconPanelMini>
+  </div>
+  <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? '恢复' : '最大化'" @click="winHandle('max')">
+    <TinyIconPanelMax v-if="!isMaximized"></TinyIconPanelMax>
+    <TinyIconPanelNormal v-if="isMaximized"></TinyIconPanelNormal>
+  </div>
+  <div id="close-btn" class="win-btn icon-close no-drag" title="关闭" @click="winHandle('close')">
+    <TinyIconClose></TinyIconClose>
+  </div>
+</template>
+
 <script setup>
 import { ref } from 'vue';
 import { IconCustom, IconLanguage, IconPanelMini, IconPanelMax, IconPanelNormal, IconClose } from '@opentiny/vue-icon';
@@ -50,33 +77,6 @@ const winHandle = (opera) => {
   window.api[opera]();
 };
 </script>
-
-<template>
-  <div id="lang-btn" class="win-btn no-drag" title="切换语言">
-    <DropDown :items="langs" :selected-item="currentLang" @item-click="switchLang">
-      <template #toggle>
-        <TinyIconLanguage></TinyIconLanguage>
-      </template>
-    </DropDown>
-  </div>
-  <div id="theme-btn" class="win-btn no-drag" title="切换主题">
-    <DropDown :items="themes" :selected-item="currentTheme" @item-click="changeTheme">
-      <template #toggle>
-        <TinyIconCustom></TinyIconCustom>
-      </template>
-    </DropDown>
-  </div>
-  <div id="min-btn" class="win-btn no-drag" title="最小化" @click="winHandle('min')">
-    <TinyIconPanelMini></TinyIconPanelMini>
-  </div>
-  <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? '恢复' : '最大化'" @click="winHandle('max')">
-    <TinyIconPanelMax v-if="!isMaximized"></TinyIconPanelMax>
-    <TinyIconPanelNormal v-if="isMaximized"></TinyIconPanelNormal>
-  </div>
-  <div id="close-btn" class="win-btn icon-close no-drag" title="关闭" @click="winHandle('close')">
-    <TinyIconClose></TinyIconClose>
-  </div>
-</template>
 
 <style lang="less" scoped>
 .win-btn {

@@ -1,26 +1,26 @@
 <template>
-  <Dropdown :show-icon="!$slots.toggle" :trigger="trigger" @item-click="itemClick">
+  <TinyDropdown :show-icon="!$slots.toggle" :trigger="trigger" @item-click="itemClick">
     <TinyIconLanguage></TinyIconLanguage>
     <slot v-if="$slots.toggle" name="toggle"></slot>
     <template #dropdown>
-      <DropdownMenu>
-        <DropdownItem
+      <TinyDropdownMenu>
+        <TinyDropdownItem
           v-for="(item, i) in items"
           :key="i"
           :label="item.label"
           :disabled="item.disabled"
           :divided="item.divided"
           :class="{ selected: item.value === selectedItem.value }"
-        ></DropdownItem>
-      </DropdownMenu>
+        ></TinyDropdownItem>
+      </TinyDropdownMenu>
     </template>
-  </Dropdown>
+  </TinyDropdown>
 </template>
 
 <script setup>
-import Dropdown from '@opentiny/vue-dropdown';
-import DropdownMenu from '@opentiny/vue-dropdown-menu';
-import DropdownItem from '@opentiny/vue-dropdown-item';
+import TinyDropdown from '@opentiny/vue-dropdown';
+import TinyDropdownMenu from '@opentiny/vue-dropdown-menu';
+import TinyDropdownItem from '@opentiny/vue-dropdown-item';
 defineProps({
   items: {
     type: Array, // 类型约定
@@ -38,8 +38,8 @@ defineProps({
     default: 'hover',
   },
 });
-
-const itemClick = defineEmits(['itemClick']);
+const emits = defineEmits(['itemClick']);
+const itemClick = (e) => emits('itemClick', e);
 </script>
 
 <style lang="less">

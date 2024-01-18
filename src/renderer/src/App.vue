@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import Button from '@opentiny/vue-button';
-import Container from '@opentiny/vue-container';
-import TreeMenu from '@opentiny/vue-tree-menu';
+import TinyButton from '@opentiny/vue-button';
+import TinyContainer from '@opentiny/vue-container';
+import TinyTreeMenu from '@opentiny/vue-tree-menu';
 import { WinBtn, About, Versions } from './components';
 
 const treeMenu = ref(null);
@@ -15,7 +15,7 @@ const treeData = ref([
 </script>
 
 <template>
-  <Container id="win" :pattern="'legend'" :header-height="48" :aside-width="270" :footer-height="40">
+  <TinyContainer id="win" :pattern="'legend'" :header-height="48" :aside-width="270" :footer-height="40">
     <template #header>
       <div class="win-header drag no-select">
         <div class="win-left">
@@ -30,15 +30,15 @@ const treeData = ref([
       </div>
     </template>
     <template #aside>
-      <TreeMenu ref="treeMenu" class="win-menu" :data="treeData" accordion :show-filter="false"></TreeMenu>
+      <TinyTreeMenu ref="treeMenu" class="win-menu" :data="treeData" accordion :show-filter="false"></TinyTreeMenu>
     </template>
     <section class="win-content">
       <div>
         Title: <input id="title" />
-        <Button id="set-title" type="button">Set</Button>
+        <TinyButton id="set-title" type="button">Set</TinyButton>
       </div>
       <div>
-        <Button id="open-file" type="button">Open a File</Button>
+        <TinyButton id="open-file" type="button">Open a File</TinyButton>
         File path: <strong id="filePath"></strong>
       </div>
     </section>
@@ -48,7 +48,7 @@ const treeData = ref([
         <About></About>
       </footer>
     </template>
-  </Container>
+  </TinyContainer>
 </template>
 
 <style lang="less">

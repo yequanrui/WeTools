@@ -33,6 +33,7 @@ const treeData = ref([
       <TinyTreeMenu ref="treeMenu" class="win-menu" :data="treeData" accordion :show-filter="false"></TinyTreeMenu>
     </template>
     <section class="win-content">
+      {{ $t('name') }}
       <div>
         Title: <input id="title" />
         <TinyButton id="set-title" type="button">Set</TinyButton>

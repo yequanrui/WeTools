@@ -1,6 +1,5 @@
 <template>
   <TinyDropdown :show-icon="!$slots.toggle" :trigger="trigger" @item-click="itemClick">
-    <TinyIconLanguage></TinyIconLanguage>
     <slot v-if="$slots.toggle" name="toggle"></slot>
     <template #dropdown>
       <TinyDropdownMenu>
@@ -10,6 +9,7 @@
           :label="item.label"
           :disabled="item.disabled"
           :divided="item.divided"
+          :item-data="item"
           :class="{ selected: item.value === selectedItem.value }"
         ></TinyDropdownItem>
       </TinyDropdownMenu>
@@ -39,7 +39,7 @@ defineProps({
   },
 });
 const emits = defineEmits(['itemClick']);
-const itemClick = (e) => emits('itemClick', e);
+const itemClick = (e) => emits('itemClick', e.itemData);
 </script>
 
 <style lang="less">

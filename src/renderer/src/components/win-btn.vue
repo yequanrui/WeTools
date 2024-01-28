@@ -26,9 +26,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { getCurrentInstance, ref } from 'vue';
 import { IconCustom, IconLanguage, IconPanelMini, IconPanelMax, IconPanelNormal, IconClose } from '@opentiny/vue-icon';
-import DropDown from './drop-down.vue';
+import DropDown from './drop-down';
 
 const TinyIconCustom = IconCustom();
 const TinyIconLanguage = IconLanguage();
@@ -37,36 +37,43 @@ const TinyIconPanelNormal = IconPanelNormal();
 const TinyIconPanelMax = IconPanelMax();
 const TinyIconClose = IconClose();
 
+//#region 语言切换
+const ctx = getCurrentInstance()?.ctx;
 const langs = ref([
   { label: '系统默认', value: 'system' },
   { label: '简体中文', value: 'zh-CN', divided: true },
   { label: 'English', value: 'en-US' },
 ]);
-let currentLang = langs.value[0];
+let currentLang = ref(langs.value[0]);
 /**
  * 切换语言
  * @param {*} lang 语言
  */
 async function switchLang(lang) {
-  currentLang = lang;
-  await window.api.toggleLocale(lang.value);
+  currentLang.value = lang;
+  ctx.$i18n.locale = lang.value === 'system' ? 'zhCN' : lang.value.replace('-', ''); // 切换页面语言
+  await window.api.switchLang(lang.value); // 切换窗体语言
 }
+//#endregion
 
+//#region 主题切换
 const themes = ref([
   { label: '系统默认', value: 'system' },
   { label: '浅色', value: 'light', divided: true },
   { label: '深色', value: 'dark' },
 ]);
-let currentTheme = themes.value[0];
+let currentTheme = ref(themes.value[0]);
 /**
  * 切换主题
  * @param {*} theme 主题
  */
 async function changeTheme(theme) {
-  currentTheme = theme;
+  currentTheme.value = theme;
   await window.api.changeTheme(theme.value);
 }
+//#endregion
 
+//#region 窗口操作
 const isMaximized = ref(window.api.isMaximized());
 /**
  * 窗口操作
@@ -76,6 +83,7 @@ const winHandle = (opera) => {
   opera === 'max' && (isMaximized.value = !window.api.isMaximized());
   window.api[opera]();
 };
+//#endregion
 </script>
 
 <style lang="less" scoped>

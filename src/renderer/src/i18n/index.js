@@ -5,7 +5,7 @@ import enUS from './en-us.json';
 
 export default (i18n) =>
   locale.initI18n({
-    i18n,
     createI18n,
+    i18n,
     messages: { zhCN, enUS },
   });

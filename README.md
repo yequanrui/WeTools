@@ -1,6 +1,6 @@
-# WeLink-Themes
+# WeTools
 
-WeLink主题设置工具
+WeLink工具箱
 
 An [Electron-Vite](https://cn.electron-vite.org/) application with [TinyVue](https://opentiny.design/tiny-vue)
 

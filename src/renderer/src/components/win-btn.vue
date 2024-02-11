@@ -1,26 +1,26 @@
 <template>
-  <div id="lang-btn" class="win-btn no-drag" title="切换语言">
+  <div id="lang-btn" class="win-btn no-drag" :title="$t('switchLang')">
     <DropDown :items="langs" :selected-item="currentLang" @item-click="switchLang">
       <template #toggle>
         <TinyIconLanguage></TinyIconLanguage>
       </template>
     </DropDown>
   </div>
-  <div id="theme-btn" class="win-btn no-drag" title="切换主题">
+  <div id="theme-btn" class="win-btn no-drag" :title="$t('changeTheme')">
     <DropDown :items="themes" :selected-item="currentTheme" @item-click="changeTheme">
       <template #toggle>
         <TinyIconCustom></TinyIconCustom>
       </template>
     </DropDown>
   </div>
-  <div id="min-btn" class="win-btn no-drag" title="最小化" @click="winHandle('min')">
+  <div id="min-btn" class="win-btn no-drag" :title="$t('minimize')" @click="winHandle('min')">
     <TinyIconPanelMini></TinyIconPanelMini>
   </div>
-  <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? '恢复' : '最大化'" @click="winHandle('max')">
+  <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? $t('unmaximize') : $t('maximize')" @click="winHandle('max')">
     <TinyIconPanelMax v-if="!isMaximized"></TinyIconPanelMax>
     <TinyIconPanelNormal v-if="isMaximized"></TinyIconPanelNormal>
   </div>
-  <div id="close-btn" class="win-btn icon-close no-drag" title="关闭" @click="winHandle('close')">
+  <div id="close-btn" class="win-btn icon-close no-drag" :title="$t('close')" @click="winHandle('close')">
     <TinyIconClose></TinyIconClose>
   </div>
 </template>
@@ -40,9 +40,9 @@ const TinyIconClose = IconClose();
 //#region 语言切换
 const ctx = getCurrentInstance()?.ctx;
 const langs = ref([
-  { label: '系统默认', value: 'system' },
-  { label: '简体中文', value: 'zh-CN', divided: true },
-  { label: 'English', value: 'en-US' },
+  { label: 'systemDefault', value: 'system' },
+  { label: 'chinese', value: 'zh-CN', divided: true },
+  { label: 'english', value: 'en-US' },
 ]);
 let currentLang = ref(langs.value[0]);
 /**
@@ -58,9 +58,9 @@ async function switchLang(lang) {
 
 //#region 主题切换
 const themes = ref([
-  { label: '系统默认', value: 'system' },
-  { label: '浅色', value: 'light', divided: true },
-  { label: '深色', value: 'dark' },
+  { label: 'systemDefault', value: 'system' },
+  { label: 'light', value: 'light', divided: true },
+  { label: 'dark', value: 'dark' },
 ]);
 let currentTheme = ref(themes.value[0]);
 /**

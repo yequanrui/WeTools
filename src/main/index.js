@@ -81,6 +81,7 @@ if (!gotTheLock) {
               app.quit();
             },
           },
+          { label: i18n[locale].about, role: 'about' },
           { label: i18n[locale].quit, role: 'quit' },
         ]);
         tray.popUpContextMenu(contextMenu);
@@ -200,4 +201,4 @@ app.on('activate', () => {
   }
 });
 // 因为阻止了close事件，导致关机时无法关闭主窗口，故加此行
-app.on('before-quit', () => mainWin.destroy());
+app.on('before-quit', () => mainWin && mainWin.destroy());

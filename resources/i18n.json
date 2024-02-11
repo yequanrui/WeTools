@@ -5,6 +5,7 @@
     "dark": "深色",
     "restartWeLink": "重启WeLink",
     "restartApp": "重启应用",
+    "about": "关于",
     "quit": "退出"
   },
   "en-US": {
@@ -13,6 +14,7 @@
     "dark": "Dark",
     "restartWeLink": "Restart WeLink",
     "restartApp": "Restart App",
+    "about": "About",
     "quit": "Quit"
   }
 }

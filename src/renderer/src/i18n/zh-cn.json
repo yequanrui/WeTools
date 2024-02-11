@@ -1,3 +1,21 @@
 {
-  "name": "中文"
+  "lang": "中文",
+  "name": "WeLink工具箱",
+  "systemDefault": "系统默认",
+  "switchLang": "切换语言",
+  "chinese": "中文",
+  "english": "English",
+  "changeTheme": "切换主题",
+  "light": "浅色",
+  "dark": "深色",
+  "minimize": "最小化",
+  "unmaximize": "恢复",
+  "maximize": "最大化",
+  "close": "关闭",
+  "about": "关于",
+  "github": "GitHub",
+  "gitee": "码云",
+  "welinkThemes": "WeLink主题",
+  "appSetting": "应用设置",
+  "appDocs": "应用文档"
 }

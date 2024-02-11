@@ -1,17 +1,26 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive, watchEffect } from 'vue';
 import TinyButton from '@opentiny/vue-button';
 import TinyContainer from '@opentiny/vue-container';
 import TinyTreeMenu from '@opentiny/vue-tree-menu';
 import { WinBtn, About, Versions } from './components';
 
 const treeMenu = ref(null);
-const treeData = ref([
-  { id: 'welink-themes', label: 'WeLink主题' },
-  { id: 'app-setting', label: '应用设置' },
-  { id: 'app-docs', label: '应用文档' },
+const treeData = reactive([
+  { id: 'welinkThemes', label: 'welinkThemes' },
+  { id: 'appSetting', label: 'appSetting' },
+  { id: 'appDocs', label: 'appDocs' },
 ]);
-// treeMenu.value.setCurrentKey('welink-themes');
+const stop = watchEffect(() => {
+  if (treeMenu.value) {
+    treeMenu.value.setCurrentKey(treeData[0].id);
+    setTimeout(() => stop());
+  }
+});
+const treeChange = (data) => {
+  console.log(data);
+  // TODO 导航当前节点变化时切换路由
+};
 </script>
 
 <template>
@@ -22,7 +31,7 @@ const treeData = ref([
           <span class="win-logo">
             <img width="20px" height="20px" src="./assets/img/logo.png" />
           </span>
-          <span class="win-title">WeLink主题设置工具</span>
+          <span class="win-title">{{ $t('name') }}</span>
         </div>
         <div class="win-right">
           <WinBtn></WinBtn>
@@ -30,10 +39,22 @@ const treeData = ref([
       </div>
     </template>
     <template #aside>
-      <TinyTreeMenu ref="treeMenu" class="win-menu" :data="treeData" accordion :show-filter="false"></TinyTreeMenu>
+      <TinyTreeMenu
+        ref="treeMenu"
+        class="win-menu"
+        accordion
+        node-key="id"
+        :data="treeData"
+        :show-filter="false"
+        @current-change="treeChange"
+      >
+        <template #default="slotScope">
+          <div>{{ $t(slotScope.data.label) }}</div>
+        </template>
+      </TinyTreeMenu>
     </template>
     <section class="win-content">
-      {{ $t('name') }}
+      {{ $t('lang') }}
       <div>
         Title: <input id="title" />
         <TinyButton id="set-title" type="button">Set</TinyButton>

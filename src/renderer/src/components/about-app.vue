@@ -1,13 +1,11 @@
 <script setup>
 import { ref } from 'vue';
-import TinyDropdown from '@opentiny/vue-dropdown';
-import TinyDropdownMenu from '@opentiny/vue-dropdown-menu';
-import TinyDropdownItem from '@opentiny/vue-dropdown-item';
 import { IconInfo } from '@opentiny/vue-icon';
+import DropDown from './drop-down';
 
-const options = ref([
-  { label: 'GitHub', url: 'https://github.com/yequanrui/WeLink-Themes' },
-  { label: 'Gitee', url: 'https://gitee.com/yequanrui/WeLink-Themes' },
+const links = ref([
+  { label: 'github', url: 'https://github.com/yequanrui/WeTools' },
+  { label: 'gitee', url: 'https://gitee.com/yequanrui/WeTools' },
 ]);
 const tinyIconInfo = IconInfo();
 
@@ -17,13 +15,25 @@ function itemClick(data) {
 </script>
 
 <template>
-  <TinyDropdown title="" :suffix-icon="tinyIconInfo" @item-click="itemClick">
-    <template #dropdown>
-      <TinyDropdownMenu>
-        <TinyDropdownItem v-for="(option, i) in options" :key="i" :label="option.label"></TinyDropdownItem>
-      </TinyDropdownMenu>
-    </template>
-  </TinyDropdown>
+  <div id="about-btn" :title="$t('about')">
+    <DropDown :items="links" @item-click="itemClick">
+      <template #toggle>
+        <tinyIconInfo></tinyIconInfo>
+      </template>
+    </DropDown>
+  </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+#about-btn {
+  padding: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--common-border-radius);
+  text-align: center;
+  transition: background-color 0.3s;
+  &:hover {
+    box-shadow: var(--base-shadow);
+  }
+}
+</style>

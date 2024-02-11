@@ -6,11 +6,11 @@
         <TinyDropdownItem
           v-for="(item, i) in items"
           :key="i"
-          :label="item.label"
+          :label="$t(item.label)"
           :disabled="item.disabled"
           :divided="item.divided"
           :item-data="item"
-          :class="{ selected: item.value === selectedItem.value }"
+          :class="{ selected: item.value === selectedItem?.value }"
         ></TinyDropdownItem>
       </TinyDropdownMenu>
     </template>

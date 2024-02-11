@@ -1,3 +1,21 @@
 {
-  "name": "English"
+  "lang": "English",
+  "name": "WeTools",
+  "systemDefault": "System",
+  "switchLang": "Switch Language",
+  "chinese": "Chinese",
+  "english": "English",
+  "changeTheme": "Change Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "minimize": "Minimize",
+  "unmaximize": "Unmaximize",
+  "maximize": "Maximize",
+  "close": "Close",
+  "about": "About",
+  "github": "GitHub",
+  "gitee": "Gitee",
+  "welinkThemes": "WeLink Themes",
+  "appSetting": "App Setting",
+  "appDocs": "App Docs"
 }

@@ -114,7 +114,7 @@ function createWindow() {
     titleBarStyle: 'hidden', // 隐藏标题栏和全尺寸内容窗口
     titleBarOverlay: false,
     backgroundColor: '#00000000', // 窗口背景色
-    opacity: 0.9, // 窗口初始透明度
+    opacity: 0.96, // 窗口初始透明度
     hasShadow: true, // 窗口是否有阴影
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),

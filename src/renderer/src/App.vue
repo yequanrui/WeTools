@@ -1,25 +1,28 @@
 <script setup>
 import { ref, reactive, watchEffect } from 'vue';
-import TinyButton from '@opentiny/vue-button';
+import { useRouter } from 'vue-router';
 import TinyContainer from '@opentiny/vue-container';
 import TinyTreeMenu from '@opentiny/vue-tree-menu';
 import { WinBtn, About, Versions } from './components';
 
+const router = useRouter();
 const treeMenu = ref(null);
 const treeData = reactive([
-  { id: 'welinkThemes', label: 'welinkThemes' },
-  { id: 'appSetting', label: 'appSetting' },
-  { id: 'appDocs', label: 'appDocs' },
+  { id: 'home', label: 'home', router: '/' },
+  { id: 'welinkThemes', label: 'welinkThemes', router: '/welink-themes' },
+  { id: 'appSetting', label: 'appSetting', router: '/app-setting' },
+  { id: 'appDocs', label: 'appDocs', router: '/app-docs' },
 ]);
 const stop = watchEffect(() => {
   if (treeMenu.value) {
-    treeMenu.value.setCurrentKey(treeData[0].id);
+    const initNode = treeData[0];
+    treeMenu.value.setCurrentKey(initNode.id);
+    router.push(initNode.router);
     setTimeout(() => stop());
   }
 });
 const treeChange = (data) => {
-  console.log(data);
-  // TODO 导航当前节点变化时切换路由
+  router.push(data.router);
 };
 </script>
 
@@ -46,23 +49,16 @@ const treeChange = (data) => {
         node-key="id"
         :data="treeData"
         :show-filter="false"
+        :show-title="false"
         @current-change="treeChange"
       >
         <template #default="slotScope">
-          <div>{{ $t(slotScope.data.label) }}</div>
+          {{ $t(slotScope.data.label) }}
         </template>
       </TinyTreeMenu>
     </template>
     <section class="win-content">
-      {{ $t('lang') }}
-      <div>
-        Title: <input id="title" />
-        <TinyButton id="set-title" type="button">Set</TinyButton>
-      </div>
-      <div>
-        <TinyButton id="open-file" type="button">Open a File</TinyButton>
-        File path: <strong id="filePath"></strong>
-      </div>
+      <router-view></router-view>
     </section>
     <template #footer>
       <footer class="win-footer">
@@ -122,6 +118,11 @@ const treeChange = (data) => {
     display: contents;
     .tiny-tree {
       height: 100%;
+    }
+    a,
+    a:hover,
+    a.router-link-active {
+      text-decoration: none;
     }
   }
   .win-content {

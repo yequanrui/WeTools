@@ -4,13 +4,13 @@ import { IconInfo } from '@opentiny/vue-icon';
 import DropDown from './drop-down';
 
 const links = ref([
-  { label: 'github', url: 'https://github.com/yequanrui/WeTools' },
-  { label: 'gitee', url: 'https://gitee.com/yequanrui/WeTools' },
+  { label: 'github', value: 'https://github.com/yequanrui/WeTools' },
+  { label: 'gitee', value: 'https://gitee.com/yequanrui/WeTools' },
 ]);
 const tinyIconInfo = IconInfo();
 
-function itemClick(data) {
-  window.open(data.itemData.url);
+function itemClick(item) {
+  window.open(item.value);
 }
 </script>
 

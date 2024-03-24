@@ -1,31 +1,3 @@
-<script setup>
-import { ref, reactive, watchEffect } from 'vue';
-import { useRouter } from 'vue-router';
-import TinyContainer from '@opentiny/vue-container';
-import TinyTreeMenu from '@opentiny/vue-tree-menu';
-import { WinBtn, About, Versions } from './components';
-
-const router = useRouter();
-const treeMenu = ref(null);
-const treeData = reactive([
-  { id: 'home', label: 'home', router: '/' },
-  { id: 'welinkThemes', label: 'welinkThemes', router: '/welink-themes' },
-  { id: 'appSetting', label: 'appSetting', router: '/app-setting' },
-  { id: 'appDocs', label: 'appDocs', router: '/app-docs' },
-]);
-const stop = watchEffect(() => {
-  if (treeMenu.value) {
-    const initNode = treeData[0];
-    treeMenu.value.setCurrentKey(initNode.id);
-    router.push(initNode.router);
-    setTimeout(() => stop());
-  }
-});
-const treeChange = (data) => {
-  router.push(data.router);
-};
-</script>
-
 <template>
   <TinyContainer id="win" :pattern="'legend'" :header-height="48" :aside-width="270" :footer-height="40">
     <template #header>
@@ -68,6 +40,34 @@ const treeChange = (data) => {
     </template>
   </TinyContainer>
 </template>
+
+<script setup>
+import { ref, reactive, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
+import TinyContainer from '@opentiny/vue-container';
+import TinyTreeMenu from '@opentiny/vue-tree-menu';
+import { WinBtn, About, Versions } from './components';
+
+const router = useRouter();
+const treeMenu = ref(null);
+const treeData = reactive([
+  { id: 'home', label: 'home', router: '/' },
+  { id: 'welinkThemes', label: 'welinkThemes', router: '/welink-themes' },
+  { id: 'appSetting', label: 'appSetting', router: '/app-setting' },
+  { id: 'appDocs', label: 'appDocs', router: '/app-docs' },
+]);
+const stop = watchEffect(() => {
+  if (treeMenu.value) {
+    const initNode = treeData[0];
+    treeMenu.value.setCurrentKey(initNode.id);
+    router.push(initNode.router);
+    setTimeout(() => stop());
+  }
+});
+const treeChange = (data) => {
+  router.push(data.router);
+};
+</script>
 
 <style lang="less">
 @import './assets/css/styles.less';

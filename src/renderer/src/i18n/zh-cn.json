@@ -18,5 +18,11 @@
   "home": "首页",
   "welinkThemes": "WeLink主题",
   "appSetting": "应用设置",
+  "generalSettings": "通用设置",
+  "openAtLogin": "开机启动",
+  "welinkSettings": "WeLink配置",
+  "welinkDir": "WeLink目录",
+  "selectWeLinkDir": "选择WeLink安装目录",
+  "themeDir": "主题目录",
   "appDocs": "应用文档"
 }

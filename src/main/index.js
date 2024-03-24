@@ -1,10 +1,11 @@
 // app负责着您应用程序的事件生命周期
 // BrowserWindow负责创建和管理应用窗口
-import { app, ipcMain, nativeImage, nativeTheme, shell, BrowserWindow, Menu, Notification, Tray } from 'electron';
+import { app, ipcMain, nativeImage, nativeTheme, dialog, shell, BrowserWindow, Menu, Notification, Tray } from 'electron';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { join, resolve } from 'path';
 import { execFile, execSync } from 'child_process';
 import Store from 'electron-store';
+import config from '../../resources/config.json';
 import i18n from '../../resources/i18n.json';
 import icon from '../../resources/icon.png?asset';
 
@@ -21,6 +22,21 @@ if (process.defaultApp) {
 } else {
   app.setAsDefaultProtocolClient(protocolName);
 }
+// 初始化存储实例
+const option = {
+  // C:\Users\{userName}\AppData\Roaming\{projectName}\config.json
+  name: 'config', // 文件名称，默认config
+  fileExtension: 'json', // 文件后缀，默认json
+  cwd: app.getPath('userData'), // 文件位置,尽量不要动，默认情况下，它将通过遵循系统约定来选择最佳位置
+  // encryptionKey: 'aes-256-cbc', // 对配置文件进行加密
+  clearInvalidConfig: true, // 发生SyntaxError则清空配置
+};
+const store = new Store(option);
+// 初始化配置
+store.set('version', app.getVersion());
+Object.keys(config).forEach((key) => {
+  !store.get(key) && store.set(key, config[key]);
+});
 const gotTheLock = app.requestSingleInstanceLock();
 if (!gotTheLock) {
   app.quit();
@@ -33,15 +49,14 @@ if (!gotTheLock) {
       mainWin.focus();
     }
   });
-  // 开机是否自启动，注意非开发环境
-  if (process.env.NODE_ENV === 'production') {
+  // 开机是否自启动，注意应用是否打包
+  if (app.isPackaged) {
     const settings = {
-      openAtLogin: true, // 是否开机启动
-      openAsHidden: true, // 是否隐藏主窗体，保留托盘位置
+      openAtLogin: store.get('openAtLogin') || false, // 是否开机启动
     };
     if (process.platform !== 'darwin') {
       settings.path = process.execPath;
-      settings.args = ['--processStart', `"${process.execPath}"`, '--process-start-args', `"--hidden"`];
+      settings.args = ['--hidden'];
     }
     app.setLoginItemSettings(settings);
   }
@@ -70,7 +85,8 @@ if (!gotTheLock) {
               } catch (error) {
                 /* empty */
               } finally {
-                execFile('C:/Program Files (x86)/WeLink/WeLink.exe');
+                const welinkDir = store.get('welinkDir');
+                execFile(`${welinkDir}\\WeLink.exe`);
               }
             },
           },
@@ -123,7 +139,6 @@ function createWindow() {
   });
   !mainWinId && (mainWinId = mainWin.id); // 记录下主窗口Id
   mainWin.setTitle(app.getName()); // 设置窗口标题
-  mainWin.on('ready-to-show', () => mainWin.show());
   // 将预加载脚本附加到webview
   mainWin.webContents.on('will-attach-webview', (e, webPreferences) => {
     webPreferences.preload = join(__dirname, '../preload/index.js');
@@ -143,7 +158,7 @@ function createWindow() {
   mainWin.on('maximize', () => mainWin.webContents.send('isMaximized', true));
   mainWin.on('unmaximize', () => mainWin.webContents.send('isMaximized', false));
   // 页面准备好才显示窗口
-  mainWin.on('ready-to-show', () => mainWin.show());
+  mainWin.on('ready-to-show', () => !process.argv.includes('--hidden') && mainWin.show());
   mainWin.on('close', (e) => {
     // 如果关闭的是主窗口，阻止并隐藏主窗口
     if (mainWin.id === mainWinId) {
@@ -156,16 +171,6 @@ function createWindow() {
 function showNotification(body = 'Start successfully.', title = 'Info') {
   new Notification({ icon, body, title }).show();
 }
-// 初始化存储实例
-const option = {
-  // C:\Users\{userName}\AppData\Roaming\{projectName}\config.json
-  name: 'config', // 文件名称，默认config
-  fileExtension: 'json', // 文件后缀，默认json
-  cwd: app.getPath('userData'), // 文件位置,尽量不要动，默认情况下，它将通过遵循系统约定来选择最佳位置
-  // encryptionKey: 'aes-256-cbc', // 对配置文件进行加密
-  clearInvalidConfig: true, // 发生SyntaxError则清空配置
-};
-const store = new Store(option);
 // 获取配置
 ipcMain.on('get-store', (_, key) => {
   let value = store.get(key);
@@ -173,9 +178,14 @@ ipcMain.on('get-store', (_, key) => {
 });
 // 设置配置
 ipcMain.on('set-store', (_, key, value) => store.set(key, value));
-store.set('version', app.getVersion());
 // 获取app版本
 ipcMain.handle('app-version', () => app.getVersion());
+// 设置app是否开机启动
+ipcMain.handle('toggle-login', (toggle) => {
+  const settings = { openAtLogin: toggle, args: ['--hidden'] };
+  !app.isPackaged && (settings.path = process.execPath);
+  app.setLoginItemSettings(settings);
+});
 // 最小化、最大化、关闭窗口
 ipcMain.on('min', (e) => BrowserWindow.fromWebContents(e.sender).minimize());
 ipcMain.on('max', (e) => {
@@ -188,6 +198,7 @@ ipcMain.on('close', (e) => BrowserWindow.fromWebContents(e.sender).close());
 ipcMain.handle('switch-lang', (_, lang) => (locale = lang === 'system' ? app.getSystemLocale() : lang));
 // 使用nativeTheme切换主题
 ipcMain.handle('change-theme', (_, theme) => (nativeTheme.themeSource = theme));
+ipcMain.handle('open-dialog', (_, options) => dialog.showOpenDialogSync(mainWin, options));
 // 禁用GPU渲染
 app.disableHardwareAcceleration();
 // 关闭所有窗口时退出应用(Windows&Linux)

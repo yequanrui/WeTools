@@ -9,6 +9,7 @@ ipcRenderer.on('isMaximized', (_, status) => {
 // Custom APIs for renderer
 const api = {
   appVersion: () => ipcRenderer.invoke('app-version'), // 工具版本
+  toggleLogin: (toggle) => ipcRenderer.invoke('toggle-login', toggle), // 设置app是否开机启动
   min: () => ipcRenderer.send('min'), // 最小化窗口
   max: () => ipcRenderer.send('max'), // 最大化窗口
   isMaximized: () => isMaximized, // 是否最大化窗口
@@ -17,6 +18,7 @@ const api = {
   setStoreValue: (key, value) => ipcRenderer.send('set-store', key, value), // 设置配置
   switchLang: (i18n) => ipcRenderer.invoke('switch-lang', i18n), // 切换语言（system/zh-CN/en-US）
   changeTheme: (theme) => ipcRenderer.invoke('change-theme', theme), // 切换主题（system/dark/light）
+  openDialog: (options) => ipcRenderer.invoke('open-dialog', options), // 打开对话框
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to

@@ -1,7 +1,3 @@
-<script setup>
-import TinyButton from '@opentiny/vue-button';
-</script>
-
 <template>
   {{ $t('lang') }}
   <div>
@@ -13,5 +9,9 @@ import TinyButton from '@opentiny/vue-button';
     File path: <strong id="filePath"></strong>
   </div>
 </template>
+
+<script setup>
+import TinyButton from '@opentiny/vue-button';
+</script>
 
 <style lang="less" scoped></style>

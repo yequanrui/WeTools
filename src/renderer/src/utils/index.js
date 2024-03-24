@@ -1,2 +1,4 @@
 export * from './appData';
+export * from './config';
+export * from './file';
 export * from './storage';

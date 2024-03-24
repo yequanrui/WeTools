@@ -17,6 +17,12 @@
   "gitee": "Gitee",
   "home": "Home",
   "welinkThemes": "WeLink Themes",
-  "appSetting": "App Setting",
+  "appSetting": "App Settings",
+  "generalSettings": "General Settings",
+  "openAtLogin": "Start on startup",
+  "welinkSettings": "WeLink Settings",
+  "welinkDir": "WeLink Directory",
+  "selectWeLinkDir": "Select the WeLink installation directory",
+  "themeDir": "Theme Directory",
   "appDocs": "App Docs"
 }

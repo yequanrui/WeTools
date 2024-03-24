@@ -1,3 +1,12 @@
+<template>
+  <ul class="versions">
+    <li class="v8-version">App: {{ versions.app }}</li>
+    <li class="electron-version">Electron {{ versions.electron }}</li>
+    <li class="chrome-version">Chromium {{ versions.chrome }}</li>
+    <li class="node-version">Node {{ versions.node }}</li>
+  </ul>
+</template>
+
 <script setup>
 import { reactive } from 'vue';
 
@@ -7,15 +16,6 @@ const initVersions = async () => {
 };
 initVersions();
 </script>
-
-<template>
-  <ul class="versions">
-    <li class="v8-version">App: {{ versions.app }}</li>
-    <li class="electron-version">Electron {{ versions.electron }}</li>
-    <li class="chrome-version">Chromium {{ versions.chrome }}</li>
-    <li class="node-version">Node {{ versions.node }}</li>
-  </ul>
-</template>
 
 <style lang="less" scoped>
 .versions {

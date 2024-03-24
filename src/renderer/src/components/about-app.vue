@@ -1,3 +1,13 @@
+<template>
+  <div id="about-btn" :title="$t('about')">
+    <DropDown :items="links" @item-click="itemClick">
+      <template #toggle>
+        <tinyIconInfo></tinyIconInfo>
+      </template>
+    </DropDown>
+  </div>
+</template>
+
 <script setup>
 import { ref } from 'vue';
 import { IconInfo } from '@opentiny/vue-icon';
@@ -13,16 +23,6 @@ function itemClick(item) {
   window.open(item.value);
 }
 </script>
-
-<template>
-  <div id="about-btn" :title="$t('about')">
-    <DropDown :items="links" @item-click="itemClick">
-      <template #toggle>
-        <tinyIconInfo></tinyIconInfo>
-      </template>
-    </DropDown>
-  </div>
-</template>
 
 <style lang="less" scoped>
 #about-btn {

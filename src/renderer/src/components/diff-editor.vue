@@ -32,17 +32,14 @@ onMounted(() => {
     value: '', // 编辑器初始显示文字
     theme: props.theme, // 官方自带三种主题vs, hc-black, or vs-dark
     fontSize: 14, // 字体大小
-    tabSize: 2, // tab缩进长度
-    autoIndent: true, // 自动调整缩进
-    automaticLayout: false, // 自动布局
-    cursorStyle: 'line', // 光标样式
     formatOnPaste: true, // 控制是否在粘贴时格式化文本
-    links: true, // 是否点击链接
-    minimap: { enabled: false }, // 是否启用小地图
     scrollBeyondLastLine: false, // 设置编辑器是否可以滚动到最后一行之后
     originalEditable: false, // 用于控制编辑器（左侧）是否可编辑
     roundedSelection: false, // 右侧是否显示编辑器预览框
     readOnly: false, // 用于控制编辑器（右侧）是否只读
+    glyphMargin: true, // Enable the rendering of the glyph margin
+    renderSideBySide: true, // Render the diff inline
+    enableSplitViewResizing: false, // Optionally disable the resizing
   });
   const originalModel = monaco.editor.createModel(props.originalValue, props.language);
   const modifiedModel = monaco.editor.createModel(props.nowValue, props.language);

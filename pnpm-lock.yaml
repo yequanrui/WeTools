@@ -44,6 +44,9 @@ dependencies:
   '@opentiny/vue-input':
     specifier: ^3.14.0
     version: 3.14.0
+  '@opentiny/vue-scroll-text':
+    specifier: ^3.14.0
+    version: 3.14.0
   '@opentiny/vue-switch':
     specifier: ^3.14.0
     version: 3.14.0
@@ -56,6 +59,9 @@ dependencies:
   electron-updater:
     specifier: ^6.1.8
     version: 6.1.8
+  monaco-editor:
+    specifier: ^0.47.0
+    version: 0.47.0
   vue-i18n:
     specifier: ^9.11.0
     version: 9.11.0(vue@3.4.21)
@@ -1225,6 +1231,14 @@ packages:
     dependencies:
       color: 4.2.3
       xss: 1.0.11
+    dev: false
+
+  /@opentiny/vue-scroll-text@3.14.0:
+    resolution: {integrity: sha512-Eah0FFkUzEfrWWrFdyfQ8ywfvicXlZH9ETCDAkvKNQ4XFgfra3/qo/w2nGUTgJ8gBGme3Zkj9n9zNoC57ddTvQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.14.0
+      '@opentiny/vue-renderless': 3.14.1
+      '@opentiny/vue-theme': 3.14.1
     dev: false
 
   /@opentiny/vue-switch@3.14.0:
@@ -3467,6 +3481,10 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dev: true
+
+  /monaco-editor@0.47.0:
+    resolution: {integrity: sha512-VabVvHvQ9QmMwXu4du008ZDuyLnHs9j7ThVFsiJoXSOQk18+LF89N4ADzPbFenm0W4V2bGHnFBztIRQTgBfxzw==}
+    dev: false
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}

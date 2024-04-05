@@ -24,7 +24,7 @@
     "build:linux": "npm run build && electron-builder --linux --config"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
     "@opentiny/vue-button": "^3.14.0",
     "@opentiny/vue-collapse": "^3.14.0",
@@ -41,22 +41,22 @@
     "@opentiny/vue-tree-menu": "^3.14.0",
     "electron-store": "^8.2.0",
     "electron-updater": "^6.1.8",
-    "vue-i18n": "^9.10.2",
+    "vue-i18n": "^9.11.0",
     "vue-router": "4.3.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",
-    "@rushstack/eslint-patch": "^1.8.0",
+    "@rushstack/eslint-patch": "^1.10.1",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "electron": "^29.1.5",
+    "electron": "^29.2.0",
     "electron-builder": "^24.13.3",
     "electron-vite": "^2.1.0",
     "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.23.0",
+    "eslint-plugin-vue": "^9.24.0",
     "less": "^4.2.0",
     "prettier": "^3.2.5",
-    "vite": "^5.2.6",
+    "vite": "^5.2.8",
     "vue": "^3.4.21"
   },
   "engines": {

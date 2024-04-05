@@ -50,6 +50,12 @@ dependencies:
   '@opentiny/vue-switch':
     specifier: ^3.14.0
     version: 3.14.0
+  '@opentiny/vue-tab-item':
+    specifier: ^3.14.0
+    version: 3.14.0
+  '@opentiny/vue-tabs':
+    specifier: ^3.14.0
+    version: 3.14.0
   '@opentiny/vue-tree-menu':
     specifier: ^3.14.0
     version: 3.14.0
@@ -1248,6 +1254,29 @@ packages:
       '@opentiny/vue-renderless': 3.14.1
       '@opentiny/vue-theme': 3.14.1
       '@opentiny/vue-theme-mobile': 3.14.1
+    dev: false
+
+  /@opentiny/vue-tab-item@3.14.0:
+    resolution: {integrity: sha512-KphDsaIU/lVQlPorWpD11vZfqMHX52v1WpFvOTeGTBxSCDLOyffjyWrOqQDTksKJNodYMcQAiRpg6Nw4J/IHtA==}
+    dependencies:
+      '@opentiny/vue-common': 3.14.0
+      '@opentiny/vue-renderless': 3.14.1
+    dev: false
+
+  /@opentiny/vue-tabs@3.14.0:
+    resolution: {integrity: sha512-OVSaI8dwvQIx7QNoA8/HHKbWHImwiaeKd4a7rSFUBcVp+kimFDn4GVURtY6Df27OSF17a3fVlug6eBtnpfkueg==}
+    dependencies:
+      '@opentiny/vue-common': 3.14.0
+      '@opentiny/vue-dropdown': 3.14.0
+      '@opentiny/vue-dropdown-item': 3.14.0
+      '@opentiny/vue-dropdown-menu': 3.14.0
+      '@opentiny/vue-icon': 3.14.0
+      '@opentiny/vue-locale': 3.14.0
+      '@opentiny/vue-popover': 3.14.0
+      '@opentiny/vue-renderless': 3.14.1
+      '@opentiny/vue-theme': 3.14.1
+      '@opentiny/vue-theme-mobile': 3.14.1
+      '@opentiny/vue-tooltip': 3.14.0
     dev: false
 
   /@opentiny/vue-theme-mobile@3.14.1:

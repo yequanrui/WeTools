@@ -1,10 +1,10 @@
 <template>
   <div id="about-btn" :title="$t('about')">
-    <DropDown :items="links" @item-click="itemClick">
+    <drop-down :items="links" @item-click="itemClick">
       <template #toggle>
-        <tinyIconInfo></tinyIconInfo>
+        <tiny-icon-info></tiny-icon-info>
       </template>
-    </DropDown>
+    </drop-down>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ const links = ref([
   { label: 'github', value: 'https://github.com/yequanrui/WeTools' },
   { label: 'gitee', value: 'https://gitee.com/yequanrui/WeTools' },
 ]);
-const tinyIconInfo = IconInfo();
+const TinyIconInfo = IconInfo();
 
 function itemClick(item) {
   window.open(item.value);

@@ -1,33 +1,33 @@
 <template>
-  <TinyCollapse v-model="activeNames">
-    <TinyCollapseItem :title="$t('generalSettings')" name="Common">
-      <TinyForm label-width="120px">
-        <TinyFormItem :label="$t('openAtLogin')">
-          <TinySwitch v-model="enableLogin" show-text @change="enableLoginChange"></TinySwitch>
-        </TinyFormItem>
-      </TinyForm>
-    </TinyCollapseItem>
-    <TinyCollapseItem :title="$t('welinkSettings')" name="WeLink">
-      <TinyForm overflow-title label-width="120px">
-        <TinyFormItem :label="$t('welinkDir')">
-          <TinyInput v-model="welinkDir" spellcheck="false">
+  <tiny-collapse v-model="activeNames">
+    <tiny-collapse-item :title="$t('generalSettings')" name="Common">
+      <tiny-form label-width="120px">
+        <tiny-form-item :label="$t('openAtLogin')">
+          <tiny-switch v-model="enableLogin" show-text @change="enableLoginChange"></tiny-switch>
+        </tiny-form-item>
+      </tiny-form>
+    </tiny-collapse-item>
+    <tiny-collapse-item :title="$t('welinkSettings')" name="WeLink">
+      <tiny-form overflow-title label-width="120px">
+        <tiny-form-item :label="$t('welinkDir')">
+          <tiny-input v-model="welinkDir" spellcheck="false">
             <template #suffix>
-              <TinyButton
+              <tiny-button
                 class="folder-icon"
                 type="text"
                 :icon="TinyIconFolderOpened"
                 :title="$t('selectWeLinkDir')"
                 @click="openDirDialog"
-              ></TinyButton>
+              ></tiny-button>
             </template>
-          </TinyInput>
-        </TinyFormItem>
-        <TinyFormItem :label="$t('themeDir')">
-          <TinyInput v-model="themeDir" disabled></TinyInput>
-        </TinyFormItem>
-      </TinyForm>
-    </TinyCollapseItem>
-  </TinyCollapse>
+          </tiny-input>
+        </tiny-form-item>
+        <tiny-form-item :label="$t('themeDir')">
+          <tiny-input v-model="themeDir" disabled></tiny-input>
+        </tiny-form-item>
+      </tiny-form>
+    </tiny-collapse-item>
+  </tiny-collapse>
 </template>
 
 <script setup>

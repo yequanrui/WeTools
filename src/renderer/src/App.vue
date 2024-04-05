@@ -1,5 +1,5 @@
 <template>
-  <TinyContainer id="win" :pattern="'legend'" :header-height="48" :aside-width="270" :footer-height="40">
+  <tiny-container id="win" :pattern="'legend'" :header-height="48" :aside-width="270" :footer-height="40">
     <template #header>
       <div class="win-header drag no-select">
         <div class="win-left">
@@ -9,12 +9,12 @@
           <span class="win-title">{{ $t('name') }}</span>
         </div>
         <div class="win-right">
-          <WinBtn></WinBtn>
+          <win-btn></win-btn>
         </div>
       </div>
     </template>
     <template #aside>
-      <TinyTreeMenu
+      <tiny-tree-menu
         ref="treeMenu"
         class="win-menu"
         accordion
@@ -27,18 +27,18 @@
         <template #default="slotScope">
           {{ $t(slotScope.data.label) }}
         </template>
-      </TinyTreeMenu>
+      </tiny-tree-menu>
     </template>
     <section class="win-content">
       <router-view></router-view>
     </section>
     <template #footer>
       <footer class="win-footer">
-        <Versions></Versions>
-        <About></About>
+        <versions></versions>
+        <about></about>
       </footer>
     </template>
-  </TinyContainer>
+  </tiny-container>
 </template>
 
 <script setup>

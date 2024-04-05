@@ -1,27 +1,27 @@
 <template>
   <div id="lang-btn" class="win-btn no-drag" :title="$t('switchLang')">
-    <DropDown :items="langs" :selected-item="currentLang" @item-click="switchLang">
+    <drop-down :items="langs" :selected-item="currentLang" @item-click="switchLang">
       <template #toggle>
-        <TinyIconLanguage></TinyIconLanguage>
+        <tiny-icon-language></tiny-icon-language>
       </template>
-    </DropDown>
+    </drop-down>
   </div>
   <div id="theme-btn" class="win-btn no-drag" :title="$t('changeTheme')">
-    <DropDown :items="themes" :selected-item="currentTheme" @item-click="changeTheme">
+    <drop-down :items="themes" :selected-item="currentTheme" @item-click="changeTheme">
       <template #toggle>
-        <TinyIconCustom></TinyIconCustom>
+        <tiny-icon-custom></tiny-icon-custom>
       </template>
-    </DropDown>
+    </drop-down>
   </div>
   <div id="min-btn" class="win-btn no-drag" :title="$t('minimize')" @click="winHandle('min')">
-    <TinyIconPanelMini></TinyIconPanelMini>
+    <tiny-icon-panelMini></tiny-icon-panelMini>
   </div>
   <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? $t('unmaximize') : $t('maximize')" @click="winHandle('max')">
-    <TinyIconPanelMax v-if="!isMaximized"></TinyIconPanelMax>
-    <TinyIconPanelNormal v-if="isMaximized"></TinyIconPanelNormal>
+    <tiny-icon-panelMax v-if="!isMaximized"></tiny-icon-panelMax>
+    <tiny-icon-panelNormal v-if="isMaximized"></tiny-icon-panelNormal>
   </div>
   <div id="close-btn" class="win-btn icon-close no-drag" :title="$t('close')" @click="winHandle('close')">
-    <TinyIconClose></TinyIconClose>
+    <tiny-icon-close></tiny-icon-close>
   </div>
 </template>
 

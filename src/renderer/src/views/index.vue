@@ -1,6 +1,6 @@
 <template>
   {{ $t('lang') }}
-  <TinyScrollText text="欢迎使用WeTools"></TinyScrollText>
+  <tiny-scroll-text text="欢迎使用WeTools"></tiny-scroll-text>
 </template>
 
 <script setup>

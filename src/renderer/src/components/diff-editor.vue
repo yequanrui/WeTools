@@ -1,5 +1,5 @@
 <template>
-  <div ref="dom" class="editor"></div>
+  <div ref="dom" class="diff-editor"></div>
 </template>
 
 <script setup>

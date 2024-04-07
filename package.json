@@ -44,6 +44,7 @@
     "@opentiny/vue-tree-menu": "^3.14.0",
     "electron-store": "^8.2.0",
     "electron-updater": "^6.1.8",
+    "express": "^4.19.2",
     "monaco-editor": "^0.47.0",
     "vue-i18n": "^9.11.0",
     "vue-router": "4.3.0"

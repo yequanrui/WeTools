@@ -23,7 +23,7 @@ import config from '../../../../resources/dev/config.json';
 
 const activeName = ref('json');
 const defaultConfig = ref(JSON.stringify(config, null, 2));
-const userConfig = ref('2');
+const userConfig = ref('{}');
 
 function updateNowValue(e) {
   userConfig.value = e;

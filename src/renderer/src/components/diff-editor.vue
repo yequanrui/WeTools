@@ -52,7 +52,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.editor {
+.diff-editor {
   height: 500px;
 }
 </style>

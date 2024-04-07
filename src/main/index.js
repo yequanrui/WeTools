@@ -1,6 +1,7 @@
 // app负责着您应用程序的事件生命周期
 // BrowserWindow负责创建和管理应用窗口
 import { app, ipcMain, nativeImage, nativeTheme, dialog, shell, BrowserWindow, Menu, Notification, Tray } from 'electron';
+import { autoUpdater } from 'electron-updater';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { join, resolve } from 'path';
 import { execFile, execSync } from 'child_process';
@@ -65,6 +66,7 @@ if (!gotTheLock) {
   app
     .whenReady()
     .then(() => {
+      checkUpdate(); // 检查更新
       locale === 'system' && (locale = app.getSystemLocale());
       // 对于Windows上的通知，需要设置一个AppUserModelID
       electronApp.setAppUserModelId(app.getName());
@@ -134,6 +136,7 @@ function createWindow() {
     hasShadow: true, // 窗口是否有阴影
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
+      backgroundThrottling: false, // 设置应用在后台正常运行
       sandbox: false,
     },
   });
@@ -170,6 +173,40 @@ function createWindow() {
 }
 function showNotification(body = 'Start successfully.', title = 'Info') {
   new Notification({ icon, body, title }).show();
+}
+function checkUpdate() {
+  // 本机开发调试，需要指定如下配置
+  autoUpdater.updateConfigPath = join(__dirname, 'dev-app-update.yml');
+  if (process.platform === 'darwin') {
+    autoUpdater.setFeedURL('http://192.168.1.155:3000/checkUpdate');
+  } else {
+    autoUpdater.setFeedURL('http://192.168.1.155:3000/checkUpdate');
+  }
+  autoUpdater.checkForUpdates();
+  autoUpdater.on('error', (err) => {
+    console.log('err', err);
+  });
+  autoUpdater.on('update-available', () => {
+    console.log('found new version');
+  });
+  autoUpdater.on('update-not-available', () => {
+    console.log('Notfound new version');
+  });
+  autoUpdater.on('update-downloaded', () => {
+    dialog
+      .showMessageBox({
+        type: 'info',
+        title: '应用更新',
+        message: '发现新版本，是否更新？',
+        buttons: ['是', '否'],
+      })
+      .then((buttonIndex) => {
+        if (buttonIndex.response == 0) {
+          autoUpdater.quitAndInstall();
+          app.quit();
+        }
+      });
+  });
 }
 // 获取配置
 ipcMain.on('get-store', (_, key) => {

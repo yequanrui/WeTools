@@ -1,7 +1,7 @@
 <template>
   <tiny-tabs v-model="activeName" tab-style="border-card">
-    <tiny-tab-item title="表单配置" name="form"></tiny-tab-item>
-    <tiny-tab-item title="代码配置" name="json">
+    <tiny-tab-item title="表单配置" lazy name="form"></tiny-tab-item>
+    <tiny-tab-item title="代码配置" lazy name="json">
       <diff-editor :original-value="defaultConfig" :now-value="userConfig" @update:now-value="updateNowValue"></diff-editor>
     </tiny-tab-item>
   </tiny-tabs>

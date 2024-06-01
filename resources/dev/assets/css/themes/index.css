@@ -1,0 +1,9 @@
+@import 'light.css';
+@import 'dark.css';
+
+:root {
+  --border-radius-common: 4px; /* 一般圆角 */
+  --border-radius-card: 8px; /* 卡片圆角 */
+  --border-radius-list: 12px; /* 列表圆角 */
+  --border-radius-full: 50%; /* 全圆角 */
+}

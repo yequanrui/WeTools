@@ -3,15 +3,9 @@
     <slot v-if="$slots.toggle" name="toggle"></slot>
     <template #dropdown>
       <tiny-dropdown-menu>
-        <tiny-dropdown-item
-          v-for="(item, i) in items"
-          :key="i"
-          :label="$t(item.label)"
-          :disabled="item.disabled"
-          :divided="item.divided"
-          :item-data="item"
-          :class="{ selected: item.value === selectedItem?.value }"
-        ></tiny-dropdown-item>
+        <tiny-dropdown-item v-for="(item, i) in items" :key="i" :label="$t(item.label)" :disabled="item.disabled"
+          :divided="item.divided" :item-data="item"
+          :class="{ selected: item.value === selectedItem?.value }"></tiny-dropdown-item>
       </tiny-dropdown-menu>
     </template>
   </tiny-dropdown>
@@ -30,7 +24,7 @@ defineProps({
   selectedItem: {
     type: Object,
     required: false,
-    default: () => {},
+    default: () => { },
   },
   trigger: {
     type: String,
@@ -47,14 +41,17 @@ const itemClick = (e) => emits('itemClick', e.itemData);
   .tiny-dropdown__title {
     margin-right: 0;
   }
+
   .tiny-svg {
     fill: var(--body-text);
     font-size: 16px;
   }
+
   &:not(.tiny-dropdown__caret-button):not(.is-disabled):hover .tiny-svg {
     fill: var(--body-text);
   }
 }
+
 .tiny-dropdown-item.selected {
   background-color: var(--ti-dropdown-item-hover-bg-color);
   color: var(--ti-dropdown-item-hover-text-color);

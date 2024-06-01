@@ -1,0 +1,6 @@
+@import './themes/index.css';
+
+::selection {
+  background: var(--bg-primary-active, #0d94ff);
+  color: var(--text-light, #fff);
+}

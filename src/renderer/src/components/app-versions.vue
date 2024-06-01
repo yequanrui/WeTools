@@ -25,18 +25,22 @@ initVersions();
   color: var(--aide-text);
   line-height: 1.5;
   transition: all 0.3s;
+
   li {
     display: block;
     float: left;
     border-right: 1px solid var(--aide-text);
     font-size: 12px;
     opacity: 0.8;
+
     &:not(:first-child) {
       padding-left: 12px;
     }
+
     &:not(:last-child) {
       padding-right: 12px;
     }
+
     &:last-child {
       border: none;
     }

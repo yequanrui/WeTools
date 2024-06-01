@@ -32,6 +32,7 @@ function itemClick(item) {
   border-radius: var(--common-border-radius);
   text-align: center;
   transition: background-color 0.3s;
+
   &:hover {
     box-shadow: var(--base-shadow);
   }

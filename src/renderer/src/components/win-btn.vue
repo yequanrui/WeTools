@@ -16,7 +16,8 @@
   <div id="min-btn" class="win-btn no-drag" :title="$t('minimize')" @click="winHandle('min')">
     <tiny-icon-panelMini></tiny-icon-panelMini>
   </div>
-  <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? $t('unmaximize') : $t('maximize')" @click="winHandle('max')">
+  <div id="max-btn" class="win-btn no-drag" :title="isMaximized ? $t('unmaximize') : $t('maximize')"
+    @click="winHandle('max')">
     <tiny-icon-panelMax v-if="!isMaximized"></tiny-icon-panelMax>
     <tiny-icon-panelNormal v-if="isMaximized"></tiny-icon-panelNormal>
   </div>
@@ -95,19 +96,24 @@ const winHandle = (opera) => {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s;
+
   svg {
     vertical-align: -2px;
     fill: var(--body-text);
   }
+
   &:hover {
     box-shadow: var(--base-shadow);
   }
+
   &#min-btn:hover,
   &#max-btn:hover {
     background-color: var(--highlight-overlay);
   }
+
   &#close-btn:hover {
     background-color: var(--contrast-bg);
+
     svg {
       fill: var(--light-text);
     }

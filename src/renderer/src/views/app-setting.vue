@@ -12,13 +12,8 @@
         <tiny-form-item :label="$t('welinkDir')">
           <tiny-input v-model="welinkDir" spellcheck="false">
             <template #suffix>
-              <tiny-button
-                class="folder-icon"
-                type="text"
-                :icon="TinyIconFolderOpened"
-                :title="$t('selectWeLinkDir')"
-                @click="openDirDialog"
-              ></tiny-button>
+              <tiny-button class="folder-icon" type="text" :icon="TinyIconFolderOpened" :title="$t('selectWeLinkDir')"
+                @click="openDirDialog"></tiny-button>
             </template>
           </tiny-input>
         </tiny-form-item>

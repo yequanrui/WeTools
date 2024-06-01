@@ -1,0 +1,13 @@
+@import 'index.css';
+
+:root {
+  --bg-primary-normal: #5e7ce0;
+  --bg-primary-hover: #40a9ff;
+  --bg-primary-active: #096dd9;
+  --bg-btn-active: #e6f7ff;
+  --text-body: #252b3a; /* 正文文本 */
+  --text-weak: #575d6c; /* 弱化正文 */
+  --text-aide: #71757f; /* 辅助文本、帮助信息 */
+  --text-light: #fff; /* 有色深色背景下字体颜色（固定） */
+  --text-dark: #252b3a; /* 有色浅色背景下字体颜色（固定）*/
+}

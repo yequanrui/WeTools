@@ -14,16 +14,8 @@
       </div>
     </template>
     <template #aside>
-      <tiny-tree-menu
-        ref="treeMenu"
-        class="win-menu"
-        accordion
-        node-key="id"
-        :data="treeData"
-        :show-filter="false"
-        :show-title="false"
-        @current-change="treeChange"
-      >
+      <tiny-tree-menu ref="treeMenu" class="win-menu" accordion node-key="id" :data="treeData" :show-filter="false"
+        :show-title="false" @current-change="treeChange">
         <template #default="slotScope">
           {{ $t(slotScope.data.label) }}
         </template>
@@ -71,6 +63,7 @@ const treeChange = (data) => {
 
 <style lang="less">
 @import './assets/css/styles.less';
+
 #win {
   display: flex;
   flex-direction: column;
@@ -80,6 +73,7 @@ const treeChange = (data) => {
   border-radius: var(--card-border-radius);
   box-shadow: var(--base-shadow);
   color: var(--body-text);
+
   .win-header {
     display: flex;
     flex: 0 0 auto;
@@ -89,24 +83,29 @@ const treeChange = (data) => {
     height: 40px;
     padding: 4px 8px;
     box-shadow: var(--base-shadow);
+
     .win-left {
       margin-left: 8px;
       height: 32px;
       font-size: 16px;
       line-height: 32px;
       color: var(--body-text);
+
       .win-logo,
       .win-title {
         display: inline-block;
         vertical-align: top;
       }
+
       .win-logo {
         margin-top: 4px;
       }
+
       .win-title {
         margin-left: 8px;
       }
     }
+
     .win-right {
       display: flex;
       flex-shrink: 0;
@@ -114,21 +113,26 @@ const treeChange = (data) => {
       justify-content: flex-end;
     }
   }
+
   .win-menu {
     display: contents;
+
     .tiny-tree {
       height: 100%;
     }
+
     a,
     a:hover,
     a.router-link-active {
       text-decoration: none;
     }
   }
+
   .win-content {
     flex: auto;
     min-height: 0;
   }
+
   .win-footer {
     display: flex;
     flex-direction: row;

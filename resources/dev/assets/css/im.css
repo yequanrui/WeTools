@@ -1,0 +1,1 @@
+@import'./themes/index.css';::-moz-selection{background:var(--bg-primary-active, #0d94ff);color:var(--text-light, #fff)}::selection{background:var(--bg-primary-active, #0d94ff);color:var(--text-light, #fff)}

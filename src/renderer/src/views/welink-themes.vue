@@ -2,7 +2,8 @@
   <tiny-tabs v-model="activeName" tab-style="border-card">
     <tiny-tab-item title="表单配置" lazy name="form"></tiny-tab-item>
     <tiny-tab-item title="代码配置" lazy name="json">
-      <diff-editor :original-value="defaultConfig" :now-value="userConfig" @update:now-value="updateNowValue"></diff-editor>
+      <diff-editor :original-value="defaultConfig" :now-value="userConfig"
+        @update:now-value="updateNowValue"></diff-editor>
     </tiny-tab-item>
   </tiny-tabs>
 
@@ -19,7 +20,7 @@ import TinyInput from '@opentiny/vue-input';
 import TinyTabs from '@opentiny/vue-tabs';
 import TinyTabItem from '@opentiny/vue-tab-item';
 import { DiffEditor } from '../components';
-import config from '../../../../resources/dev/config.json';
+import config from '../../../../resources/dev/assets/config.json';
 
 const activeName = ref('json');
 const defaultConfig = ref(JSON.stringify(config, null, 2));
@@ -29,9 +30,9 @@ function updateNowValue(e) {
   userConfig.value = e;
 }
 
-function readConfig() {}
+function readConfig() { }
 
-function writeConfig() {}
+function writeConfig() { }
 </script>
 
 <style lang="less" scoped></style>

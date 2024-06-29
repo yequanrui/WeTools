@@ -1,34 +1,38 @@
-name: Build/release Electron app
-
+# 当前workflow配置的名称
+name: Build & release WeTools app
+# 在推送的标签以"v"开头时执行
 on:
   push:
     tags:
       - v*.*.*
-
 jobs:
   release:
+    # 使用矩阵策略来确定操作系统
     runs-on: ${{ matrix.os }}
-
+    # 这个定义会启用多个系统进行打包
     strategy:
       matrix:
         os: [windows-latest]
-
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v3
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
         with:
-          node-version: 16
-
+          version: 8
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'pnpm'
       - name: Install Dependencies
-        run: npm install
-
-      - name: build-win
+        run: pnpm i
+      # 不同系统会对应打包出不同类型安装包，打包完成会自动生成 Releases 草稿
+      - name: Build Artifacts
         if: matrix.os == 'windows-latest'
-        run: npm run build:win
-
+        run: pnpm build:win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: release
         uses: softprops/action-gh-release@v1
         with:
@@ -45,4 +49,4 @@ jobs:
             dist/*.yml
             dist/*.blockmap
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

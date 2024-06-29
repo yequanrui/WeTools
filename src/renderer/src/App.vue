@@ -26,8 +26,8 @@
     </section>
     <template #footer>
       <footer class="win-footer">
-        <versions></versions>
-        <about></about>
+        <app-versions></app-versions>
+        <about-app></about-app>
       </footer>
     </template>
   </tiny-container>
@@ -38,7 +38,7 @@ import { ref, reactive, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
 import TinyContainer from '@opentiny/vue-container';
 import TinyTreeMenu from '@opentiny/vue-tree-menu';
-import { WinBtn, About, Versions } from './components';
+import { WinBtn, AboutApp, AppVersions } from './components';
 
 const router = useRouter();
 const treeMenu = ref(null);

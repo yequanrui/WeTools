@@ -7,7 +7,7 @@
 // 设置服务器更新地址
 autoUpdater.setFeedURL({
   provider: 'generic',
-  url: 'http://xxx.xxx.xxx:3001/release',
+  url: 'http://127.0.0.1:3001/release',
 });
 
 /**

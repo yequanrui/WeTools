@@ -29,7 +29,6 @@
 <script setup>
 import { getCurrentInstance, ref } from 'vue';
 import { IconCustom, IconLanguage, IconPanelMini, IconPanelMax, IconPanelNormal, IconClose } from '@opentiny/vue-icon';
-import DropDown from './drop-down';
 
 const TinyIconCustom = IconCustom();
 const TinyIconLanguage = IconLanguage();

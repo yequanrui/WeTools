@@ -11,57 +11,9 @@ dependencies:
   '@electron-toolkit/utils':
     specifier: ^3.0.0
     version: 3.0.0(electron@31.1.0)
-  '@opentiny/vue-button':
+  '@opentiny/vue':
     specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-collapse':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-collapse-item':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-container':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-dialog-box':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-dropdown':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-dropdown-item':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-dropdown-menu':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-form':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-form-item':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-icon':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-input':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-scroll-text':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-switch':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-tab-item':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-tabs':
-    specifier: ^3.17.0
-    version: 3.17.0
-  '@opentiny/vue-tree-menu':
-    specifier: ^3.17.0
-    version: 3.17.0
+    version: 3.17.0(echarts@5.5.1)
   electron-store:
     specifier: ^8.2.0
     version: 8.2.0
@@ -85,12 +37,15 @@ devDependencies:
   '@electron-toolkit/eslint-config':
     specifier: ^1.0.2
     version: 1.0.2(eslint@9.6.0)
+  '@opentiny/unplugin-tiny-vue':
+    specifier: ^0.0.2
+    version: 0.0.2(vite@5.3.3)(vue@3.4.31)
   '@rushstack/eslint-patch':
     specifier: ^1.10.3
     version: 1.10.3
   '@vitejs/plugin-vue':
     specifier: ^5.0.5
-    version: 5.0.5(vite@5.3.2)(vue@3.4.31)
+    version: 5.0.5(vite@5.3.3)(vue@3.4.31)
   '@vue/eslint-config-prettier':
     specifier: ^9.0.0
     version: 9.0.0(eslint@9.6.0)(prettier@3.3.2)
@@ -102,13 +57,13 @@ devDependencies:
     version: 24.13.3(electron-builder-squirrel-windows@24.13.3)
   electron-vite:
     specifier: ^2.3.0
-    version: 2.3.0(vite@5.3.2)
+    version: 2.3.0(vite@5.3.3)
   eslint:
     specifier: ^9.6.0
     version: 9.6.0
   eslint-plugin-vue:
-    specifier: ^9.26.0
-    version: 9.26.0(eslint@9.6.0)
+    specifier: ^9.27.0
+    version: 9.27.0(eslint@9.6.0)
   less:
     specifier: ^4.2.0
     version: 4.2.0
@@ -116,8 +71,8 @@ devDependencies:
     specifier: ^3.3.2
     version: 3.3.2
   vite:
-    specifier: ^5.3.2
-    version: 5.3.2(less@4.2.0)
+    specifier: ^5.3.3
+    version: 5.3.3(less@4.2.0)
   vue:
     specifier: ^3.4.31
     version: 3.4.31
@@ -139,6 +94,10 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
+    dev: true
+
+  /@antfu/utils@0.7.10:
+    resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
     dev: true
 
   /@babel/code-frame@7.24.7:
@@ -359,6 +318,12 @@ packages:
 
   /@better-scroll/shared-utils@2.5.1:
     resolution: {integrity: sha512-AplkfSjXVYP9LZiD6JsKgmgQJ/mG4uuLmBuwLz8W5OsYc7AYTfN8kw6GqZ5OwCGoXkVhBGyd8NeC4xwYItp0aw==}
+    dev: false
+
+  /@better-scroll/wheel@2.5.0:
+    resolution: {integrity: sha512-+cru8CtMtgGGMv3yOxn33ApbtatOZBVUCa7+X3UqVVyaxi6FbCrcSZCBlXhXpsFhJo1R282O6nQyik6KUidvoA==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
     dev: false
 
   /@develar/schema-utils@2.6.5:
@@ -720,6 +685,23 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
+  /@floating-ui/core@1.6.4:
+    resolution: {integrity: sha512-a4IowK4QkXl4SCWTGUR0INAfEOX3wtsYw3rKK5InQEHMGObkR8Xk44qYQD9P4r6HHw0iIfK6GUKECmY8sTkqRA==}
+    dependencies:
+      '@floating-ui/utils': 0.2.4
+    dev: false
+
+  /@floating-ui/dom@1.6.7:
+    resolution: {integrity: sha512-wmVfPG5o2xnKDU4jx/m4w5qva9FWHcnZ8BvzEe90D/RpwsJaTAVYPEPdQ8sbr/N8zZTAHlZUTQdqg8ZUbzHmng==}
+    dependencies:
+      '@floating-ui/core': 1.6.4
+      '@floating-ui/utils': 0.2.4
+    dev: false
+
+  /@floating-ui/utils@0.2.4:
+    resolution: {integrity: sha512-dWO2pw8hhi+WrXq1YJy2yCuWoL20PddgGaqTgVe4cOS9Q6qklXCiA1tJEqX6BEwRNSCP84/afac9hd4MS+zEUA==}
+    dev: false
+
   /@humanwhocodes/module-importer@1.0.1:
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
     engines: {node: '>=12.22'}
@@ -853,6 +835,33 @@ packages:
       fastq: 1.17.1
     dev: true
 
+  /@opentiny/unplugin-tiny-vue@0.0.2(vite@5.3.3)(vue@3.4.31):
+    resolution: {integrity: sha512-VChuA8iQ1h7fBJjy2nZHOn0VfydO6vWFGbsxEBGykxBjrqMYGkbTjbAMSJYXKB3840pbBUOsMZ9vgKHUJVC9kQ==}
+    peerDependencies:
+      vite: '>=4'
+    dependencies:
+      unplugin-vue-components: 0.26.0(vue@3.4.31)
+      vite: 5.3.3(less@4.2.0)
+    transitivePeerDependencies:
+      - '@babel/parser'
+      - '@nuxt/kit'
+      - rollup
+      - supports-color
+      - vue
+    dev: true
+
+  /@opentiny/vue-action-menu@3.17.0:
+    resolution: {integrity: sha512-SrJcbk4u5lAj5MArKgUqsx8YyRqz24a+Sg1MHO59d7HgJ+2JXmq0bnZgWDxDE+4sVCq2TCzFIXYGdnW7M4lgfg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
   /@opentiny/vue-action-sheet@3.17.0:
     resolution: {integrity: sha512-Xol4KMJXmajCoeyjsEnAGLXvNn5hc0wP4tx2Q3f6o77j+bBknp9RWKt8Z9TuNVk7QuFAQnee31Wbj2JP7D35Zg==}
     dependencies:
@@ -861,20 +870,168 @@ packages:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-drawer': 3.17.1
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
       '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
-  /@opentiny/vue-button-group@3.17.0:
-    resolution: {integrity: sha512-09WNPXivOYm3pyo8S+7srMrT0ZMUehq3mZn6lSBTEhHPmrUO8DVaQcVB4WZE3Mf8M8V6Als8QP9LFVzmzxGnRQ==}
+  /@opentiny/vue-alert@3.17.0:
+    resolution: {integrity: sha512-FbWcH187amA3JP6kYvprxSsShJEFAJ4DqttVE/cSZd88GnqUG/CAVvyzhCPsUt4qn0abVEBdqOoxc0WV1YzrZw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-amount@3.17.0:
+    resolution: {integrity: sha512-OhMjrhWaoOd3Y/qP+Z3WbtW/8tlbmnV4Y9Wy+/f9xofK2i/AaZHwjjR1OhmXe3VhgTW3pGGsxLTwwkGD/ycr7w==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-currency': 3.17.0
+      '@opentiny/vue-date-picker': 3.17.0
+      '@opentiny/vue-date-picker-mobile-first': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-radio-group': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-anchor@3.17.0:
+    resolution: {integrity: sha512-bj21D1V7KG/DwEWGW0Hrv48OfB0Orfa/g4vO7lQzZzxVU2g6iIDFuq+h4GKMAwbYPTZaMM+5ZD9+JO6dhETmfQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-area@3.17.0:
+    resolution: {integrity: sha512-xe0e/oshPtu85m3QhjUifFzF03pT4prvMc8lSYGn3dIlD2EkzVaa5z3gRH9jBQ2KZwCwVW/XIQX2ILY1pxdN1w==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-async-flowchart@3.17.0:
+    resolution: {integrity: sha512-Lrf6Z4naz3rBxLXlDKPFxx7pw5iwW/L6PvlGRE3bRy6Sbmb0OjQYXWnzubsRaEnhvgFlSRkg9yHsc9A0N8+xhQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-flowchart': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-autocomplete@3.17.0:
+    resolution: {integrity: sha512-u8T1kdavcXk7vD+r0+i4qKstfKgl+vKfolXKGqqj3/ZZK29xTTaM3ui/xekch0hQ7aPGdwTTNpuE33K7Oi9NOA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-autonavi-map@3.17.0:
+    resolution: {integrity: sha512-zSc6Z8/EJiOA9Pa1mk9qlXWlqZfohNXeQxW+Fdg/RQ4IUwgfqC134ZBVVhHC+vuv6oGMvBzmKm1vsl9wRjJc4w==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-avatar@3.17.0:
+    resolution: {integrity: sha512-tANbgrAJzYtGW3vZaV+UJDDWxgh9LTe9nS8cVU+4JjGOMLwtunC3kQuXyq1QBkEanGFJDsVSk7QxP6p53i0hHg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-badge@3.17.0:
+    resolution: {integrity: sha512-CATHj6h0pxfl/kTTMb5PCZTJyJm6dqJo2ZldTX/gAIVR/S9e39J7nFeIj8JycV5upyy1J7gvd9NQ/i0PVwWKoQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-baidu-map@3.17.0:
+    resolution: {integrity: sha512-bw+nAzUTb+ZVBHdfq3U9SWoAhi+jmwys5ILiJho4nf/iyWboCmDSV0WkGX5skfoHKurpLTKIthcHcZaJPpw10g==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-base-select@3.17.0:
+    resolution: {integrity: sha512-gGvoVoVwTctV00XgUqqtm4hMa/YOkSTHz8eGYk3fZagxtQKchZXcBTzUVzMteTRpx5bNdV6sJrWD+oSp9wHKPQ==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-grid': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-recycle-scroller': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-select-dropdown': 3.17.0
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-tree': 3.17.0
+    dev: false
+
+  /@opentiny/vue-breadcrumb-item@3.17.0:
+    resolution: {integrity: sha512-UnHL9k/b493s/FL4toEYJXa07H0npZWSjy0bplE5VsVhSI5wsw3Eqg7Osp7/2xnLuaUpYrndTIPO7WO3HJvwYA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-breadcrumb@3.17.0:
+    resolution: {integrity: sha512-AHSGTxXuzdn9jPL0xPzZTSl9EaGQHyT/UendlU5TUwHizyCtOBku+BSPh9gLCr0DqrO3CXgJQV/W9LVxwQ0sPQ==}
+    dependencies:
+      '@opentiny/vue-breadcrumb-item': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-bulletin-board@3.17.0:
+    resolution: {integrity: sha512-Z0MHNBjGuiYli6gLhwkkz/KQx5YdiOyPddHD0au9jmuHUUMS+7Wq+GWPIQ7ibO+bJqI62eLpMp+pWnBBMnuwSg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tab-item': 3.17.0
+      '@opentiny/vue-tabs': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-button-group@3.17.1:
+    resolution: {integrity: sha512-aQzvk/XA+5G2bYN6x94Iu+qZ+BaFT6olAOFR2vaAojeR870qTSdhRXi5GXZUm0Smom7pHXUom+pZWYGiWYTTuQ==}
     dependencies:
       '@opentiny/vue-button': 3.17.0
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-directive': 3.17.0
       '@opentiny/vue-icon': 3.17.0
       '@opentiny/vue-popover': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-button@3.17.0:
@@ -882,17 +1039,85 @@ packages:
     dependencies:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-calendar-bar@3.17.0:
+    resolution: {integrity: sha512-5TxiBBhHlN/xXITGXk0VEYPE3nTFUAZUL00fqoESWkEp2Qv4fv9p4cxx34cmjnBbL9STtffHGwXRRD/bM4KtOA==}
+    dependencies:
+      '@opentiny/vue-cascader-select': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-calendar-view@3.17.0:
+    resolution: {integrity: sha512-pFGs7TnPoZFN6G2KoLgjOC5/CBxFxopPYYnlw6tFMvI44QoRUxNAKF7nfKaOKWA/UYytSJVV7hN/HRUhhz21Nw==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-date-picker': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-radio-button': 3.17.0
+      '@opentiny/vue-radio-group': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-slider-button': 3.17.0
+      '@opentiny/vue-slider-button-group': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-calendar@3.17.0:
+    resolution: {integrity: sha512-QPafDAPIRtloKOrVkqPuTPj9fPMykdxcO7PGvmEGubsGYlchLJ4gcXA2JiMb8GL17tM/y67dZ9BPJUGk70uMcw==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-card-group@3.17.0:
+    resolution: {integrity: sha512-jj2arBKN6jJcQz1JYijsL9xnCYoPHnjzAqEQ8Ii1in+N3OZ5FS4MWZkeUUGGuS2gNfqoRrqTHaUng4t+9Pj1Rw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-card-template@3.17.0:
+    resolution: {integrity: sha512-KGClwz9MjhBhDlKDf7IVM2B4b/R6eFqsAcSyGovvGcTbuYuLV3w8qTtanOYKW9GsWfa94R2VL20s+9ZiIeh+Lg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-card@3.17.0:
+    resolution: {integrity: sha512-p1J4UAq5Iue8t6RjViBkKpevmU8bzRW6FnlYXfKeKwgw8XhbX3ME7M/1Br3hGi5wDkt6ZdubyDudmJUtv/O1gw==}
+    dependencies:
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-carousel-item@3.17.0:
     resolution: {integrity: sha512-X4oxDt19FhuY+yhBppvYme0PQZwBFbH1MiewkfKHxOpiT3v+PZ/Pdw9bjMYJx+xfD0e7bGOmw8kRV/8UpeQ0Wg==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-carousel@3.17.0:
@@ -900,8 +1125,314 @@ packages:
     dependencies:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-cascader-menu@3.17.0:
+    resolution: {integrity: sha512-uWLuvmCx+Z7R92kOpo/DGGFhPouzvMPrvlucHTXTNZWUYHOlFuuYZf2dCW1eIgyO9kkT0tQ5CsbUvlaIgROM/w==}
+    dependencies:
+      '@opentiny/vue-cascader-node': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-cascader-mobile@3.17.0:
+    resolution: {integrity: sha512-D1hZ2ybixlLZ34iKZsWXlVA7tFbS7UBAvpQu0MzE6tAOTtlTQrpoE4lwSaZUBigpuxCywe7n1uy8AsqRbptACQ==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-cascader-node@3.17.0:
+    resolution: {integrity: sha512-j0kGKVQajcOAODK9fxFEJH37pbGoLuFPlh7u38bSm6nEVDQwvc10qJ7fI5W5jD3cVcvhHYLYKtCEb+TdPOY/kQ==}
+    dependencies:
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-cascader-panel@3.17.0:
+    resolution: {integrity: sha512-YZhx9Rc7GSFMBXVTdJT7vPixCV2EHyRaHUWcUfPJshHGPqIDrREyBlz7edPIL5XYcUa8RMUjJ2D9AncQPzgJ0w==}
+    dependencies:
+      '@opentiny/vue-cascader-menu': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-cascader-select@3.17.0:
+    resolution: {integrity: sha512-gXGQZKeCKXTVzmhH/1BeQu8lo6n9CvTXiT9EuJNTVkgIVN5sX8jwVvvlcw3oH5f95ArVI25EeKkTybeutDkYtw==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-cascader-view@3.17.0:
+    resolution: {integrity: sha512-yCmdfN3FZGa3l0c6s14x7sDjXzhS3holXapHMOuhfmi9vtGhQQ+KG3+fBZv226TSebkYswhPOX+G8CaIKzqvsA==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-cascader@3.17.0:
+    resolution: {integrity: sha512-zEbincPXHLMv7S2PnuV8JvydE2rdCXQseUeQ1yOep8onI4IxmFAkKDQF6n8nccqs95qLItrcCK4tT0hqHSkUKA==}
+    dependencies:
+      '@opentiny/vue-cascader-mobile': 3.17.0
+      '@opentiny/vue-cascader-panel': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-cell@3.17.0:
+    resolution: {integrity: sha512-X/53c7Tv8lzKSeGr36YHhceCj1H/T8JMmNP9OPM4k1k6/atMEFVKlkjHKQ2j7vkdHXABq70D73KVEcC1o9IvHQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-chart-bar@3.17.0:
+    resolution: {integrity: sha512-gswzfan6qd90Ud5Bt5Z8YPS67Alb8AHpopVGBDjmMUKsClJhCew4d0YdmMpwLmF/9Of+S7jPG6Dg3pxiUTFw1A==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-boxplot@3.17.0:
+    resolution: {integrity: sha512-LEka9I6kSdwH0lBiOXwcC6dd3io9fUp0XxSB8kdBf2H2caJmztC+AcUx4AWEzgJ4SC5OVzwJoWINg0dIaBX5Ow==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-candle@3.17.0:
+    resolution: {integrity: sha512-XfiyPuemB5/qkRDBh+w9yaSwsKrO1iTtjhsnoFOWBoBWp6IqZOnsbyFVVoDvoGlpU2NHUY3Wdr362nW/e3sO0A==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-core@3.17.1:
+    resolution: {integrity: sha512-nZP77gMXrf5uB5l8H0bd6NvKuXiBkb59qjRJCLXn8M/ykn1EbTHwvv5LdzDObBJjeZ7ERZoOBBccjgwQ9CqYfg==}
+    dependencies:
+      '@opentiny/vue-theme': 3.17.3
+      echarts: 5.4.1
+    dev: false
+
+  /@opentiny/vue-chart-funnel@3.17.0:
+    resolution: {integrity: sha512-TlCMQoIMTRfcpGjvRlfGJmBR8RpEVaHabaIqLz5llGvqQxHcAvjbCSFD+mUUv6WWitSPdgoQhzoW2RxudtNtyQ==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-gauge@3.17.0:
+    resolution: {integrity: sha512-/XzrF/sqCRLhrONKGj9wPcBP3OEfFnBgwve3/owLUSX3acKprBGddgjBdeHMhQdkdfUpVqu2D3KzeYmB8ypzFA==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-graph@3.17.0:
+    resolution: {integrity: sha512-v+hu/hK5aygVa3uC6GkXg83BIWYF6VMoPeJeSjNjLAc4HQrflM4mO9eGraQ55n6aTzg6+qxNm5x4Shr1pN8KFA==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-heatmap@3.17.0:
+    resolution: {integrity: sha512-7RO/sr6ztvdOU9NpkSztQhel9HR240xHUf+4KCxOYdJGQ0JWF30tZjwBbm9ZPJ/kzsgfn6hnWsON/VHuWjxlyg==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-histogram@3.17.0:
+    resolution: {integrity: sha512-U7IOOdhrB0hSq+JOTdYg/4OOBnCSnxeyI3L4ylG14AivSRwWPwqQ3Bsmr3Slq2sgt4QA781T4OKOtVoEeiCcLw==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-line@3.17.0:
+    resolution: {integrity: sha512-FFnrR9FmP9wq7yl+4h4wwYbQV3jI7JA3WxjIAm+2WwdfAl5AxtDps5U1YrmlctbldPgmA+YBMfAke+LBWVinug==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-liquidfill@3.17.0(echarts@5.5.1):
+    resolution: {integrity: sha512-bzOlXpJqvkMtooteyicDpQoHhQdgMMayutsxY+IbFIAqn/iwbxxjW7kKIbtcIUBO1ql5rAHgzqvDFdtM67o7Cg==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+      echarts-liquidfill: 3.1.0(echarts@5.5.1)
+    transitivePeerDependencies:
+      - echarts
+    dev: false
+
+  /@opentiny/vue-chart-map@3.17.0:
+    resolution: {integrity: sha512-8UW6MYg2IM7Eb+8ukvhLQ8mHYTqjIbIJYjc51x8r032SY9VPTQp7HL/BNqBQPbwp7oS3mBFsOsCujMZ5WeJaCQ==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-pie@3.17.0:
+    resolution: {integrity: sha512-WS9BuRduTVtz4UNBZazbqP4cLsItpZxR6wLxdRgE5cqsGHL4CmO1pNx0Y7R3xHSGd824OytOnl1R9eZ309yOKQ==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-process@3.17.0:
+    resolution: {integrity: sha512-YKFZURF/rxQRce0qZkfYRLLkPtEHC73Uz26qE0zkeDSDT5Lv4bLY0RQhi5HoGRbaT0V3dAz7Hiw1gRbvq1nh/Q==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-radar@3.17.0:
+    resolution: {integrity: sha512-iEIUFFcfwUIfzv21McqgUFAw2B1lZFZ2b8ALYC/QzFMqGL4m81CZqUf6S/VAocse+rwyX8P/x5MJO8KHmIQUEg==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-ring@3.17.0:
+    resolution: {integrity: sha512-XvhcNEbVnMpWW+Hgz6UzhkESs8vZYAO1VuSIOkFxYZ5GoFydULgv34uO2TdA6/XLJ3NMwCk+qFpG8Hnuxbmpzw==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-sankey@3.17.0:
+    resolution: {integrity: sha512-LGH0gOvGiWYkRAEsRi6YIGyjdVCkm7x8bHW5CogsT9wgXYHz7dQ5AyZ9jvnp0fT13PzifQ1VCuZY9Rg4a3+Q6Q==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-scatter@3.17.0:
+    resolution: {integrity: sha512-Pdy1cseupCjJXpoTpd9kZrh8hdRfDC91eyKDHh75j9qwmFmQ2MgfEuP5DyCvtS98DVbNIxWeRN1dijKoGyXMRg==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-sunburst@3.17.0:
+    resolution: {integrity: sha512-nPDvjy+XtqzqISTxRDkGCD6Pdk79ZTVaef8SoJL+6nHQE9b942n3jTAUwlpR1KZMcBdJeykep1tLOouy64sO2A==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-tree@3.17.0:
+    resolution: {integrity: sha512-GeOwBsI9BkXG/3rF8SkVUtGGOfq1WjYr+6zKlhehTYYNbqI3RTGN7/2/8rug88i2DlZddP8E6G+5MwOD7gXRIQ==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-waterfall@3.17.0:
+    resolution: {integrity: sha512-kVpnBPAzhL4qWwl7hniK9MRPCY26m0y2Dy/QfVNipT73fhMVk+2gffX3XqVu4ppB+SOVOfSehvb8pyZx1NHvMw==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+    dev: false
+
+  /@opentiny/vue-chart-wordcloud@3.17.0(echarts@5.5.1):
+    resolution: {integrity: sha512-tnFjV2OPILd974BlBaEZu7+rgPVMR11JP0jBiSnht/A5ttgHQAXwiwL8hTH9bVy4ZCyU73I/tKVRTy86j04mAA==}
+    dependencies:
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-common': 3.17.0
+      echarts-wordcloud: 2.0.0(echarts@5.5.1)
+    transitivePeerDependencies:
+      - echarts
+    dev: false
+
+  /@opentiny/vue-chart@3.17.0(echarts@5.5.1):
+    resolution: {integrity: sha512-+3A2qbYePCAC7WFF7r6qJB3uOlKyeTk2uq5Kwy7taJTe9Lo+ZWOkDu1zDqnPiY70T4iI0w8RR3ELIebjPoTcMQ==}
+    dependencies:
+      '@opentiny/vue-autonavi-map': 3.17.0
+      '@opentiny/vue-baidu-map': 3.17.0
+      '@opentiny/vue-chart-bar': 3.17.0
+      '@opentiny/vue-chart-boxplot': 3.17.0
+      '@opentiny/vue-chart-candle': 3.17.0
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-chart-funnel': 3.17.0
+      '@opentiny/vue-chart-gauge': 3.17.0
+      '@opentiny/vue-chart-graph': 3.17.0
+      '@opentiny/vue-chart-heatmap': 3.17.0
+      '@opentiny/vue-chart-histogram': 3.17.0
+      '@opentiny/vue-chart-line': 3.17.0
+      '@opentiny/vue-chart-liquidfill': 3.17.0(echarts@5.5.1)
+      '@opentiny/vue-chart-map': 3.17.0
+      '@opentiny/vue-chart-pie': 3.17.0
+      '@opentiny/vue-chart-radar': 3.17.0
+      '@opentiny/vue-chart-ring': 3.17.0
+      '@opentiny/vue-chart-sankey': 3.17.0
+      '@opentiny/vue-chart-scatter': 3.17.0
+      '@opentiny/vue-chart-sunburst': 3.17.0
+      '@opentiny/vue-chart-tree': 3.17.0
+      '@opentiny/vue-chart-waterfall': 3.17.0
+      '@opentiny/vue-chart-wordcloud': 3.17.0(echarts@5.5.1)
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    transitivePeerDependencies:
+      - echarts
+    dev: false
+
+  /@opentiny/vue-checkbox-button@3.17.0:
+    resolution: {integrity: sha512-92DOld7Av6z9sRIVrn13Udi6WXHDsUGXeBFUL0eFE0HdRZxH4oeA3pmkr9jSow9jQ03wzqJHfkCv3kTqErhYag==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-checkbox-group@3.17.0:
+    resolution: {integrity: sha512-0Qu90uWvkn8HO+n8EIfL+OBUXeCfd/60H2mHexSSdvwz91GZKTe5kjtAN8YBCynvcRN3eJh/AXflPQu+OWjmUw==}
+    dependencies:
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-checkbox-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
   /@opentiny/vue-checkbox@3.17.0:
@@ -910,9 +1441,17 @@ packages:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-directive': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-col@3.17.0:
+    resolution: {integrity: sha512-zfhl8WRhIdEoTpLRoSqEi3RwdLtclkaui1cquZOZDeSvqZBK7MKwnQncFznz8U4zugIjQgE1HQLw3n/wzGAWwg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-collapse-item@3.17.0:
@@ -921,43 +1460,212 @@ packages:
       '@opentiny/vue-collapse-transition': 3.17.0
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-collapse-transition@3.17.0:
     resolution: {integrity: sha512-HWMK/G2CsQYXLnN8vtropcTcjeY5ZSkEGqIZ10lIJbbaPZzDabCflpPz86INEWZqMpi7Bl05Kgj7dknvp+VPZw==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-collapse@3.17.0:
     resolution: {integrity: sha512-0viZI+FFgvuBdsjz0suHpzKGBZ7DA6vym8sRARldgKJ/oiDyfft2vq3Da1lRn9iuZ17k9UdTRKTkJVIsjPdplg==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-color-picker@3.17.0:
+    resolution: {integrity: sha512-EpQdBiItme6E3DXOIp4sIdVhzaQaIfc6o7UwUGe1AMqRiaeIV/IoZHuHicEexG9OfupZijhVJBW9mrMOcOfBXg==}
+    dependencies:
+      '@opentiny/vue-color-select-panel': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-color-select-panel@3.17.0:
+    resolution: {integrity: sha512-oIuS6+8ARBTABSLpvQlKSVg7jTtAEr9ntkn25StmZEkTg5cGAZkDRhVsWiKvBaiA7fSC4czWwQYGAoD/Eysv8A==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-button-group': 3.17.1
+      '@opentiny/vue-collapse': 3.17.0
+      '@opentiny/vue-collapse-item': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-column-list-group@3.17.0:
+    resolution: {integrity: sha512-+hK7N2D+4+LA3wzBXqLfcZfbRRC9fZ3jlDJW2G/lQmc4nxRcFigAHd0ilhTg6oGBAsehBSlgQ7VxZGgAx77tJA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-column-list-item@3.17.0:
+    resolution: {integrity: sha512-OTRvAkjRtKvhyHub583uM5myqwmFOAwxMKIpHGVQ0RH/6rOSaiokOmXkQtwu2S+LaVkfteJE5RBtMm0DvaqJjg==}
+    dependencies:
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
     dev: false
 
   /@opentiny/vue-common@3.17.0:
     resolution: {integrity: sha512-mzM8l/b+6/QYUvF3Wnaq1gF7moZ99J1DpUNHpltweJj1Yy+XMWurKhd3GSX3SQAcMu39ewyRkCnio+YeOfjaNw==}
     dependencies:
       '@opentiny/vue-locale': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
       tailwind-merge: 1.14.0
+    dev: false
+
+  /@opentiny/vue-company@3.17.0:
+    resolution: {integrity: sha512-LGO0K1TJkxC6nsIDabItGsYZMfRxPv6YMKvPsF6sLUjZHRQQmp02JZOFnuY4X2iDY7Pj/FycadK12zHS3ufs8A==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-config-provider@3.17.0:
+    resolution: {integrity: sha512-YV5559hm8YmxaCqBV2TPho1jDHdNieVIDVducMWCvZ3OcYIWOnJ9SuPAg+KDCXDZFuQjDWMiOTmEj+esuC6pCw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-container@3.17.0:
     resolution: {integrity: sha512-+o330igmmxUHbFH46t/AB5xltV6PnNL1vn2poavexm0Loo2NHXKa1sNwz8pNhnRKEO7bntwT94m37u2w+ksSjw==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-country@3.17.0:
+    resolution: {integrity: sha512-53eqCFLOzXqnzJs6AF0ET63W5NN4DctEeTwOehQl3xfRiWukuIWc4OnmzHWzXtfLEECFg1eDgpCqBOVN8tj//Q==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-crop@3.17.0:
+    resolution: {integrity: sha512-lDL7Mu1YcnlECRAmEstvxdH37iJl7vOgeYLmABN3orJb6KF4H0+bua4+oRKusn04YeS4UtRfxPoQAKCdqZRwhw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      cropperjs: 1.5.7
+    dev: false
+
+  /@opentiny/vue-currency@3.17.0:
+    resolution: {integrity: sha512-ebAL8RZ1RXZ1SR4n+KqykY/+1J9KsIFVGt3QNqNhpz8SaTLc5/ZTXlfBXnju+TBlDxuJS5k/a/oaG9B8GIWLJQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-select-mobile': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-date-panel@3.17.0:
+    resolution: {integrity: sha512-F77F7F28CwSQz07zzUGHZqnRbPt0pDAbw1lhCIqvnrJtS5VT3Q/eznlx912w8yPeKrYpqMW8u8zOLVASfpWj4w==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-date-table': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-month-table': 3.17.0
+      '@opentiny/vue-popup': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-time': 3.17.0
+      '@opentiny/vue-year-table': 3.17.0
+    dev: false
+
+  /@opentiny/vue-date-picker-mobile-first@3.17.0:
+    resolution: {integrity: sha512-HGISQIfT8a28yyKxyZjMM1XsX9/0u3bZ4ArBrZ1d7Ap3OHkaT1V8qnlQykSCMIT23c72OF3IbaZVp6W9XJRtPQ==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-recycle-scroller': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-time-picker-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-date-picker@3.17.0:
+    resolution: {integrity: sha512-1vCyH2456cMNQNc8z0SOL30mAMdGh/1OWXDkbbIMFjN3MzHQxWvWGKV0GQCPeTxqY7SwjVRc1qK6Oj2bNpUegA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-mini-picker': 3.17.0
+      '@opentiny/vue-picker': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-date-range@3.17.0:
+    resolution: {integrity: sha512-iJzoOwRbYjqrwUi1bFe0P1OnMgeDCQSn+qXlIuxllhg5KfnoOxUMOrLZEJnMKGApBOlEbAIiTcVlxF0LByZhHw==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-date-table': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-time': 3.17.0
+    dev: false
+
+  /@opentiny/vue-date-table@3.17.0:
+    resolution: {integrity: sha512-c9W8/TCkF6vNcMyEbcu7rHcYU7mKW5/RLDk9U5i2uXYVFZc5z43Jz7ByP6rUsWsXJzSjiovWmWT2H/7iKlfbsg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-dept@3.17.0:
+    resolution: {integrity: sha512-nWQOsXrostufRLP7WdYUYc11PgS5RPnqoZ60TILiugZjPiT2pAANiNcCUiGVyOSYaJUOr74BDQFHrNfEiIgfcQ==}
+    dependencies:
+      '@opentiny/vue-col': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-row': 3.17.0
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-dialog-box@3.17.0:
@@ -966,9 +1674,25 @@ packages:
       '@opentiny/vue-action-sheet': 3.17.0
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-dialog-select@3.17.0:
+    resolution: {integrity: sha512-xaPq2p9Ec4rOMejWstwy9mfg2L4Rbxi0sgVGp9odNPSf7Cvvu2TH3R+lkzarbj5z9sx/X0w6f9eiEtGD5qJCYQ==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-grid': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-pager': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-selected-box': 3.17.0
+      '@opentiny/vue-split': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tree': 3.17.0
     dev: false
 
   /@opentiny/vue-directive@3.17.0:
@@ -978,15 +1702,44 @@ packages:
       '@opentiny/vue-tooltip': 3.17.0
     dev: false
 
+  /@opentiny/vue-divider@3.17.0:
+    resolution: {integrity: sha512-P4+NibkWXoaaRPFC0epSr0H2xM7nxpUGkVUdZHXKKbqslUkeV9ltoLtcupRO0TsKhGodElfgUS+nOhTvlhBqRA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
   /@opentiny/vue-drawer@3.17.1:
     resolution: {integrity: sha512-c3qkSFGIVxrvDZ6Qengg29JJGPa7cNHe4II08K/ScXDKN2O400Gy6t7TRI1pQWt8ltM237fzKCiDS0epzSvLyQ==}
     dependencies:
       '@opentiny/vue-button': 3.17.0
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-drop-roles@3.17.0:
+    resolution: {integrity: sha512-PpnAO2QWT1PVtfDZnto/SWkhoOu6c1UPCM5qjCi5PgXAQ6llcpICi4fPND+TdLTR4aT9N/3rFMET9EL3hDwGdg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-drop-times@3.17.0:
+    resolution: {integrity: sha512-l4evDpebDu46JBSVC1hiPDhjnDRw8B3vvq4+l0vk3UVX/1ICB+Q7FgYh4iLcwfa6DYRIXI419zVmgEgGgvoDFQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-dropdown-item@3.17.0:
@@ -996,8 +1749,8 @@ packages:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
       '@opentiny/vue-popup': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
       '@opentiny/vue-tooltip': 3.17.0
     dev: false
@@ -1008,8 +1761,8 @@ packages:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-dropdown-item': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
       '@opentiny/vue-tooltip': 3.17.0
     dev: false
@@ -1018,12 +1771,152 @@ packages:
     resolution: {integrity: sha512-Gj6VK4sI3TqelbtTN7hCyTuiawG0PyjuEX0blc04QP67urN2lFF1MyyS3iXjWWKRpfn995N7mttOGPPtLGLpSw==}
     dependencies:
       '@opentiny/vue-button': 3.17.0
-      '@opentiny/vue-button-group': 3.17.0
+      '@opentiny/vue-button-group': 3.17.1
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-dropdown-menu': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-dynamic-scroller-item@3.17.0:
+    resolution: {integrity: sha512-jwciVDcWKIo3fBIE8OibjroF+Kb1dk8gKr5l+jay5PYtzqBj9KnmZHggEqb3uTYfjbxj7lo+VvaYiQPWGw6lnQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-dynamic-scroller@3.17.0:
+    resolution: {integrity: sha512-dHB/JNSOp6MmLOCXR0bbk747THXUEUZ2MfsnGq2anzZB7tkhBAOKDui+fy8xeWx+y9GxUYpdifB39btDTVcnXw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-recycle-scroller': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-espace@3.17.0:
+    resolution: {integrity: sha512-5nQ7WHbl3Swe8taZWLc61HJUlx9jdHiSEknzu543ZNFEIoEcthxxCiEBztnc8N64QeNVz/md/Ic/3twgpwZeIw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-exception@3.17.0:
+    resolution: {integrity: sha512-wCFwcKWQGTp9CSpCoF88rhb37kXL+za+Jx/kWHh08zrnGcanj422iJ0lpOFI7qmaMYjCBaARRFcyJ4j3J/9DuA==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-fall-menu@3.17.0:
+    resolution: {integrity: sha512-VlodkvIHEVKvXf+rWqQQZA0q97+GydE/5mGEGwsK6Nq5f3ACUCeTuPyb0uXPWI3hHdepj0Jiomk1brtNgmME/g==}
+    dependencies:
+      '@opentiny/vue-col': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-row': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-file-upload@3.17.0:
+    resolution: {integrity: sha512-R14ncaRnlBGG1h1r3kXiWnrtQWhYQlbfK2NgxfAqobfc/k0ivTZZrFFo7UUpMYgZCjik1i8emIexgYgBdzbI3A==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-progress': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-switch': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-upload': 3.17.0
+      '@opentiny/vue-upload-list': 3.17.0
+      crypto-js: 4.2.0
+      streamsaver: 2.0.6
+    dev: false
+
+  /@opentiny/vue-filter-bar@3.17.0:
+    resolution: {integrity: sha512-OaglzB1bU05vzyVw8sFumsuKD09j0KW8L8YURGlN8Yc6+yTO09sNT8NaS8QrYQE9YmKuibGGU+jNF7G2katAJw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-filter-box@3.17.0:
+    resolution: {integrity: sha512-Hi0ug3E4P9lNam1n4WtqQz+PFQ9u71K/kKahFaUk2+JR0t7eLoWWK/Ggbm6vJe4qHgtPfuv5jQmLyrHAdfjt7w==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-filter-panel@3.17.0:
+    resolution: {integrity: sha512-B96ocfcNrMOQAliQX/OI6SzVj4RtXJtp3wJZQFLMc2nNSnyFdwAhs5VFWOJ6/1moj8IgSe3dTb0tOr4d2cpqkQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-filter@3.17.0:
+    resolution: {integrity: sha512-x9BpUw+/VTwiUUwbiNKmSd/aQdSEeYtrOYBO+HNtR4ABn0zDph4zq6klo1uy3xpDP0vK87UbmGov6YmZjZAuqw==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-filter-bar': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-float-button@3.17.0:
+    resolution: {integrity: sha512-HwcwxaQ1fNq6re8nN2vucTm4FHprdzwRgu42nIbxFalPDodvq0DfPWv7/Q21X+Zgoe3DN0asoY32Q9yLJQgcqw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-floatbar@3.17.0:
+    resolution: {integrity: sha512-WckAoNzygMQ26Gbo6JXbRrumBtUVGpnonsoIzqS60MABpDRHa0pwZsuNkd4fhOlTV7rf/QIC0JQ7yGjFUpHN4Q==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-floating-button@3.17.0:
+    resolution: {integrity: sha512-OTJaF52cxSgBDoEM17fCWPsHEzpRjWihK9+IQbv4NJ8sjHrAhK9UbEsHP7OP0OdtmEP0bwkfAkZmW+qA+kdeyg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-flowchart@3.17.0:
+    resolution: {integrity: sha512-Kk9cfSZ9b+5oVWliItGLEgrqWSGnq7bhRz0WdivflLuKLo/lonCHnOMbkyXnEZeLB52sUfdbewy01VsMPFWlgg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-form-item@3.17.0:
@@ -1031,7 +1924,7 @@ packages:
     dependencies:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
       '@opentiny/vue-tooltip': 3.17.0
     dev: false
 
@@ -1039,17 +1932,153 @@ packages:
     resolution: {integrity: sha512-7yUIBWV3fGnNy/ePAq7NV0CWsD0Yv3sevLYEG92uhss4lD+gm4ZikGZmdWxhlhA90RKyKvjNTEoiXe2PQ6S2lA==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
       '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-fullscreen@3.17.0:
+    resolution: {integrity: sha512-GLACCjT4XxzjlM8VZhd+Bp1Q+7U13GRPp3L5d72or+mDDzd3gjTnxdzLXSDQlQvS2At3aLTfLWGzaX+IDjQPxA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-grid-column@3.17.0:
+    resolution: {integrity: sha512-/iqRe4G1SRvIoQJh65xVR8sPVBt0Tj54RHkh8QXj0SUluHsp7iRp6XN+9waug/b8evyrXUnkrIfBNnasGlHjsg==}
+    dependencies:
+      '@opentiny/vue-grid': 3.17.0
+    dev: false
+
+  /@opentiny/vue-grid-manager@3.17.0:
+    resolution: {integrity: sha512-MwPYm4bZpAL4bkGg9Fvoyq/MwMC1PKzqIFzdG4znulIv0Hp/P8AhTnJMmptuUMifqn8A2AkVKzqBzc+z2oGhuA==}
+    dependencies:
+      '@opentiny/vue-grid': 3.17.0
+    dev: false
+
+  /@opentiny/vue-grid-toolbar@3.17.1:
+    resolution: {integrity: sha512-D4I8llJ15i6DpQcuHjyeRUy/rw6bw0b3uqoDaxfyBqYXVlkdFychEWhyiYqK9Vpztf8jLyBIVgtK/avimM+WeQ==}
+    dependencies:
+      '@opentiny/vue-alert': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-checkbox-group': 3.17.0
+      '@opentiny/vue-col': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-grid': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-layout': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-radio-group': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-row': 3.17.0
+      '@opentiny/vue-search': 3.17.0
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-split': 3.17.0
+      '@opentiny/vue-tab-item': 3.17.0
+      '@opentiny/vue-tabs': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-tree': 3.17.0
+    dev: false
+
+  /@opentiny/vue-grid@3.17.0:
+    resolution: {integrity: sha512-IkN5klzI9VL4xCcBCWvqygpMlb/gWrKb+mQHwHsx/HAGyJ5FL0lI0pT2iptVJcpVU1+SsmAvglpkyV2z3PyC2g==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-pager': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-guide@3.17.0:
+    resolution: {integrity: sha512-ptbD7GIf55vh/jZjSflJRMOvJ9HNBGOcI2fWv58ZY+G3YnD7boUQOY+369ERXTTAqReLapqFi/cDtlLP3rztpw==}
+    dependencies:
+      '@floating-ui/dom': 1.6.7
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      shepherd.js: 11.1.1
+    dev: false
+
+  /@opentiny/vue-hrapprover@3.17.0:
+    resolution: {integrity: sha512-9TpxIpUnDCsE8nd3Iz1oFzRpAIe1fdiiTzR9zFoPhESZx29Cg1tBy4g+HTdo9Bvw+LHZPv9fKcBnUSv0npkVzA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dept': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-icon@3.17.0:
     resolution: {integrity: sha512-u4odnI2QrRQ4fLJ7WYFvqqdqaLHSfxPJwi7QUBNeeiVuiI+CKUuFEAXIpfd+r0yLgCZAt1Ei3Te4za0tbvmd6g==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-image-viewer@3.17.0:
+    resolution: {integrity: sha512-WnsGbGNV7xFKJ3Vxho0TT7PFP0OOgVTny2EtC9Gbm2g0vDbCbdSEZf99orU0o73IruNOT2XqU5JDmNEEt5IBsQ==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-image@3.17.0:
+    resolution: {integrity: sha512-i9i2tx5mzTjEskFPCjvFSdt2yfx0Z8D6I9S4do5wzGC+/31ShJ7+xRQ5tLU8S4NGZobp03/PWwyelXAsuJ5/Kg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-image-viewer': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-index-bar-anchor@3.17.0:
+    resolution: {integrity: sha512-vS8BNemMsOilUEMLHfNkwIIxgEgdAXF5V9F4ggdVSH4mLJMnin6pRIOgtbOzOqnhGIsrUrmiYWpflFMWWz9WDA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-index-bar@3.17.0:
+    resolution: {integrity: sha512-2AbgdPvr56HyZ+U+APRp5tmdTgp8MMXT2cEGlqWW8HdC2fpvaRI/tPAm0Sk2sUxQvxZ1lPs5wGJ9IkiTuDwK8g==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
   /@opentiny/vue-input@3.17.0:
@@ -1060,18 +2089,374 @@ packages:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-dialog-box': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
       '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-ip-address@3.17.0:
+    resolution: {integrity: sha512-/cD7AAZZDTOznMjJ2bkMOlBALZ69n7ULihhdlznQm+bbnoQC0qkng9X0ewjXFQNalNvs4kiLqFFTCamY0TjAmw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-label@3.17.0:
+    resolution: {integrity: sha512-kKhyPFW9ykRcihP38CKaaersaYYtU7dVxEKCNx1rnKZfC7cKgCy/+9GgO8aYFQv+HBNpNcChiBeO2BDpeJYQDQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-layout@3.17.0:
+    resolution: {integrity: sha512-nNY2VLV9/gQVQch61vHSxbOJv97jC/fvdoZK+5L3Lt6bLBApkYDr1GW5m8bdLv5Ut+hcHuh44lwdii1tRNtDig==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-link-menu@3.17.0:
+    resolution: {integrity: sha512-AYNx/4FONAWQ3h+g4SkmxnyhSrObF4WD/qsZlZga2TJItIkvfjnJC0S86C6mVE/Hue4wrBc3BXKQT73wwoN5eA==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tree': 3.17.0
+    dev: false
+
+  /@opentiny/vue-link@3.17.0:
+    resolution: {integrity: sha512-hYLleLWEerlCNK/EGZCR4v6yv7kGfQ5PWC+sgFnEs5yklCFW6DLiPOLm3os42wuwKyomO8sPjSuWgDiuJVUaOQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-list@3.17.0:
+    resolution: {integrity: sha512-LdUyyLhK7EGrqG/qq7ahVWJNeQOaINbDlLf3kXTPAgn+UFhjbTuj/xZePl+2HZzlBX5EMlP9lT6JNf+T3yCzjQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-loading@3.17.0:
+    resolution: {integrity: sha512-Kwo+S73acVwNU14sO00kDCIOgMwY+TDdlU2/FgsMKC9ZkL7l9GMeMhAqjlM2+bZrWjqgPXbqmi6I6nXFe4Ad9g==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
   /@opentiny/vue-locale@3.17.0:
     resolution: {integrity: sha512-YVJWJhKeRS9AXz4r+zQ9E9234ltPek3KHySgTwT/7VwluBtQBY7AXdfH8vQFdaR9TuR7nCpbAzwxF6RxwJsSww==}
     dependencies:
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-locales@3.17.0:
+    resolution: {integrity: sha512-+zBWnWNXNcWqJvx4riHR75R4NT6DkN743HDSphH7990CwcIVNyTafL13b9VtfEcKlPzGKQLiUofExy0eQe0XwQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-logon-user@3.17.0:
+    resolution: {integrity: sha512-al4ljC/r8HJPHJGnFD2PoT7y9LdRwyrYKp8ih6x0HrAoUmZud5d3bQTZVx9V3bYx7OGXId/TSge0eFiVD6bSMA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-logout@3.17.0:
+    resolution: {integrity: sha512-JCt7OfMQ8NHczyN8BLb3fZ7E0L16eyrwURMp+lvLc09PVbd9PCli/7AXW6lmO97PuFYKEsNlxHo+vW5/u5BFRA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-mask@3.17.0:
+    resolution: {integrity: sha512-T+DWPz/44HmS0sKcvBFEho3KmVO8javoolQzFrHIWtXXzzbO/y+RkjspSc5BlfcpbziSdccyuetwDN8RVAkcXg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-menu@3.17.0:
+    resolution: {integrity: sha512-TizOw6/alRH4RZFhLtfLnU47YJItPKq82XENjE2F6L+kc3TvAHeMFqcXEIkDFHtI/5loCYusjjg8TSRm9IIzMw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-message@3.17.0:
+    resolution: {integrity: sha512-8zi4YnnmKoa4Ln3qsgSiwkbUki0ZGjdpMc4ynA7R/DG+N0doilx8tdsoi7xfNM5KFtZi3CTegZ/c+G2nLuCBtg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-milestone@3.17.0:
+    resolution: {integrity: sha512-9mruGtY15Cc0ZGQ6UBxKmcCuuF74UqwlT0E9/Gkinrj51jUw+I/sl5L7vgfID6BqPCXVOrI+r8XBahffYp0PXw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-mind-map@3.17.0:
+    resolution: {integrity: sha512-U7Ylh1lZKO53GsBI0czX8lRFfnkatAM6NX8+dSY+fdIByH5Ebk1T2sigajKsKZu5c1dyNwm6ORez1U8F4SL3ug==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      mind-elixir: 3.3.2
+    dev: false
+
+  /@opentiny/vue-mini-picker@3.17.0:
+    resolution: {integrity: sha512-FKX0xyIJN+44Qhmsa1P8HnhoVZAaxZJYUxvsIKwlWHu7EUu72FYq5t95dw7Oc1S/B3aJ8Sltwp3k2ZlWWd7lwQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-picker-column': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-modal@3.17.0:
+    resolution: {integrity: sha512-gNhdD6oi8WoesNx9fsKzJjLSoo8Mhw1Hmju3R/6CDvn9Mvd5AysRDI4tI4RYU8w/VDoOmy0fSt9VbVB3fMyVFA==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-checkbox-group': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popconfirm': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-month-range@3.17.0:
+    resolution: {integrity: sha512-2ikU4jebqHd5lV40IZg9CseEhgn/GrA0w341t+NwgUvUuP4L17NtRVkWfe1fTxpMtzJhzYvXo2oCGZr7evsnfA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-month-table': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-month-table@3.17.0:
+    resolution: {integrity: sha512-kw0gCPeelfAId/+ySVtHD61gHR/K/cpDf8Iy+j4tRPJ+jiKRXtHcoWczQ2hahrgWpHa8qxMU7eJDCyVVVaRjkQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-multi-select-item@3.17.0:
+    resolution: {integrity: sha512-L/M+zDj51srHG5ZUul0U6oAJLvdFE1QK9OkDjb9U9izacRfwOVQj7O6BzZG5lvF04eETYKfdFqVfDwAcnGBYGQ==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-multi-select@3.17.0:
+    resolution: {integrity: sha512-DyQ3REY2cMFUecmrgnTqAm/ybYgdDpQg610hfwjqttEBBVnS2UpsHjTNEN34v+AkL0Ga7qx/SOZAwWJD24TbPQ==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-mask': 3.17.0
+      '@opentiny/vue-multi-select-item': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+      '@opentiny/vue-wheel': 3.17.0
+    dev: false
+
+  /@opentiny/vue-nav-bar@3.17.0:
+    resolution: {integrity: sha512-HS/1PO902TudFiHc97xYevHduuOTv5UihuTNL5vRgSxo1Fv0zpLw1BanvVxYg1tLlbuDo4q4fb+BXM5FKxZCGg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-nav-menu@3.17.0:
+    resolution: {integrity: sha512-9WBs7qCg+o1q1xBKfbnTBuefHCcc5iAIvfChoMoDGtO6B4q71e3HamLXPTFE7UZ7x/nLMghyEfj7ytq1d9D7Ug==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-notify@3.17.0:
+    resolution: {integrity: sha512-LOnQY2YCAjnasQ4vsTpb5Kuxw0/ljzgHwHs0W+7GNsxuNwZdq4Pxie6KMiWpOVSf7U8KBkcBTvGnJrFcWiqIOg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-numeric@3.17.0:
+    resolution: {integrity: sha512-oC9Fl03qgn9/ahM4JEUL3EfQOYFO4R7LGEAHx+PElGbA0NeSAn6c/szcBw53qxIwPL05zzwiVQXqH6RuYrt+Eg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-filter-panel': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-radio-group': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-option-group@3.17.0:
+    resolution: {integrity: sha512-AgL917G8FqfC65QTi9q27eQM6tz8m3hp4/m+5DRQ4h+w5Dpg8By9XWEVa0J/J3HngO7iqqz33aREbD8Zm8O0Xg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-option@3.17.0:
+    resolution: {integrity: sha512-YWe/ZhY2US7DIGqkyurVswnZQkQnZ5LOclFKRIv/jE7vxJ4u62EHARbFGV64xYb7HV7PdqcQvvxjVQ0pep105A==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-pager-item@3.17.0:
+    resolution: {integrity: sha512-D1UHQism977raQVdtSUNVahfwdHl+R7Vpx4eJoFXJZqNwY3CW0OEBM24Zc7860QYxGK4cqbiefjbhk+MS1voNw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-pager@3.17.0:
+    resolution: {integrity: sha512-rQiArPJs9Q/QiM4HUwYgZOLOodfCB+GdiW+9bdbcd6GjZxrSW0KMS/LL23hhnFg17a3eZdBDtdlG9CIXrttpuA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-pager-item': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-panel@3.17.0:
+    resolution: {integrity: sha512-IKs4p0lqAE66PJ+y6omWgjO+tv5zf0yL302Gh2h/uOwQ28HKwUtBGf3V2UpTsKzg3eoxKvk8PMZtYYvMEKZhzg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-picker-column@3.17.0:
+    resolution: {integrity: sha512-9mkcdY3VShheO1OU66AWLDKorTj9/FYeYNM3jcVte99d34WNztpFCJZ+udfddW6UrFiiV2rLMBPERbcYTwQ1Iw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-picker@3.17.0:
+    resolution: {integrity: sha512-wjff6d6B4e/lOKpmzeFjmvUiGLnwAm9l8t+Q0HYfVDAtSd+znYQQn51UprywLjLr03rWxjkzQVGveoDbY/x2kw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-date-panel': 3.17.0
+      '@opentiny/vue-date-picker-mobile-first': 3.17.0
+      '@opentiny/vue-date-range': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-month-range': 3.17.0
+      '@opentiny/vue-quarter-panel': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-time': 3.17.0
+      '@opentiny/vue-time-panel': 3.17.0
+      '@opentiny/vue-time-picker-mobile': 3.17.0
+      '@opentiny/vue-time-range': 3.17.0
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-year-range': 3.17.0
+    dev: false
+
+  /@opentiny/vue-pop-upload@3.17.0:
+    resolution: {integrity: sha512-ltENztGHHTilKwmxiYsoNs2M38M+jJ98JGvrHvXzZSIgfswj6B7Kuxt38FPZkUM3/prINK+VpMAJxue0uHjE1Q==}
+    dependencies:
+      '@opentiny/vue-alert': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-file-upload': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-popconfirm@3.17.0:
+    resolution: {integrity: sha512-VuSk8DCXTvlH2Cv8fY0VdrxvM2okk69JwNhzQaIVVrJwbhxE3TadLmTG2b1gyaJQzTCn0IGRbxGthUsKP37ISA==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-popeditor@3.17.0:
+    resolution: {integrity: sha512-bYyPnU6h6rC4Pj2gtZGjDF9gRkV5At3JAig24lLNqPoKgScgp0TI4Nj0uFAwxuOsdco+jBatYbpO4NrCZjTBog==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-grid': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-pager': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-selected-box': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tree': 3.17.0
     dev: false
 
   /@opentiny/vue-popover@3.17.0:
@@ -1079,8 +2464,8 @@ packages:
     dependencies:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
@@ -1089,8 +2474,86 @@ packages:
     dependencies:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
       '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-progress@3.17.0:
+    resolution: {integrity: sha512-h2ZQGa1F+fnlP1YJA6vPPiaJnaaqk9HtQbCBIwDxwr3wdYdOEn9HCSUM3qwSn2AC3AHrmZh2uH6RziYPIZaH8A==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-pull-refresh@3.17.0:
+    resolution: {integrity: sha512-MSsEAKNwjTQLwWX5RyVdMaNiZil8Uj+V+yRWXeUjuczLD5SuXTkk2jswLEK4SXd5L4WTqzViNSma66tmct4U8w==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-qr-code@3.17.0:
+    resolution: {integrity: sha512-umVy70q11OEq5qy2OfPdhcUfFh9CIZfrw6cj97Fb46yq9lYZME2ouAocTqm3CaSkcAlU0HbZcX7HEqSJgO95ug==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      qrcode: 1.5.1
+    dev: false
+
+  /@opentiny/vue-quarter-panel@3.17.0:
+    resolution: {integrity: sha512-oHcpEPbKwcBiZzlCFOr6QPHoYU3nCFgBjDKQEJMfX73K4izubFinALocdUSdNIOqXy76T6AGvDkQtkKXglG0xA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-year-table': 3.17.0
+    dev: false
+
+  /@opentiny/vue-query-builder@3.17.0:
+    resolution: {integrity: sha512-L+5XC/2U2CdBXozzHM8qSxqRviU30RnW9P75GfnqLrC+ikLNl9PbIfayKWEEf6x37VA3GLfO1esOWDYfSr4LwA==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-date-picker': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-numeric': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-option-group': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-time-picker': 3.17.0
+    dev: false
+
+  /@opentiny/vue-radio-button@3.17.0:
+    resolution: {integrity: sha512-GfV0v+YR0NgRNpLNTMzlg9mC5XlrK7SuB3wnb/piukSEL54H3RQ0jyJ0DkcSypIawCg+jWAOeUHKw/mOfj5VPw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-radio-group@3.17.0:
+    resolution: {integrity: sha512-io/vBV/Tae3ptZ5pUh+QpBj8U/w3i4COGEJaMlRWS9nzFMqabrwTbGZrgXRJ6eaOcIHNut4bAbN79juaq55ShQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-radio-button': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-radio@3.17.0:
@@ -1098,32 +2561,283 @@ packages:
     dependencies:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
-  /@opentiny/vue-renderless@3.17.1:
-    resolution: {integrity: sha512-DTxoudxXMofYc8btdQWtngEyWk/cmN+NdrYnrDTXVOy7ReVegMMNs4dv8E8v1ss8hJJJDhXCW2MM8DHfZbOvzQ==}
+  /@opentiny/vue-rate@3.17.0:
+    resolution: {integrity: sha512-JU5KIF54xQ3z4hFON3Tnj7VVIZXv1Qqu/VsfwvPXNdfiQQe2AhkHiB3z6PUH0VQFhqQ3fuNHGM+tmkg3SJRL1A==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-record@3.17.0:
+    resolution: {integrity: sha512-3kqShRVRt2DO76MtwvnUahkJWG0o3nW7gnkfuN4WT9/k0NGgHLo1TnDfUWMa36jMz/BjF1D/YAt2pglUC2baPg==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-recycle-scroller@3.17.0:
+    resolution: {integrity: sha512-obgC42MELM8L2468CzLDB2Gu6GuMDUuNA9+nvLWpQ/8soGfLFc5zkXDKyonGzTom4xkWMhtOAlpNQz+84RLq9w==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-renderless@3.17.2:
+    resolution: {integrity: sha512-BxMt1LAI4b7DS1iAgEMsB4F92W/ircemdaaD8XvyTRWVsDmmQkuV1ldK3EnU8+knLUUAoA30C5OvkkvpgU5l9g==}
     dependencies:
       color: 4.2.3
       xss: 1.0.11
+    dev: false
+
+  /@opentiny/vue-rich-text-editor@3.17.0:
+    resolution: {integrity: sha512-xnDfdlhh6j6cr6rpdvTtnaSP4+4/zHvvkhyi+Xmyl372Q7DFnNXL4F3kwokGpudZAl92HD+aHLRJepN8yIrN4w==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-river@3.17.0:
+    resolution: {integrity: sha512-7SFBiQ4BdO/I000peUKwLkwevtL/UlV3nKVbUD/qgou8EAS3B7AQTZmREcrzwdxnL2A+kuRoE0Nn6HKARsmWWw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      echarts: 5.4.1
+    dev: false
+
+  /@opentiny/vue-roles@3.17.0:
+    resolution: {integrity: sha512-NbM+JLSnVLWGO1qxhos2TM4r3IH72H50u1rCd/qzQehLzvoE3eVWwu4bg/uJIOYZmlCk2n8MUpYu1sYaQtg+Wg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-row@3.17.0:
+    resolution: {integrity: sha512-gm5DE77lfhXnkLtXBy4A0BLjCX53DFpAxaKNFtwTDJTnJBw2Ra7hwDQwD28cNpngn9u6lDVvPYYPNr/96M3rTw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-scroll-text@3.17.0:
     resolution: {integrity: sha512-kK/307F/0tCqS6B5Gi+CYOIYMWXvzLpQlg8PesOOAJdwwq9FENMSOVCJyiZ7mYo3w+BRhjoQ7YaMAnB2q6KrYg==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-scrollbar@3.17.0:
+    resolution: {integrity: sha512-ro5kM7eNVS42o0OdBHDKoqprOeCarO95yR9ovBMnlPVW2eVhPpW6CqZyyprADvVZJeCRDu9y645NQUwT1cQfyQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-search@3.17.0:
+    resolution: {integrity: sha512-oS93nMzGh/S5khqeAGD6wVu6/wP6GrdZmVMvhx/GFI6sIG/+6PqEB7rGDlCeTJnxPBqMln06oxjVv3t5CpyVQg==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-select-dropdown@3.17.0:
+    resolution: {integrity: sha512-issT1AijKE5ITm/DjcVuftmqo6DWQtkePUhtW1098YBVf2i+x+C/XfX1E0sNgO5+5NIhP+ODY4UZll+2rf6tFg==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-search': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-select-mobile@3.17.0:
+    resolution: {integrity: sha512-NrjoI8l9MucSMFpPRKzN1t3q0a4S1hH7SAd5CU0qyszImbqKsbxvAAYpajC2KIhYO1dS4HXyI6acxPKTGIpQEg==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-cell': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-select-view@3.17.0:
+    resolution: {integrity: sha512-0qdoBAWWjhFJWRMD+5zc7Y7R9zSgFMeOp88+1JWLi5lAaNgMnAMWEsMv773d5NQZL5TmykE+O1+QoFX9N470Uw==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-select@3.17.0:
+    resolution: {integrity: sha512-p25U//Bq7LCOURzimJeRXCKz3R69rrvrRQSfLE1aPtNbuLFPdo/vsqsL/YJeq0Z9Gppsl6KrkO737k3uJP9sfg==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-grid': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-recycle-scroller': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-select-dropdown': 3.17.0
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-tree': 3.17.0
+    dev: false
+
+  /@opentiny/vue-selected-box@3.17.0:
+    resolution: {integrity: sha512-CEhPBpZjbltgj4vJC6GECP8a0Vn15lwi91KbBYOiXYFlOSdSaF38CfuLwj65igd/WpIbzn80xEKzpHAMzCnOAA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-signature@3.17.0:
+    resolution: {integrity: sha512-HC8hHotHWGy+QqPfG/Rq4bvpz+3ucVElNheonc0yM0zywhZoz6TXIhod/vY3FlMo+xDQCKqvXyZvzp3f6WujqQ==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-locale': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-skeleton-item@3.17.0:
+    resolution: {integrity: sha512-pW1gAUSzqdKWn0YveGl1XvAx+IROzMGcvawr/GzjWibn91F2Uu6A6dTlCfnsd841PCl9uZb/bsuNjXyz/Gnxdg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-skeleton@3.17.0:
+    resolution: {integrity: sha512-WpMY5GTChcbTRIYaqyUa1sB+OvYqqZCLb8O6kcScKxnPgh79MkLtYtrB2wAMI7JoxGrrzpb87JLft2zqTxvDcQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-skeleton-item': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-slider-button-group@3.17.0:
+    resolution: {integrity: sha512-kk9UGJw7gvzycYjpEHrPu8RlDHDU3mUKBG+Yso57/gsPNRRsh2tCvI8ixmgr2TeVIQg1+nJzWEbhVeEGndkI9w==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-slider-button': 3.17.0
+    dev: false
+
+  /@opentiny/vue-slider-button@3.17.0:
+    resolution: {integrity: sha512-KA2Sp0ILrNB7hDZcAspPdBvumhJq3ryMB/R7r083FSm6R0gU/njN35KQZglaPIaq2VDHiWyF/BZVtnrpTWIx5Q==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-slider@3.17.0:
+    resolution: {integrity: sha512-DVau5qBrx3AfbhVNmc+IBCY7AdK5fQ4Oq8BR8YbZkKoI1UAP1vzwpyqn0y2MARMZTFwo/OUBtGR8e7daJfRkag==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-split@3.17.0:
+    resolution: {integrity: sha512-e0uifYmCHTod+TCRi5clJc+zJwshTSUPB7KVCSYNdFXYHe9fFKw8+jj7vPqGJEHGf7Dy2NfUFtsX/d50E0usDA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-standard-list-item@3.17.0:
+    resolution: {integrity: sha512-grhmA0e3Y2cGrZylBN1PRLTZkWeOGkRDE2BhijPHkhaontq78+gb24rQlK414R95KCzSSqddTMpDjQAVsBYXgQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tag-group': 3.17.0
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-user-head': 3.17.0
+    dev: false
+
+  /@opentiny/vue-statistic@3.17.0:
+    resolution: {integrity: sha512-i1iIvULwyEQSFj11S8hegHLQMFHcVR0fNPlk9jiM4Wb/4qCyuZKb3YkbUSCovGa/3AJPYVy0BTOoEvjfSC6OCQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-steps@3.17.0:
+    resolution: {integrity: sha512-9gSrhJAlAEm/wAdSnjBM1rNtxp1bBU0Hdu2QpV+jFYb3LPgbp5WyFehnUJJloAzZ/fEb4pw3SESGkjbBTOritg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-svg-icon@3.17.0:
+    resolution: {integrity: sha512-0Xw/86UyiqkUwuTVmusJy4Os4Oj781Z9fQUfTyJU90ws5nKFkgWIPTKQSPDuPv/F7mQQl+rXX5hA8ACvfrXYRA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-switch@3.17.0:
     resolution: {integrity: sha512-dtWdSjZwsA+qWVEVyyGVf2sW7KvQMhiCpLQ4p61QMLx74gHoEunECaFIhr20St829uZqTDkrUIOb0Dud9BTU8w==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
@@ -1131,7 +2845,35 @@ packages:
     resolution: {integrity: sha512-jnF2iBeVTSErWus8MzjbecoIIuVUEQDKOpkpr1ISgQBiI3FcJUFoHwqbv2RVaL3ekvd4R2hlRizU3Evmn4F3oQ==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-tabbar-item@3.17.0:
+    resolution: {integrity: sha512-/rlqOi5hjCCN6bgfi4Q679RjSgELP8SgqdhvWZc8V5DXJR3nfZGqeMzTytxwZ5ePPzFwsh0byaAwcQn91OvGxA==}
+    dependencies:
+      '@opentiny/vue-badge': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-tabbar@3.17.0:
+    resolution: {integrity: sha512-Zzil2OcjPLeHWseFQUUMhR445WMwDl2RrzPJQw9znqvqDApFUusMrdv1HaeHcESRP45xiMvR1IE1IYQAhUX1Bg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tabbar-item': 3.17.0
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-table@3.17.0:
+    resolution: {integrity: sha512-Yt0HAhe0eDkqDDCUgs7f1aUqdhb+mDYgxGNSjnBSrRNJWkWcxl05RFB6lwqELzz8DPFDsDiGSGnVY4IiDFV0zA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
     dev: false
 
   /@opentiny/vue-tabs@3.17.0:
@@ -1145,26 +2887,191 @@ packages:
       '@opentiny/vue-dropdown-menu': 3.17.0
       '@opentiny/vue-icon': 3.17.0
       '@opentiny/vue-locale': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-theme-mobile': 3.17.0
       '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-tag-group@3.17.0:
+    resolution: {integrity: sha512-BHnynMRF0tczDiZf0x+d21djqn/oRSYIIA7U9cBUGdlxhyiSyaY8LrhRvaw3K1WauYARFd61VuoZvl/UHNJqug==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-tag@3.17.0:
+    resolution: {integrity: sha512-HXolmIaW/Lg3xbkkXkeonxL5Iv0TvmwYdCGHoMGeiXrM66QUEw6k3yl8uF39zdR3lGflQFp3K12CzSiISSHt9g==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-text-popup@3.17.0:
+    resolution: {integrity: sha512-uyPfCOT4TNt6eAp1jEKE47Sg229ljxrwnoKdvfJ/W8CM0zCBjT/qQadxHSsnGD89P0lJKk0+nB5Ki3jCtO38qg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
     dev: false
 
   /@opentiny/vue-theme-mobile@3.17.0:
     resolution: {integrity: sha512-snQEzzbtZm7D8EXTrvd7II4awRe6ne0QoRWdw+OQV/5pwvRlGki3mrSZC9cHTCtIJOS0zQXGV96wzESAXkElSQ==}
     dev: false
 
-  /@opentiny/vue-theme@3.17.1:
-    resolution: {integrity: sha512-ictL7GCZhkSD+b6rEe4tAkTeDNJ2MDA/GUXdZUQk87Ff8cClivUDGN45mD7xnnt6JoBnykHYIfpm1gF2n+3ghg==}
+  /@opentiny/vue-theme@3.17.3:
+    resolution: {integrity: sha512-nipVH8vb8mXDt4XOs+6XFBDa8qApsD2lWw9Qr3R+M0yexjBE8cgro+MhCNrj4ovDb09UHt41DTWfNtvsGj+iTQ==}
+    dev: false
+
+  /@opentiny/vue-time-line@3.17.0:
+    resolution: {integrity: sha512-yIeMUt9pRVHFGnASpedAJN5KQbTMDXfmshdDi7NE9c26dPcwxXr5AQPy3PEnNGR7VIbz7WLEAV24EOWezZaTZQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+      '@opentiny/vue-timeline-item': 3.17.0
+    dev: false
+
+  /@opentiny/vue-time-panel@3.17.0:
+    resolution: {integrity: sha512-643fQK0jJ73Ao3gQH85rlrcZ4tuBPA6fqTFiIG6RRzqzqZNPRo+6Pl3iJQ3uLsz/eYCuv56BhNIGZ1UtB7/1Lw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-time-picker-mobile@3.17.0:
+    resolution: {integrity: sha512-oYLvgAlif2exYfnagwU6nwYhzFvO2AZzBWc9osI05ccAFEAF3uFFdRNzc379d26qnj4AZRrXI5KKT8zUTOeWlg==}
+    dependencies:
+      '@opentiny/vue-cascader-select': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-time-picker@3.17.0:
+    resolution: {integrity: sha512-j2lqYGmGYK+LZ3ikz3dFvCEURCrZmzR6byZ4rwmTK4JAKFWkDLBFK+IZQBRxFjkyKqHtlvNGIIOw4dZai+zWVQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-picker': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-time-range@3.17.0:
+    resolution: {integrity: sha512-93JvMAUMLD/70GvD/9d3HJLwGOWE98A0v8kJMACQ3rCMuWGyOiboxFoYkZacZLvgl0KygrqudRWOKVcT5VR4kQ==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-time-spinner': 3.17.0
+    dev: false
+
+  /@opentiny/vue-time-select@3.17.0:
+    resolution: {integrity: sha512-wPvPHLzebRB8v2E077CCJlWoKGbFxZegL/ohiMeBGxUEgb1K9/YYia61x8/1xpte+JvmLAdMOFzCGhKdJrWTvA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-picker': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-time-spinner@3.17.0:
+    resolution: {integrity: sha512-Mrt1s3DiC7O7KErYrruK851/bWqjTM7USiS5fFvX+nwZOKD80Gw5LxUeUV6db74yg0qiv8fConbo95papMRDbA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-time@3.17.0:
+    resolution: {integrity: sha512-6mEIZaqAeyIikRgh6uNu5OIhPnrHNMptsi1f7zcbyaBzGRRDTHBPsuCdByl2m5yXOepPPeGu5KQj6s2PzOM1vg==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-time-spinner': 3.17.0
+    dev: false
+
+  /@opentiny/vue-timeline-item@3.17.0:
+    resolution: {integrity: sha512-IUJhFwOdNimvUJfMmeRFPV2Es3tFbJMQXBJHJJJfSTsOtU8HBl8F3+dHNwWpyS8As36eyvOVI5yBXOcouDx9rg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-toast@3.17.0:
+    resolution: {integrity: sha512-rSV8o0A+pB1MFtH6Cm+gTGJynC5+LHnuppJCi1p8J6X2RvuFEfo/dBLP1yZAIu6M4aRvrL9NBzG09GDcZLv3gg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-toggle-menu@3.17.0:
+    resolution: {integrity: sha512-yyrDd4gugH1L5LcenVZAzZI748rYl7XujGDlQBGsyuYeaGAm2nEy7H+lwOhbX4+h/r/8t/4vt1SsozCW3SIpeg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-tree': 3.17.0
     dev: false
 
   /@opentiny/vue-tooltip@3.17.0:
     resolution: {integrity: sha512-9x7IuQSJ77Erd2RO9VqEVP4GIF6x7kZMvHSQM/m4sVc2llyC9dNs+eqcelaHhLE52ouVbFtHMwlNY8oHpS8n6g==}
     dependencies:
       '@opentiny/vue-common': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-top-box@3.17.0:
+    resolution: {integrity: sha512-e+SfwZrbq0wxowugmhSxVLJJEX9PUN5EolfWCiAnUFwSi3irJPyrTOA+SQmHCGpDE/lvh8CqFxMm5IuFeJ2Vww==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-transfer-panel@3.17.0:
+    resolution: {integrity: sha512-xgUzSR0dS0n65yEFifEhiVyKR0JA7ZOYkpLbuYshW8cGZpktaAFnAsCtAijONeMotItMADfDRUHFNyeK1xYdMA==}
+    dependencies:
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-pager': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-transfer@3.17.0:
+    resolution: {integrity: sha512-nyskTTvdUdnw3nqdLQTBT8e67CTllUqjk6xV/TKsfWTT20REOWae53uWZjv8NUrAwxOV8wcxSpDnkLQ8jTMTdQ==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-transfer-panel': 3.17.0
     dev: false
 
   /@opentiny/vue-tree-menu@3.17.0:
@@ -1173,8 +3080,8 @@ packages:
       '@opentiny/vue-common': 3.17.0
       '@opentiny/vue-icon': 3.17.0
       '@opentiny/vue-input': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
       '@opentiny/vue-tree': 3.17.0
     dev: false
 
@@ -1189,9 +3096,385 @@ packages:
       '@opentiny/vue-input': 3.17.0
       '@opentiny/vue-popover': 3.17.0
       '@opentiny/vue-radio': 3.17.0
-      '@opentiny/vue-renderless': 3.17.1
+      '@opentiny/vue-renderless': 3.17.2
       '@opentiny/vue-switch': 3.17.0
-      '@opentiny/vue-theme': 3.17.1
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-upload-dragger@3.17.0:
+    resolution: {integrity: sha512-plwqQ2LxxOQi4T44F2+/ICUraVWIgSEG6ocbtuM0P9Y25SH7mvM0Y4BAvdFOInQH/q6Y7R4IcejUEH0SOAlEJg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+    dev: false
+
+  /@opentiny/vue-upload-list@3.17.0:
+    resolution: {integrity: sha512-4rasIOkOZGHT3YPPSbZNzK0rMuZzUQApys9MT5DeB4fksyX2y5rycURsysLEJavbHWUrawUTdnOvW/IdDne3dw==}
+    dependencies:
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-image-viewer': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-progress': 3.17.0
+      '@opentiny/vue-record': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-tooltip': 3.17.0
+    dev: false
+
+  /@opentiny/vue-upload@3.17.0:
+    resolution: {integrity: sha512-keqVrP6gy6vuXqWejagWz1KVSGbQytAEf61VrKGH78evscmbGkp2J4THRk1WI7AgYOBoNILyYsIGPNqEhwS/Ww==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-upload-dragger': 3.17.0
+    dev: false
+
+  /@opentiny/vue-user-account@3.17.0:
+    resolution: {integrity: sha512-8TDM43HTFZGrnL2oxQHC8YpynLbVrVCJT82wYu0FjCbV/dLc4W69DJh263G3FmBQs2TEoW32pe5vlnvtlZGCMw==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-logout': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-user-contact': 3.17.0
+    dev: false
+
+  /@opentiny/vue-user-contact@3.17.0:
+    resolution: {integrity: sha512-xZuSnnuf8VBgNFklUubzhAFLeerdBCuuee5N5Uc6Q4MLKimsSLNJVMRRXAHOsz57svut0g9HvW8eEaGRC950ww==}
+    dependencies:
+      '@opentiny/vue-card-template': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-espace': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-user-head': 3.17.0
+    dev: false
+
+  /@opentiny/vue-user-head-group@3.17.0:
+    resolution: {integrity: sha512-6c5UX2IT3yElcrBVNSjCMdxR7YTahz98e96qJbaji3ppfmY0DChbGfQwi7Zc71zVKDJD8B0ncc4vUMwCglwTlA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-user-head': 3.17.0
+    dev: false
+
+  /@opentiny/vue-user-head@3.17.0:
+    resolution: {integrity: sha512-+l5VqYHW5QjlL2ppVkMVI0GnXsSFggD9N7Up7pO9kKgY04WfUGThmbDKfY6wCFKhSkEZ9MeBkjSxSACkMLImQg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-user-link@3.17.0:
+    resolution: {integrity: sha512-hK7iyg3c3xdfz4IhYRYqN4XRSf4mYdTTpIgi0kztZ8kT+cfhxgWhE2J8sXx7/rPtxPyMHufGSk+cOOWubzKpsg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-user@3.17.0:
+    resolution: {integrity: sha512-SLBmueAS4uEqH9sJauB3VixU17E4WgdBbwAPwdzXMG6o2idWYqQ57I/a6p6dH2OAPXd8JxiB1vSznmbfLoyH3g==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-watermark@3.17.0:
+    resolution: {integrity: sha512-8tBF3LScvJzzvPWYHyowzHmDlpAUuCdf0ik+qHWWJmBnl4IkcCg2IWgrUFZLFfhx/n4YCnJQ2IMP/TcGxoC0AA==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue-wheel@3.17.0:
+    resolution: {integrity: sha512-DX43Oup5fD8Nj8kL1KU/bQSHb2F/hP9oz48AD8FWAkjeOh8mZUnrcVMq/0uiZ0UqD1rhZ5JFlBcuinTkpr08Lw==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
+      '@better-scroll/wheel': 2.5.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme-mobile': 3.17.0
+    dev: false
+
+  /@opentiny/vue-wizard@3.17.0:
+    resolution: {integrity: sha512-H1JSUHYyslmZJwydLiWlib9vum3QjpXWdRHLdqMK18fKCgkocOrz3UEJQI4tLtq8Z4NWVRWNp3dc+v5jRpyVlw==}
+    dependencies:
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+      '@opentiny/vue-user-contact': 3.17.0
+    dev: false
+
+  /@opentiny/vue-year-range@3.17.0:
+    resolution: {integrity: sha512-TEQEN9JNCoZNsBOnYonOCmhR6rnBalfEHiswZKqQgpIkTJFAEWheb2f3kONJn/v67ZS/LRozPsRvGAP1pMEDUg==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-icon': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-year-table': 3.17.0
+    dev: false
+
+  /@opentiny/vue-year-table@3.17.0:
+    resolution: {integrity: sha512-XdjC099YswiRYG37UdC14Kfv9xb2mNHIa5hvEwuiL9F/ydgSjFeow9d2q1MJ29NTIaMrKI50EF+SAYWcoMFa8g==}
+    dependencies:
+      '@opentiny/vue-common': 3.17.0
+      '@opentiny/vue-renderless': 3.17.2
+      '@opentiny/vue-theme': 3.17.3
+    dev: false
+
+  /@opentiny/vue@3.17.0(echarts@5.5.1):
+    resolution: {integrity: sha512-+b9ayAiCMSwkBB/MQUkO61W1yMDU1ZsLO78t05CqKaCyRgFdiLu387w9YSGtVcewxYjbgm8DJniv32z1dT3eXw==}
+    dependencies:
+      '@opentiny/vue-action-menu': 3.17.0
+      '@opentiny/vue-action-sheet': 3.17.0
+      '@opentiny/vue-alert': 3.17.0
+      '@opentiny/vue-amount': 3.17.0
+      '@opentiny/vue-anchor': 3.17.0
+      '@opentiny/vue-area': 3.17.0
+      '@opentiny/vue-async-flowchart': 3.17.0
+      '@opentiny/vue-autocomplete': 3.17.0
+      '@opentiny/vue-autonavi-map': 3.17.0
+      '@opentiny/vue-avatar': 3.17.0
+      '@opentiny/vue-badge': 3.17.0
+      '@opentiny/vue-baidu-map': 3.17.0
+      '@opentiny/vue-base-select': 3.17.0
+      '@opentiny/vue-breadcrumb': 3.17.0
+      '@opentiny/vue-breadcrumb-item': 3.17.0
+      '@opentiny/vue-bulletin-board': 3.17.0
+      '@opentiny/vue-button': 3.17.0
+      '@opentiny/vue-button-group': 3.17.1
+      '@opentiny/vue-calendar': 3.17.0
+      '@opentiny/vue-calendar-bar': 3.17.0
+      '@opentiny/vue-calendar-view': 3.17.0
+      '@opentiny/vue-card': 3.17.0
+      '@opentiny/vue-card-group': 3.17.0
+      '@opentiny/vue-card-template': 3.17.0
+      '@opentiny/vue-carousel': 3.17.0
+      '@opentiny/vue-carousel-item': 3.17.0
+      '@opentiny/vue-cascader': 3.17.0
+      '@opentiny/vue-cascader-menu': 3.17.0
+      '@opentiny/vue-cascader-mobile': 3.17.0
+      '@opentiny/vue-cascader-node': 3.17.0
+      '@opentiny/vue-cascader-panel': 3.17.0
+      '@opentiny/vue-cascader-select': 3.17.0
+      '@opentiny/vue-cascader-view': 3.17.0
+      '@opentiny/vue-cell': 3.17.0
+      '@opentiny/vue-chart': 3.17.0(echarts@5.5.1)
+      '@opentiny/vue-chart-bar': 3.17.0
+      '@opentiny/vue-chart-boxplot': 3.17.0
+      '@opentiny/vue-chart-candle': 3.17.0
+      '@opentiny/vue-chart-core': 3.17.1
+      '@opentiny/vue-chart-funnel': 3.17.0
+      '@opentiny/vue-chart-gauge': 3.17.0
+      '@opentiny/vue-chart-graph': 3.17.0
+      '@opentiny/vue-chart-heatmap': 3.17.0
+      '@opentiny/vue-chart-histogram': 3.17.0
+      '@opentiny/vue-chart-line': 3.17.0
+      '@opentiny/vue-chart-liquidfill': 3.17.0(echarts@5.5.1)
+      '@opentiny/vue-chart-map': 3.17.0
+      '@opentiny/vue-chart-pie': 3.17.0
+      '@opentiny/vue-chart-process': 3.17.0
+      '@opentiny/vue-chart-radar': 3.17.0
+      '@opentiny/vue-chart-ring': 3.17.0
+      '@opentiny/vue-chart-sankey': 3.17.0
+      '@opentiny/vue-chart-scatter': 3.17.0
+      '@opentiny/vue-chart-sunburst': 3.17.0
+      '@opentiny/vue-chart-tree': 3.17.0
+      '@opentiny/vue-chart-waterfall': 3.17.0
+      '@opentiny/vue-chart-wordcloud': 3.17.0(echarts@5.5.1)
+      '@opentiny/vue-checkbox': 3.17.0
+      '@opentiny/vue-checkbox-button': 3.17.0
+      '@opentiny/vue-checkbox-group': 3.17.0
+      '@opentiny/vue-col': 3.17.0
+      '@opentiny/vue-collapse': 3.17.0
+      '@opentiny/vue-collapse-item': 3.17.0
+      '@opentiny/vue-collapse-transition': 3.17.0
+      '@opentiny/vue-color-picker': 3.17.0
+      '@opentiny/vue-color-select-panel': 3.17.0
+      '@opentiny/vue-column-list-group': 3.17.0
+      '@opentiny/vue-column-list-item': 3.17.0
+      '@opentiny/vue-company': 3.17.0
+      '@opentiny/vue-config-provider': 3.17.0
+      '@opentiny/vue-container': 3.17.0
+      '@opentiny/vue-country': 3.17.0
+      '@opentiny/vue-crop': 3.17.0
+      '@opentiny/vue-currency': 3.17.0
+      '@opentiny/vue-date-panel': 3.17.0
+      '@opentiny/vue-date-picker': 3.17.0
+      '@opentiny/vue-date-picker-mobile-first': 3.17.0
+      '@opentiny/vue-date-range': 3.17.0
+      '@opentiny/vue-date-table': 3.17.0
+      '@opentiny/vue-dept': 3.17.0
+      '@opentiny/vue-dialog-box': 3.17.0
+      '@opentiny/vue-dialog-select': 3.17.0
+      '@opentiny/vue-divider': 3.17.0
+      '@opentiny/vue-drawer': 3.17.1
+      '@opentiny/vue-drop-roles': 3.17.0
+      '@opentiny/vue-drop-times': 3.17.0
+      '@opentiny/vue-dropdown': 3.17.0
+      '@opentiny/vue-dropdown-item': 3.17.0
+      '@opentiny/vue-dropdown-menu': 3.17.0
+      '@opentiny/vue-dynamic-scroller': 3.17.0
+      '@opentiny/vue-dynamic-scroller-item': 3.17.0
+      '@opentiny/vue-espace': 3.17.0
+      '@opentiny/vue-exception': 3.17.0
+      '@opentiny/vue-fall-menu': 3.17.0
+      '@opentiny/vue-file-upload': 3.17.0
+      '@opentiny/vue-filter': 3.17.0
+      '@opentiny/vue-filter-bar': 3.17.0
+      '@opentiny/vue-filter-box': 3.17.0
+      '@opentiny/vue-filter-panel': 3.17.0
+      '@opentiny/vue-float-button': 3.17.0
+      '@opentiny/vue-floatbar': 3.17.0
+      '@opentiny/vue-floating-button': 3.17.0
+      '@opentiny/vue-flowchart': 3.17.0
+      '@opentiny/vue-form': 3.17.0
+      '@opentiny/vue-form-item': 3.17.0
+      '@opentiny/vue-fullscreen': 3.17.0
+      '@opentiny/vue-grid': 3.17.0
+      '@opentiny/vue-grid-column': 3.17.0
+      '@opentiny/vue-grid-manager': 3.17.0
+      '@opentiny/vue-grid-toolbar': 3.17.1
+      '@opentiny/vue-guide': 3.17.0
+      '@opentiny/vue-hrapprover': 3.17.0
+      '@opentiny/vue-image': 3.17.0
+      '@opentiny/vue-image-viewer': 3.17.0
+      '@opentiny/vue-index-bar': 3.17.0
+      '@opentiny/vue-index-bar-anchor': 3.17.0
+      '@opentiny/vue-input': 3.17.0
+      '@opentiny/vue-ip-address': 3.17.0
+      '@opentiny/vue-label': 3.17.0
+      '@opentiny/vue-layout': 3.17.0
+      '@opentiny/vue-link': 3.17.0
+      '@opentiny/vue-link-menu': 3.17.0
+      '@opentiny/vue-list': 3.17.0
+      '@opentiny/vue-loading': 3.17.0
+      '@opentiny/vue-locales': 3.17.0
+      '@opentiny/vue-logon-user': 3.17.0
+      '@opentiny/vue-logout': 3.17.0
+      '@opentiny/vue-mask': 3.17.0
+      '@opentiny/vue-menu': 3.17.0
+      '@opentiny/vue-message': 3.17.0
+      '@opentiny/vue-milestone': 3.17.0
+      '@opentiny/vue-mind-map': 3.17.0
+      '@opentiny/vue-mini-picker': 3.17.0
+      '@opentiny/vue-modal': 3.17.0
+      '@opentiny/vue-month-range': 3.17.0
+      '@opentiny/vue-month-table': 3.17.0
+      '@opentiny/vue-multi-select': 3.17.0
+      '@opentiny/vue-multi-select-item': 3.17.0
+      '@opentiny/vue-nav-bar': 3.17.0
+      '@opentiny/vue-nav-menu': 3.17.0
+      '@opentiny/vue-notify': 3.17.0
+      '@opentiny/vue-numeric': 3.17.0
+      '@opentiny/vue-option': 3.17.0
+      '@opentiny/vue-option-group': 3.17.0
+      '@opentiny/vue-pager': 3.17.0
+      '@opentiny/vue-pager-item': 3.17.0
+      '@opentiny/vue-panel': 3.17.0
+      '@opentiny/vue-picker': 3.17.0
+      '@opentiny/vue-picker-column': 3.17.0
+      '@opentiny/vue-pop-upload': 3.17.0
+      '@opentiny/vue-popconfirm': 3.17.0
+      '@opentiny/vue-popeditor': 3.17.0
+      '@opentiny/vue-popover': 3.17.0
+      '@opentiny/vue-popup': 3.17.0
+      '@opentiny/vue-progress': 3.17.0
+      '@opentiny/vue-pull-refresh': 3.17.0
+      '@opentiny/vue-qr-code': 3.17.0
+      '@opentiny/vue-quarter-panel': 3.17.0
+      '@opentiny/vue-query-builder': 3.17.0
+      '@opentiny/vue-radio': 3.17.0
+      '@opentiny/vue-radio-button': 3.17.0
+      '@opentiny/vue-radio-group': 3.17.0
+      '@opentiny/vue-rate': 3.17.0
+      '@opentiny/vue-record': 3.17.0
+      '@opentiny/vue-recycle-scroller': 3.17.0
+      '@opentiny/vue-rich-text-editor': 3.17.0
+      '@opentiny/vue-river': 3.17.0
+      '@opentiny/vue-roles': 3.17.0
+      '@opentiny/vue-row': 3.17.0
+      '@opentiny/vue-scroll-text': 3.17.0
+      '@opentiny/vue-scrollbar': 3.17.0
+      '@opentiny/vue-search': 3.17.0
+      '@opentiny/vue-select': 3.17.0
+      '@opentiny/vue-select-dropdown': 3.17.0
+      '@opentiny/vue-select-mobile': 3.17.0
+      '@opentiny/vue-select-view': 3.17.0
+      '@opentiny/vue-selected-box': 3.17.0
+      '@opentiny/vue-signature': 3.17.0
+      '@opentiny/vue-skeleton': 3.17.0
+      '@opentiny/vue-skeleton-item': 3.17.0
+      '@opentiny/vue-slider': 3.17.0
+      '@opentiny/vue-slider-button': 3.17.0
+      '@opentiny/vue-slider-button-group': 3.17.0
+      '@opentiny/vue-split': 3.17.0
+      '@opentiny/vue-standard-list-item': 3.17.0
+      '@opentiny/vue-statistic': 3.17.0
+      '@opentiny/vue-steps': 3.17.0
+      '@opentiny/vue-svg-icon': 3.17.0
+      '@opentiny/vue-switch': 3.17.0
+      '@opentiny/vue-tab-item': 3.17.0
+      '@opentiny/vue-tabbar': 3.17.0
+      '@opentiny/vue-tabbar-item': 3.17.0
+      '@opentiny/vue-table': 3.17.0
+      '@opentiny/vue-tabs': 3.17.0
+      '@opentiny/vue-tag': 3.17.0
+      '@opentiny/vue-tag-group': 3.17.0
+      '@opentiny/vue-text-popup': 3.17.0
+      '@opentiny/vue-time': 3.17.0
+      '@opentiny/vue-time-line': 3.17.0
+      '@opentiny/vue-time-panel': 3.17.0
+      '@opentiny/vue-time-picker': 3.17.0
+      '@opentiny/vue-time-picker-mobile': 3.17.0
+      '@opentiny/vue-time-range': 3.17.0
+      '@opentiny/vue-time-select': 3.17.0
+      '@opentiny/vue-time-spinner': 3.17.0
+      '@opentiny/vue-timeline-item': 3.17.0
+      '@opentiny/vue-toast': 3.17.0
+      '@opentiny/vue-toggle-menu': 3.17.0
+      '@opentiny/vue-tooltip': 3.17.0
+      '@opentiny/vue-top-box': 3.17.0
+      '@opentiny/vue-transfer': 3.17.0
+      '@opentiny/vue-transfer-panel': 3.17.0
+      '@opentiny/vue-tree': 3.17.0
+      '@opentiny/vue-tree-menu': 3.17.0
+      '@opentiny/vue-upload': 3.17.0
+      '@opentiny/vue-upload-dragger': 3.17.0
+      '@opentiny/vue-upload-list': 3.17.0
+      '@opentiny/vue-user': 3.17.0
+      '@opentiny/vue-user-account': 3.17.0
+      '@opentiny/vue-user-contact': 3.17.0
+      '@opentiny/vue-user-head': 3.17.0
+      '@opentiny/vue-user-head-group': 3.17.0
+      '@opentiny/vue-user-link': 3.17.0
+      '@opentiny/vue-watermark': 3.17.0
+      '@opentiny/vue-wheel': 3.17.0
+      '@opentiny/vue-wizard': 3.17.0
+      '@opentiny/vue-year-range': 3.17.0
+      '@opentiny/vue-year-table': 3.17.0
+    transitivePeerDependencies:
+      - echarts
     dev: false
 
   /@pkgjs/parseargs@0.11.0:
@@ -1204,6 +3487,20 @@ packages:
   /@pkgr/core@0.1.1:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+    dev: true
+
+  /@rollup/pluginutils@5.1.0:
+    resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.5
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
     dev: true
 
   /@rollup/rollup-android-arm-eabi@4.13.0:
@@ -1402,14 +3699,14 @@ packages:
       '@types/node': 20.11.17
     optional: true
 
-  /@vitejs/plugin-vue@5.0.5(vite@5.3.2)(vue@3.4.31):
+  /@vitejs/plugin-vue@5.0.5(vite@5.3.3)(vue@3.4.31):
     resolution: {integrity: sha512-LOjm7XeIimLBZyzinBQ6OSm3UBCNVCpLkxGC0oWmm2YPzVZoxMsdvNVimLTBzpAnR9hl/yn1SHGuRfe6/Td9rQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.3.2(less@4.2.0)
+      vite: 5.3.3(less@4.2.0)
       vue: 3.4.31
     dev: true
 
@@ -1510,26 +3807,12 @@ packages:
       negotiator: 0.6.3
     dev: false
 
-  /acorn-jsx@5.3.2(acorn@8.11.3):
-    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
-    peerDependencies:
-      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
-    dependencies:
-      acorn: 8.11.3
-    dev: true
-
   /acorn-jsx@5.3.2(acorn@8.12.0):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       acorn: 8.12.0
-    dev: true
-
-  /acorn@8.11.3:
-    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
     dev: true
 
   /acorn@8.12.0:
@@ -1587,7 +3870,6 @@ packages:
   /ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
-    dev: true
 
   /ansi-regex@6.0.1:
     resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
@@ -1606,11 +3888,18 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       color-convert: 2.0.1
-    dev: true
 
   /ansi-styles@6.2.1:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
+    dev: true
+
+  /anymatch@3.1.3:
+    resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
+    engines: {node: '>= 8'}
+    dependencies:
+      normalize-path: 3.0.0
+      picomatch: 2.3.1
     dev: true
 
   /app-builder-bin@4.0.0:
@@ -1755,6 +4044,11 @@ packages:
     requiresBuild: true
     dev: true
 
+  /binary-extensions@2.3.0:
+    resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
+    engines: {node: '>=8'}
+    dev: true
+
   /bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
     dependencies:
@@ -1813,6 +4107,13 @@ packages:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
     dependencies:
       balanced-match: 1.0.2
+    dev: true
+
+  /braces@3.0.3:
+    resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
+    engines: {node: '>=8'}
+    dependencies:
+      fill-range: 7.1.1
     dev: true
 
   /browserslist@4.22.3:
@@ -1920,6 +4221,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /camelcase@5.3.1:
+    resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /caniuse-lite@1.0.30001585:
     resolution: {integrity: sha512-yr2BWR1yLXQ8fMpdS/4ZZXpseBgE7o4g41x3a6AJOqZuOi+iE/WdJYAuZ6Y95i4Ohd2Y+9MzIWRR+uGABH4s3Q==}
     dev: true
@@ -1939,6 +4245,21 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+    dev: true
+
+  /chokidar@3.6.0:
+    resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
+    engines: {node: '>= 8.10.0'}
+    dependencies:
+      anymatch: 3.1.3
+      braces: 3.0.3
+      glob-parent: 5.1.2
+      is-binary-path: 2.1.0
+      is-glob: 4.0.3
+      normalize-path: 3.0.0
+      readdirp: 3.6.0
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: true
 
   /chownr@2.0.0:
@@ -1964,6 +4285,14 @@ packages:
       string-width: 4.2.3
     dev: true
     optional: true
+
+  /cliui@6.0.0:
+    resolution: {integrity: sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==}
+    dependencies:
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wrap-ansi: 6.2.0
+    dev: false
 
   /cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
@@ -2129,6 +4458,10 @@ packages:
     dev: true
     optional: true
 
+  /cropperjs@1.5.7:
+    resolution: {integrity: sha512-sGj+G/ofKh+f6A4BtXLJwtcKJgMUsXYVUubfTo9grERiDGXncttefmue/fyQFvn8wfdyoD1KhDRYLfjkJFl0yw==}
+    dev: false
+
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -2137,6 +4470,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+    dev: false
 
   /cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -2180,6 +4517,11 @@ packages:
     dependencies:
       ms: 2.1.2
 
+  /decamelize@1.2.0:
+    resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
     engines: {node: '>=10'}
@@ -2189,6 +4531,11 @@ packages:
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
+
+  /deepmerge@4.3.1:
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /defer-to-connect@2.0.1:
     resolution: {integrity: sha512-4tvttepXG1VaYGrRibk5EwJd1t4udunSOVMdLSAL6mId1ix438oPwPZMALY41FCijukO1L0twNcGsdzS7dHgDg==}
@@ -2231,6 +4578,10 @@ packages:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
     requiresBuild: true
     optional: true
+
+  /dijkstrajs@1.0.3:
+    resolution: {integrity: sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA==}
+    dev: false
 
   /dir-compare@3.3.0:
     resolution: {integrity: sha512-J7/et3WlGUCxjdnD3HAAzQ6nsnc0WL6DD7WcwJb7c39iH1+AWfg+9OqzJNaI6PkBwBvm1mhZNL9iY/nRiZXlPg==}
@@ -2292,6 +4643,36 @@ packages:
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
+
+  /echarts-liquidfill@3.1.0(echarts@5.5.1):
+    resolution: {integrity: sha512-5Dlqs/jTsdTUAsd+K5LPLLTgrbbNORUSBQyk8PSy1Mg2zgHDWm83FmvA4s0ooNepCJojFYRITTQ4GU1UUSKYLw==}
+    peerDependencies:
+      echarts: ^5.0.1
+    dependencies:
+      echarts: 5.5.1
+    dev: false
+
+  /echarts-wordcloud@2.0.0(echarts@5.5.1):
+    resolution: {integrity: sha512-K7l6pTklqdW7ZWzT/1CS0KhBSINr/cd7c5N1fVMzZMwLQHEwT7x+nivK7g5hkVh7WNcAv4Dn6/ZS5zMKRozC1g==}
+    peerDependencies:
+      echarts: ^5.0.1
+    dependencies:
+      echarts: 5.5.1
+    dev: false
+
+  /echarts@5.4.1:
+    resolution: {integrity: sha512-9ltS3M2JB0w2EhcYjCdmtrJ+6haZcW6acBolMGIuf01Hql1yrIV01L1aRj7jsaaIULJslEP9Z3vKlEmnJaWJVQ==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.4.1
+    dev: false
+
+  /echarts@5.5.1:
+    resolution: {integrity: sha512-Fce8upazaAXUVUVsjgV6mBnGuqgO+JNDlcgF79Dksy4+wgGpQB2lmYoO4TSweFg/mZITdpGHomw/cNBJZj1icA==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.6.0
+    dev: false
 
   /ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -2378,7 +4759,7 @@ packages:
       - supports-color
     dev: false
 
-  /electron-vite@2.3.0(vite@5.3.2):
+  /electron-vite@2.3.0(vite@5.3.3):
     resolution: {integrity: sha512-lsN2FymgJlp4k6MrcsphGqZQ9fKRdJKasoaiwIrAewN1tapYI/KINLdfEL7n10LuF0pPSNf/IqjzZbB5VINctg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -2395,7 +4776,7 @@ packages:
       esbuild: 0.21.5
       magic-string: 0.30.10
       picocolors: 1.0.1
-      vite: 5.3.2(less@4.2.0)
+      vite: 5.3.3(less@4.2.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2414,11 +4795,14 @@ packages:
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
-    dev: true
 
   /emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
     dev: true
+
+  /encode-utf8@1.0.3:
+    resolution: {integrity: sha512-ucAnuBEhUK4boH2HjVYG5Q2mQyPorvv0u/ocS+zhdw0S8AlHYY+GOFhP1Gio5z4icpP2ivFSvhtFjQi8+T9ppw==}
+    dev: false
 
   /encodeurl@1.0.2:
     resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
@@ -2546,8 +4930,8 @@ packages:
       synckit: 0.8.8
     dev: true
 
-  /eslint-plugin-vue@9.26.0(eslint@9.6.0):
-    resolution: {integrity: sha512-eTvlxXgd4ijE1cdur850G6KalZqk65k1JKoOI2d1kT3hr8sPD07j1q98FRFdNnpxBELGPWxZmInxeHGF/GxtqQ==}
+  /eslint-plugin-vue@9.27.0(eslint@9.6.0):
+    resolution: {integrity: sha512-5Dw3yxEyuBSXTzT5/Ge1X5kIkRTQ3nvBn/VwPwInNiZBSJOO/timWMUaflONnFBzU6NhB68lxnCda7ULV5N7LA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -2558,8 +4942,8 @@ packages:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.15
-      semver: 7.6.0
-      vue-eslint-parser: 9.4.2(eslint@9.6.0)
+      semver: 7.6.2
+      vue-eslint-parser: 9.4.3(eslint@9.6.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -2647,8 +5031,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.11.3
-      acorn-jsx: 5.3.2(acorn@8.11.3)
+      acorn: 8.12.0
+      acorn-jsx: 5.3.2(acorn@8.12.0)
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -2750,6 +5134,17 @@ packages:
     resolution: {integrity: sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==}
     dev: true
 
+  /fast-glob@3.3.2:
+    resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
+    engines: {node: '>=8.6.0'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.7
+    dev: true
+
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
     dev: true
@@ -2782,6 +5177,13 @@ packages:
       minimatch: 5.1.6
     dev: true
 
+  /fill-range@7.1.1:
+    resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
+    engines: {node: '>=8'}
+    dependencies:
+      to-regex-range: 5.0.1
+    dev: true
+
   /finalhandler@1.2.0:
     resolution: {integrity: sha512-5uXcUVftlQMFnWC9qu/svkWv3GTd2PfUhK/3PLkYNAe7FbqJMt3515HaxE6eRL74GdsriiwujiawdaB1BpEISg==}
     engines: {node: '>= 0.8'}
@@ -2802,6 +5204,14 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       locate-path: 3.0.0
+    dev: false
+
+  /find-up@4.1.0:
+    resolution: {integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==}
+    engines: {node: '>=8'}
+    dependencies:
+      locate-path: 5.0.0
+      path-exists: 4.0.0
     dev: false
 
   /find-up@5.0.0:
@@ -2912,7 +5322,6 @@ packages:
   /get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
     engines: {node: 6.* || 8.* || >= 10.*}
-    dev: true
 
   /get-intrinsic@1.2.4:
     resolution: {integrity: sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==}
@@ -2930,6 +5339,13 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       pump: 3.0.0
+
+  /glob-parent@5.1.2:
+    resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
+    engines: {node: '>= 6'}
+    dependencies:
+      is-glob: 4.0.3
+    dev: true
 
   /glob-parent@6.0.2:
     resolution: {integrity: sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==}
@@ -2970,7 +5386,7 @@ packages:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.6.0
+      semver: 7.6.2
       serialize-error: 7.0.1
     optional: true
 
@@ -3055,6 +5471,13 @@ packages:
     requiresBuild: true
     dependencies:
       function-bind: 1.1.2
+
+  /hasown@2.0.2:
+    resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      function-bind: 1.1.2
+    dev: true
 
   /hosted-git-info@4.1.0:
     resolution: {integrity: sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA==}
@@ -3180,11 +5603,25 @@ packages:
     resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
     dev: false
 
+  /is-binary-path@2.1.0:
+    resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
+    engines: {node: '>=8'}
+    dependencies:
+      binary-extensions: 2.3.0
+    dev: true
+
   /is-ci@3.0.1:
     resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
     hasBin: true
     dependencies:
       ci-info: 3.9.0
+    dev: true
+
+  /is-core-module@2.14.0:
+    resolution: {integrity: sha512-a5dFJih5ZLYlRtDc0dZWP7RiKr6xIKzmn/oAYCDvdLThadVgyJwlaoQPmRtMSpz+rk0OGAgIu+TcM9HUF0fk1A==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      hasown: 2.0.2
     dev: true
 
   /is-extglob@2.1.1:
@@ -3195,13 +5632,17 @@ packages:
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
-    dev: true
 
   /is-glob@4.0.3:
     resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       is-extglob: 2.1.1
+    dev: true
+
+  /is-number@7.0.0:
+    resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
+    engines: {node: '>=0.12.0'}
     dev: true
 
   /is-obj@2.0.0:
@@ -3355,12 +5796,24 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /local-pkg@0.4.3:
+    resolution: {integrity: sha512-SFppqq5p42fe2qcZQqqEOiVRXl+WCP1MdT6k7BDEW1j++sp5fIY+/fdRQitvKgB5BrBcmrs5m/L0v2FrU5MY1g==}
+    engines: {node: '>=14'}
+    dev: true
+
   /locate-path@3.0.0:
     resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}
     engines: {node: '>=6'}
     dependencies:
       p-locate: 3.0.0
       path-exists: 3.0.0
+    dev: false
+
+  /locate-path@5.0.0:
+    resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
+    engines: {node: '>=8'}
+    dependencies:
+      p-locate: 4.1.0
     dev: false
 
   /locate-path@6.0.0:
@@ -3459,10 +5912,23 @@ packages:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
     dev: false
 
+  /merge2@1.4.1:
+    resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
+    engines: {node: '>= 8'}
+    dev: true
+
   /methods@1.1.2:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
     engines: {node: '>= 0.6'}
     dev: false
+
+  /micromatch@4.0.7:
+    resolution: {integrity: sha512-LPP/3KorzCwBxfeUuZmaR6bG2kdeHSbe0P2tY3FLRU4vYrjYz5hI4QZwV0njUx3jeuKe67YukQ1LSPZBKDqO/Q==}
+    engines: {node: '>=8.6'}
+    dependencies:
+      braces: 3.0.3
+      picomatch: 2.3.1
+    dev: true
 
   /mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
@@ -3503,6 +5969,10 @@ packages:
   /mimic-response@3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
+
+  /mind-elixir@3.3.2:
+    resolution: {integrity: sha512-SHHospQXT7ARaNMMnaZLFzBsOela9tc8rgSYHPhAPrV8Jxh6MCo1X8qQxJAvuqIVvN8uSGnXf+Po4nhzzSmWWQ==}
+    dev: false
 
   /minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -3690,6 +6160,13 @@ packages:
       p-limit: 2.3.0
     dev: false
 
+  /p-locate@4.1.0:
+    resolution: {integrity: sha512-R79ZZ/0wAxKGu3oYMlz8jy/kbhsNrS7SKZ7PxEHBgJ5+F2mtFW2fK2cOtBh1cHYkQsbzFV7I+EoRKe6Yt0oK7A==}
+    engines: {node: '>=8'}
+    dependencies:
+      p-limit: 2.3.0
+    dev: false
+
   /p-locate@5.0.0:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
@@ -3727,7 +6204,6 @@ packages:
   /path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
-    dev: true
 
   /path-is-absolute@1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
@@ -3737,6 +6213,10 @@ packages:
   /path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /path-parse@1.0.7:
+    resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: true
 
   /path-scurry@1.10.1:
@@ -3759,6 +6239,11 @@ packages:
 
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+    dev: true
+
+  /picomatch@2.3.1:
+    resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
+    engines: {node: '>=8.6'}
     dev: true
 
   /pify@4.0.1:
@@ -3784,6 +6269,11 @@ packages:
       xmlbuilder: 15.1.1
     dev: true
 
+  /pngjs@5.0.0:
+    resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
+    engines: {node: '>=10.13.0'}
+    dev: false
+
   /postcss-selector-parser@6.0.15:
     resolution: {integrity: sha512-rEYkQOMUCEMhsKbK66tbEU9QVIxbhN18YiniAwA7XQYTVBqrBy+P2p5JcdqsHgKM2zWylp8d7J6eszocfds5Sw==}
     engines: {node: '>=4'}
@@ -3799,6 +6289,15 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.2.0
+
+  /postcss@8.4.39:
+    resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.1
+      source-map-js: 1.2.0
+    dev: true
 
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -3857,6 +6356,17 @@ packages:
   /punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+
+  /qrcode@1.5.1:
+    resolution: {integrity: sha512-nS8NJ1Z3md8uTjKtP+SGGhfqmTCs5flU/xR623oI0JX+Wepz9R8UrRVCTBTJm3qGw3rH6jJ6MUHjkDx15cxSSg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dependencies:
+      dijkstrajs: 1.0.3
+      encode-utf8: 1.0.3
+      pngjs: 5.0.0
+      yargs: 15.4.1
+    dev: false
 
   /qs@6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
@@ -3927,14 +6437,24 @@ packages:
       minimatch: 5.1.6
     dev: true
 
+  /readdirp@3.6.0:
+    resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
+    engines: {node: '>=8.10.0'}
+    dependencies:
+      picomatch: 2.3.1
+    dev: true
+
   /require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /require-main-filename@2.0.0:
+    resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
     dev: false
 
   /resolve-alpn@1.2.1:
@@ -3943,6 +6463,15 @@ packages:
   /resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
+    dev: true
+
+  /resolve@1.22.8:
+    resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
+    hasBin: true
+    dependencies:
+      is-core-module: 2.14.0
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
   /responselike@2.0.1:
@@ -4056,7 +6585,6 @@ packages:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
     hasBin: true
-    dev: false
 
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -4099,6 +6627,10 @@ packages:
       - supports-color
     dev: false
 
+  /set-blocking@2.0.0:
+    resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
+    dev: false
+
   /set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -4126,6 +6658,14 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
     dev: true
+
+  /shepherd.js@11.1.1:
+    resolution: {integrity: sha512-7nVEgLTZUu5qQCKTlzQeKL1AQd2rG9Y9iqzZUgGvCFwMUZZhfwtZ6eEyMWMYw0zl8qKjSrjgzxFOe+SpfO43aA==}
+    engines: {node: 16.* || >= 18}
+    dependencies:
+      '@floating-ui/dom': 1.6.7
+      deepmerge: 4.3.1
+    dev: false
 
   /side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -4204,6 +6744,10 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  /streamsaver@2.0.6:
+    resolution: {integrity: sha512-LK4e7TfCV8HzuM0PKXuVUfKyCB1FtT9L0EGxsFk5Up8njj0bXK8pJM9+Wq2Nya7/jslmCQwRK39LFm55h7NBTw==}
+    dev: false
+
   /string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
     engines: {node: '>=8'}
@@ -4211,7 +6755,6 @@ packages:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.1
-    dev: true
 
   /string-width@5.1.2:
     resolution: {integrity: sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==}
@@ -4239,7 +6782,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       ansi-regex: 5.0.1
-    dev: true
 
   /strip-ansi@7.1.0:
     resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
@@ -4273,6 +6815,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
+    dev: true
+
+  /supports-preserve-symlinks-flag@1.0.0:
+    resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
+    engines: {node: '>= 0.4'}
     dev: true
 
   /synckit@0.8.8:
@@ -4342,6 +6889,13 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
+  /to-regex-range@5.0.1:
+    resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
+    engines: {node: '>=8.0'}
+    dependencies:
+      is-number: 7.0.0
+    dev: true
+
   /toidentifier@1.0.1:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
@@ -4352,6 +6906,10 @@ packages:
     dependencies:
       utf8-byte-length: 1.0.4
     dev: true
+
+  /tslib@2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
@@ -4410,6 +6968,45 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  /unplugin-vue-components@0.26.0(vue@3.4.31):
+    resolution: {integrity: sha512-s7IdPDlnOvPamjunVxw8kNgKNK8A5KM1YpK5j/p97jEKTjlPNrA0nZBiSfAKKlK1gWZuyWXlKL5dk3EDw874LQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@nuxt/kit': ^3.2.2
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@nuxt/kit':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.7.10
+      '@rollup/pluginutils': 5.1.0
+      chokidar: 3.6.0
+      debug: 4.3.4
+      fast-glob: 3.3.2
+      local-pkg: 0.4.3
+      magic-string: 0.30.10
+      minimatch: 9.0.3
+      resolve: 1.22.8
+      unplugin: 1.11.0
+      vue: 3.4.31
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /unplugin@1.11.0:
+    resolution: {integrity: sha512-3r7VWZ/webh0SGgJScpWl2/MRCZK5d3ZYFcNaeci/GQ7Teop7zf0Nl2pUuz7G21BwPd9pcUPOC5KmJ2L3WgC5g==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      acorn: 8.12.0
+      chokidar: 3.6.0
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.6.2
+    dev: true
+
   /update-browserslist-db@1.0.13(browserslist@4.22.3):
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
     hasBin: true
@@ -4455,8 +7052,8 @@ packages:
     dev: true
     optional: true
 
-  /vite@5.3.2(less@4.2.0):
-    resolution: {integrity: sha512-6lA7OBHBlXUxiJxbO5aAY2fsHHzDr1q7DvXYnyZycRs2Dz+dXBWuhpWHvmljTRTpQC2uvGmUFFkSHF2vGo90MA==}
+  /vite@5.3.3(less@4.2.0):
+    resolution: {integrity: sha512-NPQdeCU0Dv2z5fu+ULotpuq5yfCS1BzKUIPhNbP3YBfAMGJXbt2nS+sbTFu+qchaqWTD+H3JK++nRwr6XIcp6A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -4485,14 +7082,14 @@ packages:
     dependencies:
       esbuild: 0.21.5
       less: 4.2.0
-      postcss: 8.4.38
+      postcss: 8.4.39
       rollup: 4.13.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
 
-  /vue-eslint-parser@9.4.2(eslint@9.6.0):
-    resolution: {integrity: sha512-Ry9oiGmCAK91HrKMtCrKFWmSFWvYkpGglCeFAIqDdr9zdXmMMpJOmUJS7WWsW7fX81h6mwHmUZCQQ1E0PkSwYQ==}
+  /vue-eslint-parser@9.4.3(eslint@9.6.0):
+    resolution: {integrity: sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -4504,7 +7101,7 @@ packages:
       espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.6.0
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4544,6 +7141,19 @@ packages:
       '@vue/server-renderer': 3.4.31(vue@3.4.31)
       '@vue/shared': 3.4.31
 
+  /webpack-sources@3.2.3:
+    resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
+    engines: {node: '>=10.13.0'}
+    dev: true
+
+  /webpack-virtual-modules@0.6.2:
+    resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
+    dev: true
+
+  /which-module@2.0.1:
+    resolution: {integrity: sha512-iBdZ57RDvnOR9AGBhML2vFZf7h8vmBjhoaZqODJBFWHVtKkDmKuHai3cx5PgVMrX5YDNp27AofYbAwctSS+vhQ==}
+    dev: false
+
   /which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
@@ -4551,6 +7161,15 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /wrap-ansi@6.2.0:
+    resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
+    engines: {node: '>=8'}
+    dependencies:
+      ansi-styles: 4.3.0
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+    dev: false
 
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
@@ -4593,6 +7212,10 @@ packages:
       cssfilter: 0.0.10
     dev: false
 
+  /y18n@4.0.3:
+    resolution: {integrity: sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ==}
+    dev: false
+
   /y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -4605,10 +7228,35 @@ packages:
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
+  /yargs-parser@18.1.3:
+    resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
+    engines: {node: '>=6'}
+    dependencies:
+      camelcase: 5.3.1
+      decamelize: 1.2.0
+    dev: false
+
   /yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
     dev: true
+
+  /yargs@15.4.1:
+    resolution: {integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==}
+    engines: {node: '>=8'}
+    dependencies:
+      cliui: 6.0.0
+      decamelize: 1.2.0
+      find-up: 4.1.0
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      require-main-filename: 2.0.0
+      set-blocking: 2.0.0
+      string-width: 4.2.3
+      which-module: 2.0.1
+      y18n: 4.0.3
+      yargs-parser: 18.1.3
+    dev: false
 
   /yargs@17.7.2:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
@@ -4642,3 +7290,15 @@ packages:
       compress-commons: 4.1.2
       readable-stream: 3.6.2
     dev: true
+
+  /zrender@5.4.1:
+    resolution: {integrity: sha512-M4Z05BHWtajY2241EmMPHglDQAJ1UyHQcYsxDNzD9XLSkPDqMq4bB28v9Pb4mvHnVQ0GxyTklZ/69xCFP6RXBA==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false
+
+  /zrender@5.6.0:
+    resolution: {integrity: sha512-uzgraf4njmmHAbEUxMJ8Oxg+P3fT04O+9p7gY+wJRVxo8Ge+KmYv0WJev945EH4wFuc4OY2NLXz46FZrWS9xJg==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false

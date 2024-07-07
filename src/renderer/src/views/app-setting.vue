@@ -27,14 +27,6 @@
 
 <script setup>
 import { ref, watch } from 'vue';
-import { t } from '@opentiny/vue-locale';
-import TinyButton from '@opentiny/vue-button';
-import TinyCollapse from '@opentiny/vue-collapse';
-import TinyCollapseItem from '@opentiny/vue-collapse-item';
-import TinyForm from '@opentiny/vue-form';
-import TinyFormItem from '@opentiny/vue-form-item';
-import TinyInput from '@opentiny/vue-input';
-import TinySwitch from '@opentiny/vue-switch';
 import { IconFolderOpened } from '@opentiny/vue-icon';
 import { openDialog } from '../utils';
 

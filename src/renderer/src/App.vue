@@ -36,17 +36,15 @@
 <script setup>
 import { ref, reactive, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
-import TinyContainer from '@opentiny/vue-container';
-import TinyTreeMenu from '@opentiny/vue-tree-menu';
-import { WinBtn, AboutApp, AppVersions } from './components';
+import { IconApp, IconCustom, IconFiletext, IconSetting } from '@opentiny/vue-icon';
 
 const router = useRouter();
 const treeMenu = ref(null);
 const treeData = reactive([
-  { id: 'home', label: 'home', router: '/' },
-  { id: 'welinkThemes', label: 'welinkThemes', router: '/welink-themes' },
-  { id: 'appSetting', label: 'appSetting', router: '/app-setting' },
-  { id: 'appDocs', label: 'appDocs', router: '/app-docs' },
+  { id: 'home', label: 'home', router: '/', customIcon: IconApp() },
+  { id: 'welinkThemes', label: 'welinkThemes', router: '/welink-themes', customIcon: IconCustom() },
+  { id: 'appSetting', label: 'appSetting', router: '/app-setting', customIcon: IconSetting() },
+  { id: 'appDocs', label: 'appDocs', router: '/app-docs', customIcon: IconFiletext() },
 ]);
 const stop = watchEffect(() => {
   if (treeMenu.value) {

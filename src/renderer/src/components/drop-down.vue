@@ -12,9 +12,6 @@
 </template>
 
 <script setup>
-import TinyDropdown from '@opentiny/vue-dropdown';
-import TinyDropdownMenu from '@opentiny/vue-dropdown-menu';
-import TinyDropdownItem from '@opentiny/vue-dropdown-item';
 defineProps({
   items: {
     type: Array, // 类型约定

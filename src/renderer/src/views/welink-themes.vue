@@ -15,11 +15,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import TinyButton from '@opentiny/vue-button';
-import TinyInput from '@opentiny/vue-input';
-import TinyTabs from '@opentiny/vue-tabs';
-import TinyTabItem from '@opentiny/vue-tab-item';
-import { DiffEditor } from '../components';
 import config from '../../../../resources/dev/assets/config.json';
 
 const activeName = ref('json');

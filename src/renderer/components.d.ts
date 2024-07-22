@@ -14,6 +14,7 @@ declare module 'vue' {
     JsonEditor: typeof import('./src/components/json-editor.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Tag: typeof import('./src/components/tag.vue')['default']
     TinyButton: typeof import('@opentiny/vue')['Button']
     TinyCollapse: typeof import('@opentiny/vue')['Collapse']
     TinyCollapseItem: typeof import('@opentiny/vue')['CollapseItem']

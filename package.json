@@ -9,7 +9,8 @@
     "themes",
     "electron",
     "vite",
-    "vue"
+    "vue",
+    "tiny"
   ],
   "main": "./out/main/index.js",
   "scripts": {
@@ -41,15 +42,15 @@
     "@rushstack/eslint-patch": "^1.10.3",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "electron": "^31.1.0",
+    "electron": "^31.2.1",
     "electron-builder": "^24.13.3",
     "electron-vite": "^2.3.0",
-    "eslint": "^9.6.0",
+    "eslint": "^9.7.0",
     "eslint-plugin-vue": "^9.27.0",
     "less": "^4.2.0",
-    "prettier": "^3.3.2",
-    "vite": "^5.3.3",
-    "vue": "^3.4.31"
+    "prettier": "^3.3.3",
+    "vite": "^5.3.4",
+    "vue": "^3.4.33"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"

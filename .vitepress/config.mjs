@@ -5,8 +5,12 @@ import config from '../package.json';
 export default defineConfig({
   title: config.productName,
   description: config.description,
-  base: `/${config.productName}/`,
   srcDir: 'docs',
+  base: `/${config.productName}/`,
+  sitemap: {
+    hostname: config.homepage,
+    lastmodDateOnly: false,
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -22,7 +26,7 @@ export default defineConfig({
         ],
       },
     ],
-    socialLinks: [{ icon: 'github', link: config.homepage }],
+    socialLinks: [{ icon: 'github', link: config.repository.url }],
     rewrites: {
       'packages/:pkg(.*)': ':pkg/index.md',
     },

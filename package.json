@@ -31,13 +31,13 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
-    "@opentiny/vue": "^3.17.2",
+    "@opentiny/vue": "^3.18.0",
     "electron-store": "^8.2.0",
     "electron-updater": "^6.2.1",
     "express": "^4.19.2",
-    "monaco-editor": "^0.50.0",
-    "vue-i18n": "^9.13.1",
-    "vue-router": "4.4.2"
+    "monaco-editor": "^0.51.0",
+    "vue-i18n": "^9.14.0",
+    "vue-router": "4.4.3"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",
@@ -45,16 +45,16 @@
     "@rushstack/eslint-patch": "^1.10.4",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "electron": "^31.3.1",
+    "electron": "^32.0.1",
     "electron-builder": "^24.13.3",
     "electron-vite": "^2.3.0",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.1",
     "eslint-plugin-vue": "^9.27.0",
     "less": "^4.2.0",
     "prettier": "^3.3.3",
-    "vite": "^5.3.5",
-    "vitepress": "^1.3.1",
-    "vue": "^3.4.35"
+    "vite": "^5.4.2",
+    "vitepress": "^1.3.4",
+    "vue": "^3.4.38"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"
@@ -66,7 +66,7 @@
     "email": "yequanrui@qq.com",
     "url": "https://yequanrui.github.io"
   },
-  "homepage": "https://github.com/yequanrui/WeTools",
+  "homepage": "https://yequanrui.github.io/WeTools",
   "repository": {
     "type": "git",
     "url": "https://github.com/yequanrui/WeTools.git"

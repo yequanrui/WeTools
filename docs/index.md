@@ -14,11 +14,11 @@ hero:
     alt: WeTools
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Guides
+      link: /guides/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Packages
+      link: /packages/
 
 features:
   - icon: 🎨

@@ -6,12 +6,12 @@ layout: page
 import { VPTeamPage, VPTeamPageTitle, VPTeamPageSection, VPTeamMembers } from 'vitepress/theme'
 
 const coreMembers = [{
-  avatar: 'https://www.github.com/yyx990803.png',
-  name: 'Evan You',
+  avatar: 'https://avatars.githubusercontent.com/u/26866409?v=4',
+  name: 'Quanrui Ye',
   title: 'Creator',
   links: [
-    { icon: 'github', link: 'https://github.com/yyx990803' },
-    { icon: 'twitter', link: 'https://twitter.com/youyuxi' }
+    { icon: 'github', link: 'https://github.com/yequanrui' },
+    { icon: 'npm', link: 'https://www.npmjs.com/~yequanrui' }
   ]
 }];
 const partners = []
@@ -19,8 +19,8 @@ const partners = []
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title>Team Name</template>
-    <template #lead>Team Desc</template>
+    <template #title>WeTools</template>
+    <template #lead>An <a target="_blank" href="https://cn.electron-vite.org">Electron-Vite</a> application with <a target="_blank" href="https://opentiny.design/tiny-vue">TinyVue</a></template>
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="coreMembers" />
   <VPTeamPageSection>

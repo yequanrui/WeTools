@@ -8,13 +8,15 @@ export default defineConfig({
   description: config.description, // 网站描述
   srcDir: 'docs', // 设置 docs 文件夹为源码文件夹
   base: `/${config.productName}/`, // 设置网站根路径
+  head: [['link', { rel: 'icon', type: 'image/png', href: 'assets/img/logo.png' }]],
   sitemap: {
     hostname: `${config.homepage}/${config.productName}/`,
     lastmodDateOnly: false,
   }, // 生成 sitemap.xml
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '../src/renderer/src/assets/img/logo.png', // 网站Logo
+    logo: 'assets/img/logo.png', // 网站Logo
+    siteTitle: config.productName, // 网站标题
     search: {
       provider: 'local',
       options: {
@@ -40,11 +42,19 @@ export default defineConfig({
     }, // 搜索配置
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: 'Team', link: '/team' },
+      {
+        text: 'Examples',
+        items: [
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+        ],
+      },
     ],
     sidebar: [
       {
         text: 'Examples',
+        collapsed: false,
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
@@ -58,6 +68,10 @@ export default defineConfig({
     },
     rewrites: {
       'packages/:pkg(.*)': ':pkg/index.md',
+    },
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2021-present Quanrui Ye',
     },
   }, // 主题配置
   lastUpdated: true, // 显示最后更新时间

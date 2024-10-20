@@ -12,6 +12,7 @@ declare module 'vue' {
     DiffEditor: typeof import('./src/components/diff-editor.vue')['default']
     DropDown: typeof import('./src/components/drop-down.vue')['default']
     JsonEditor: typeof import('./src/components/json-editor.vue')['default']
+    Modal: typeof import('./src/components/modal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Tag: typeof import('./src/components/tag.vue')['default']

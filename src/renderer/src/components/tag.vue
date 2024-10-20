@@ -12,9 +12,7 @@
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="less" scoped>
 @keyframes appear {
@@ -52,24 +50,23 @@
   }
 }
 
-
 .con {
   position: relative;
   display: flex;
   gap: 5px;
+  margin-right: -46px;
   padding: 5px;
   overflow: hidden;
   counter-reset: num;
   animation: check;
   animation-timeline: scroll(x self);
-  margin-right: -46px;
 }
 
 .tag {
   padding: .2em .5em;
   background-color: #9747FF;
-  color: #fff;
   border-radius: 4px;
+  color: #fff;
   counter-increment: num 1;
   animation: appear;
   animation-timeline: view(inline);

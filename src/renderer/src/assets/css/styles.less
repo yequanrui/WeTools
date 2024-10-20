@@ -1,54 +1,5 @@
-:root {
-  color-scheme: light dark; /* 页面配色方案 */
-  --common-border-radius: 4px; /* 一般圆角 */
-  --card-border-radius: 8px; /* 卡片圆角 */
-  --list-border-radius: 16px; /* 列表圆角 */
-  --full-border-radius: 100px; /* 全圆角 */
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    /* 全透明样式背景色 */
-    --transparent-overlay: rgba(255, 255, 255, 0);
-    /* 半透明样式背景色 */
-    --highlight-overlay: rgba(255, 255, 255, 0.5);
-    /* 全局背景色 */
-    --global-bg: #e2e1e4; /* 芡食白 */
-    /* 正文文本 */
-    --body-text: #161823; /* 漆黑 */
-    /* 辅助文本、帮助文本 */
-    --aide-text: #50616d; /* 墨色 */
-    /* 有色深色背景下文本颜色（固定） */
-    --light-text: #fffbf0; /* 象牙白 */
-    /* 主要背景色 */
-    --main-bg: #084495; /* 群青 */
-    /* 撞色、对比色、反衬色 */
-    --contrast-bg: #b84b48; /* 朱砂 */
-    /* 基础阴影 */
-    --base-shadow: 0 2px 6px 0 rgba(37, 43, 58, 0.24);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* 全透明样式背景色 */
-    --transparent-overlay: rgba(0, 0, 0, 0);
-    /* 半透明样式背景色 */
-    --highlight-overlay: rgba(0, 0, 0, 0.5);
-    /* 全局背景色 */
-    --global-bg: #303030; /* 油烟墨 */
-    /* 正文文本 */
-    --body-text: #f0f0f4; /* 铅白 */
-    /* 辅助文本、帮助文本 */
-    --aide-text: #c0c4c3; /* 月影白 */
-    /* 有色深色背景下文本颜色（固定） */
-    --light-text: #fffbf0; /* 象牙白 */
-    /* 主要背景色 */
-    --main-bg: #1772b4; /* 群青 */
-    /* 撞色、对比色、反衬色 */
-    --contrast-bg: #b84b48; /* 朱砂 */
-    /* 基础阴影 */
-    --base-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.72);
-  }
-}
+@import './vars.less';
+
 :host {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -59,8 +10,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--global-bg, #2f3241);
-  color: var(--body-text, #86a5b1);
+  color: var(--body-text);
   font-family:
     Roboto,
     -apple-system,
@@ -101,19 +51,16 @@ ul {
   list-style: none;
 }
 a {
-  color: var(--main-bg, #9feaf9);
+  color: var(--main-bg);
   font-weight: 600;
   text-decoration: none;
   outline: none;
   cursor: pointer;
-  &:hover {
-    border-bottom: 1px solid;
-  }
 }
 code {
   padding: 3px 5px;
-  border-radius: var(--common-border-radius, 2px);
-  background-color: var(--dark-bg, #26282e);
+  border-radius: var(--common-border-radius);
+  background-color: var(--dark-bg);
   font-family:
     ui-monospace,
     SFMono-Regular,
@@ -136,44 +83,25 @@ code {
 }
 /* 设置滚动条的大小、颜色、圆角 */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
   background-color: #f5f5f5;
-  border-radius: var(--common-border-radius, 5px);
+  border-radius: var(--common-border-radius);
 }
 /* 设置滚动条滑块 */
 ::-webkit-scrollbar-thumb {
   background-color: #ccc;
-  border-radius: var(--common-border-radius, 5px);
+  border-radius: var(--common-border-radius);
   /* 设置滚动条滑块在悬停状态下的背景色和圆角 */
   &:hover {
     background-color: #999;
-    border-radius: var(--common-border-radius, 5px);
+    border-radius: var(--common-border-radius);
   }
 }
 /* 设置滚动条轨道（滑块可滑动区域）的背景色和圆角 */
 ::-webkit-scrollbar-track {
   background-color: #f5f5f5;
-  border-radius: var(--common-border-radius, 5px);
+  border-radius: var(--common-border-radius);
   /* 设置滚动条轨道在悬停状态下的背景色和圆角 */
   &:hover {
     background-color: #ccc;
   }
-}
-::-webkit-scrollbar-track-piece {
-  background-color: green;
-}
-/* 设置水平和垂直滚动条交叉部分的背景色 */
-::-webkit-scrollbar-corner {
-  background-color: cyan;
-}
-/* 当元素设置为可拖动时（resize:horizontal|vertical|both），元素底角会出现可调整元素大小的滑块 */
-::-webkit-resizer {
-  background-color: rgb(242, 5, 151);
-}
-/* 设置滚动条两端的上下（左右）滚动按钮（上下、左右箭头） */
-::-webkit-scrollbar-button {
-  background-color: pink;
-  border-radius: var(--list-border-radius, 20px);
-  width: 20px;
 }

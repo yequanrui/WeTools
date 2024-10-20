@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light dark; /* 页面配色方案 */
+  --common-border-radius: 4px; /* 一般圆角 */
+  --card-border-radius: 8px; /* 卡片圆角 */
+  --list-border-radius: 16px; /* 列表圆角 */
+  --full-border-radius: 100px; /* 全圆角 */
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    /* 全透明样式背景色 */
+    --transparent-overlay: rgba(255, 255, 255, 0);
+    /* 半透明样式背景色 */
+    --highlight-overlay: rgba(255, 255, 255, 0.5);
+    /* 全局背景色 */
+    --global-bg: #e2e1e4; /* 芡食白 */
+    /* 正文文本 */
+    --body-text: #161823; /* 漆黑 */
+    /* 辅助文本、帮助文本 */
+    --aide-text: #50616d; /* 墨色 */
+    /* 有色深色背景下文本颜色（固定） */
+    --light-text: #fffbf0; /* 象牙白 */
+    /* 主要背景色 */
+    --main-bg: #084495; /* 群青 */
+    /* 撞色、对比色、反衬色 */
+    --contrast-bg: #b84b48; /* 朱砂 */
+    /* 基础阴影 */
+    --base-shadow: 0 2px 6px 0 rgba(37, 43, 58, 0.24);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 全透明样式背景色 */
+    --transparent-overlay: rgba(0, 0, 0, 0);
+    /* 半透明样式背景色 */
+    --highlight-overlay: rgba(0, 0, 0, 0.5);
+    /* 全局背景色 */
+    --global-bg: #303030; /* 油烟墨 */
+    /* 正文文本 */
+    --body-text: #f0f0f4; /* 铅白 */
+    /* 辅助文本、帮助文本 */
+    --aide-text: #c0c4c3; /* 月影白 */
+    /* 有色深色背景下文本颜色（固定） */
+    --light-text: #fffbf0; /* 象牙白 */
+    /* 主要背景色 */
+    --main-bg: #1772b4; /* 群青 */
+    /* 撞色、对比色、反衬色 */
+    --contrast-bg: #b84b48; /* 朱砂 */
+    /* 基础阴影 */
+    --base-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.72);
+  }
+}

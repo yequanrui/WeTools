@@ -1,11 +1,11 @@
 // app负责着您应用程序的事件生命周期
 // BrowserWindow负责创建和管理应用窗口
-import { app, ipcMain, nativeImage, nativeTheme, dialog, shell, BrowserWindow, Menu, Notification, Tray } from 'electron';
-import { autoUpdater } from 'electron-updater';
-import { electronApp, optimizer, is } from '@electron-toolkit/utils';
-import { join, resolve } from 'path';
+import { electronApp, is, optimizer } from '@electron-toolkit/utils';
 import { execFile, execSync } from 'child_process';
+import { app, BrowserWindow, dialog, ipcMain, Menu, nativeImage, nativeTheme, Notification, shell, Tray } from 'electron';
 import Store from 'electron-store';
+import { autoUpdater } from 'electron-updater';
+import { join, resolve } from 'path';
 import config from '../../resources/config.json';
 import i18n from '../../resources/i18n.json';
 import icon from '../../resources/icon.png?asset';

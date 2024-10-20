@@ -31,16 +31,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
-      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
-      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
+          fetch-depth: 0 # 如果未启用lastUpdated，则不需要
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3 # 安装pnpm并添加到环境变量
+        with:
+          version: 8.6.12 # 指定需要的pnpm版本，或使用最新版本
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18
           cache: pnpm # npm / pnpm / yarn
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v4 # 在工作流程自动配置GithubPages
       - name: Install dependencies
         run: pnpm install # npm ci / pnpm install / yarn install / bun install
       - name: Build with VitePress

@@ -34,9 +34,9 @@
 </template>
 
 <script setup>
-import { ref, reactive, watchEffect } from 'vue';
-import { useRouter } from 'vue-router';
 import { IconApp, IconCustom, IconFiletext, IconSetting } from '@opentiny/vue-icon';
+import { reactive, ref, watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const treeMenu = ref(null);

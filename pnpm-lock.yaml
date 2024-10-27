@@ -7,10 +7,10 @@ settings:
 dependencies:
   '@electron-toolkit/preload':
     specifier: ^3.0.1
-    version: 3.0.1(electron@32.2.1)
+    version: 3.0.1(electron@33.0.2)
   '@electron-toolkit/utils':
     specifier: ^3.0.0
-    version: 3.0.0(electron@32.2.1)
+    version: 3.0.0(electron@33.0.2)
   '@opentiny/vue':
     specifier: ^3.18.0
     version: 3.18.0(echarts@5.5.1)
@@ -39,25 +39,25 @@ devDependencies:
     version: 1.0.2(eslint@9.13.0)
   '@opentiny/unplugin-tiny-vue':
     specifier: ^0.0.2
-    version: 0.0.2(vite@5.4.9)(vue@3.5.12)
+    version: 0.0.2(vite@5.4.10)(vue@3.5.12)
   '@rushstack/eslint-patch':
     specifier: ^1.10.4
     version: 1.10.4
   '@vitejs/plugin-vue':
     specifier: ^5.1.4
-    version: 5.1.4(vite@5.4.9)(vue@3.5.12)
+    version: 5.1.4(vite@5.4.10)(vue@3.5.12)
   '@vue/eslint-config-prettier':
-    specifier: ^10.0.0
-    version: 10.0.0(eslint@9.13.0)(prettier@3.3.3)
+    specifier: ^10.1.0
+    version: 10.1.0(eslint@9.13.0)(prettier@3.3.3)
   electron:
-    specifier: ^32.2.1
-    version: 32.2.1
+    specifier: ^33.0.2
+    version: 33.0.2
   electron-builder:
     specifier: ^25.1.8
     version: 25.1.8(electron-builder-squirrel-windows@25.1.8)
   electron-vite:
     specifier: ^2.3.0
-    version: 2.3.0(vite@5.4.9)
+    version: 2.3.0(vite@5.4.10)
   eslint:
     specifier: ^9.13.0
     version: 9.13.0
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^3.3.3
     version: 3.3.3
   vite:
-    specifier: ^5.4.9
-    version: 5.4.9(less@4.2.0)
+    specifier: ^5.4.10
+    version: 5.4.10(less@4.2.0)
   vitepress:
     specifier: ^1.4.1
     version: 1.4.1(@algolia/client-search@4.24.0)(less@4.2.0)(search-insights@2.15.0)
@@ -560,20 +560,20 @@ packages:
       eslint: 9.13.0
     dev: true
 
-  /@electron-toolkit/preload@3.0.1(electron@32.2.1):
+  /@electron-toolkit/preload@3.0.1(electron@33.0.2):
     resolution: {integrity: sha512-EzoQmpK8jqqU8YnM5jRe0GJjGVJPke2KtANqz8QtN2JPT96ViOvProBdK5C6riCm0j1T8jjAGVQCZLQy9OVoIA==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 32.2.1
+      electron: 33.0.2
     dev: false
 
-  /@electron-toolkit/utils@3.0.0(electron@32.2.1):
+  /@electron-toolkit/utils@3.0.0(electron@33.0.2):
     resolution: {integrity: sha512-GaXHDhiT7KCvMJjXdp/QqpYinq69T/Pdl49Z1XLf8mKGf63dnsODMWyrmIjEQ0z/vG7dO8qF3fvmI6Eb2lUNZA==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 32.2.1
+      electron: 33.0.2
     dev: false
 
   /@electron/asar@3.2.8:
@@ -1136,13 +1136,13 @@ packages:
       quill-delta: 5.1.0
     dev: false
 
-  /@opentiny/unplugin-tiny-vue@0.0.2(vite@5.4.9)(vue@3.5.12):
+  /@opentiny/unplugin-tiny-vue@0.0.2(vite@5.4.10)(vue@3.5.12):
     resolution: {integrity: sha512-VChuA8iQ1h7fBJjy2nZHOn0VfydO6vWFGbsxEBGykxBjrqMYGkbTjbAMSJYXKB3840pbBUOsMZ9vgKHUJVC9kQ==}
     peerDependencies:
       vite: '>=4'
     dependencies:
       unplugin-vue-components: 0.26.0(vue@3.5.12)
-      vite: 5.4.9(less@4.2.0)
+      vite: 5.4.10(less@4.2.0)
     transitivePeerDependencies:
       - '@babel/parser'
       - '@nuxt/kit'
@@ -4157,14 +4157,14 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-vue@5.1.4(vite@5.4.9)(vue@3.5.12):
+  /@vitejs/plugin-vue@5.1.4(vite@5.4.10)(vue@3.5.12):
     resolution: {integrity: sha512-N2XSI2n3sQqp5w7Y/AN/L2XDjBIRGqXko+eDp42sydYSBeJuSm5a1sLf8zakmo8u7tA8NmBgoDLA1HeOESjp9A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.4.9(less@4.2.0)
+      vite: 5.4.10(less@4.2.0)
       vue: 3.5.12
     dev: true
 
@@ -4230,8 +4230,8 @@ packages:
       rfdc: 1.4.1
     dev: true
 
-  /@vue/eslint-config-prettier@10.0.0(eslint@9.13.0)(prettier@3.3.3):
-    resolution: {integrity: sha512-iDEjsfT+UXQTJfe+4mstb/B5BSZ5RpL6FO3F97XxElIXdD04gkH+F7PR4fBMEVyJi4892G4LQVPQ8oXxVyp8Dw==}
+  /@vue/eslint-config-prettier@10.1.0(eslint@9.13.0)(prettier@3.3.3):
+    resolution: {integrity: sha512-J6wV91y2pXc0Phha01k0WOHBTPsoSTf4xlmMjoKaeSxBpAdsgTppGF5RZRdOHM7OA74zAXD+VLANrtYXpiPKkQ==}
     peerDependencies:
       eslint: '>= 8.21.0'
       prettier: '>= 3.0.0'
@@ -5505,7 +5505,7 @@ packages:
       - supports-color
     dev: false
 
-  /electron-vite@2.3.0(vite@5.4.9):
+  /electron-vite@2.3.0(vite@5.4.10):
     resolution: {integrity: sha512-lsN2FymgJlp4k6MrcsphGqZQ9fKRdJKasoaiwIrAewN1tapYI/KINLdfEL7n10LuF0pPSNf/IqjzZbB5VINctg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5522,13 +5522,13 @@ packages:
       esbuild: 0.21.5
       magic-string: 0.30.10
       picocolors: 1.0.1
-      vite: 5.4.9(less@4.2.0)
+      vite: 5.4.10(less@4.2.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /electron@32.2.1:
-    resolution: {integrity: sha512-GCPI/5hU34pPcNltNpz+uylhhuTm9BM0N8RmrbVgaWBodLSmmcCkvpgN0BseKhO6IwQOPzWaovrcZ/nPIpfGaQ==}
+  /electron@33.0.2:
+    resolution: {integrity: sha512-C2WksfP0COsMHbYXSJG68j6S3TjuGDrw/YT42B526yXalIlNQZ2GeAYKryg6AEMkIp3p8TUfDRD0+HyiyCt/nw==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
@@ -8409,8 +8409,8 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite@5.4.9(less@4.2.0):
-    resolution: {integrity: sha512-20OVpJHh0PAM0oSOELa5GaZNWeDjcAvQjGXy2Uyr+Tp+/D2/Hdz6NLgpJLsarPTA2QJ6v8mX2P1ZfbsSKvdMkg==}
+  /vite@5.4.10(less@4.2.0):
+    resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -8466,7 +8466,7 @@ packages:
       '@shikijs/transformers': 1.22.0
       '@shikijs/types': 1.22.0
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.1.4(vite@5.4.9)(vue@3.5.12)
+      '@vitejs/plugin-vue': 5.1.4(vite@5.4.10)(vue@3.5.12)
       '@vue/devtools-api': 7.4.6
       '@vue/shared': 3.5.12
       '@vueuse/core': 11.1.0(vue@3.5.12)
@@ -8475,7 +8475,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 7.1.0
       shiki: 1.22.0
-      vite: 5.4.9(less@4.2.0)
+      vite: 5.4.10(less@4.2.0)
       vue: 3.5.12
     transitivePeerDependencies:
       - '@algolia/client-search'

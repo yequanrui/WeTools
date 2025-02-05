@@ -4,9 +4,9 @@ const devList = [];
 // endregion
 // region 公共方法
 // 阻止事件冒泡
-const stopProp = e => e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true);
+const stopProp = (e) => e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true);
 // 给head对象添加元素
-const appendToHead = element => {
+const appendToHead = (element) => {
   if (!element) return;
   let head = document.getElementsByTagName('head')[0];
   !head && (head = document.createElement('head'));
@@ -23,7 +23,7 @@ const addScript = (url, onload, onerror) => {
   appendToHead(script);
 };
 // 加载样式文件
-const addStyle = url => {
+const addStyle = (url) => {
   if (!url) return;
   const link = document.createElement('link');
   link.type = 'text/css';
@@ -54,12 +54,11 @@ const getLocalByDefault = (key, defaultValue) => {
  * @param path 文件路径
  * @returns {*}
  */
-const getData = path => {
+const getData = (path) => {
   let res;
   try {
     res = window.require(path);
-  } catch (e) {
-  }
+  } catch (e) {}
   return res;
 };
 /**
@@ -74,8 +73,7 @@ const rsHttp = async ({ method, url, header, body }) => {
   let res;
   try {
     res = await window.coreRsHttp[method]({ request: { url, header, body } });
-  } catch (e) {
-  }
+  } catch (e) {}
   return res || {};
 };
 /**
@@ -87,10 +85,9 @@ const isDev = () => {
   try {
     const os = require('os');
     const network = os.networkInterfaces();
-    const localhost = network[Object.keys(network)[0][0]].address();
+    const localhost = network[Object.keys(network)[0]][0].address;
     flag = devList.includes(btoa(localhost));
-  } catch (e) {
-  }
+  } catch (e) {}
   return flag;
 };
 /**
@@ -101,8 +98,7 @@ const getLangCode = () => {
   let lang = DEFAULT_LANGUAGE_CODE;
   try {
     lang = window.getLanguageCode();
-  } catch (e) {
-  }
+  } catch (e) {}
   return lang;
 };
 /**
@@ -110,31 +106,31 @@ const getLangCode = () => {
  * @param show 是否显示
  * @returns {*}
  */
-const wtLoading = show => window.Pedestal.callMethod(`method://pedestal/${show ? 'showLoading' : 'closeLoading'}`);
+const wtLoading = (show) => window.Pedestal.callMethod(`method://pedestal/${show ? 'showLoading' : 'closeLoading'}`);
 /**
  * 打开链接
  * @param url 链接地址
  * @returns {*}
  */
-const wtOpenUrl = url => window.Pedestal.callMethod('method://pedestal/openUrl', url);
+const wtOpenUrl = (url) => window.Pedestal.callMethod('method://pedestal/openUrl', url);
 /**
  * 全局提示
  * @param content 提示内容
  * @returns {*}
  */
-const wtToast = content => window.Pedestal.callMethod('method://pedestal/toast', { content });
+const wtToast = (content) => window.Pedestal.callMethod('method://pedestal/toast', { content });
 /**
  * 警示提示框
  * @param content 提示内容
  * @returns {*}
  */
-const wtAlert = content => window.Pedestal.callMethod('method://pedestal/alert', { dialogId: Date.now(), content });
+const wtAlert = (content) => window.Pedestal.callMethod('method://pedestal/alert', { dialogId: Date.now(), content });
 /**
  * 确认提示框
  * @param content 提示内容
  * @returns {*}
  */
-const wtConfirm = content => window.Pedestal.callMethod('method://pedestal/confirm', { dialogId: Date.now(), content });
+const wtConfirm = (content) => window.Pedestal.callMethod('method://pedestal/confirm', { dialogId: Date.now(), content });
 /**
  * 消息提示框，可带输入框
  * @param title 弹框标题
@@ -149,7 +145,7 @@ const wtConfirm = content => window.Pedestal.callMethod('method://pedestal/confi
 const wtNotifyPrompt = async ({ title, inputType = 'text', inputTestId, placeholders, defaultValue, maxLength = 1e5, callback }) => {
   const newProc = new Promise((resolve, reject) => {
     const d = window.Pedestal.callMethod('method://pedestal/notifyPrompt', {
-      dialogId: Date.now(), title, inputParam: [{ inputType, placeholders, inputTestId, maxLength, defaultValue }],
+      dialogId: Date.now(), title, inputParam: { inputType, placeholders, inputTestId, maxLength, defaultValue },
     });
     setTimeout(() => {
       if (inputTestId) {
@@ -177,8 +173,7 @@ const wtNotifyPrompt = async ({ title, inputType = 'text', inputTestId, placehol
 const move = (x, y) => {
   try {
     window.moveTo(x, y);
-  } catch (e) {
-  }
+  } catch (e) {}
 };
 /**
  * 重置窗口大小
@@ -188,17 +183,15 @@ const move = (x, y) => {
 const resize = (x, y) => {
   try {
     window.resizeTo(x, y);
-  } catch (e) {
-  }
+  } catch (e) {}
 };
 /**
  * 调用Electron内部函数跳转外部链接（仅pedestal可用）
  * @param url 跳转链接
  */
-const openExternal = url => {
+const openExternal = (url) => {
   try {
     electron.shell.openExternal(url);
-  } catch (e) {
-  }
+  } catch (e) {}
 };
 // endregion

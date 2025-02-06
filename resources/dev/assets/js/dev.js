@@ -31,6 +31,13 @@ const addStyle = (url) => {
   link.href = url;
   appendToHead(link);
 };
+// 添加/删除类
+const toggleClass = (target, cls, toggle = false) => {
+  const targetEl = document.querySelector(target);
+  if (targetEl) {
+    toggle ? targetEl.classList.add(cls) : targetEl.classList.remove(cls);
+  }
+};
 // 触发键盘事件
 const keyEvent = (key, ctrlKey = false, altKey = false, shiftKey = false) => {
   const ke = new KeyboardEvent('keydown', { ctrlKey, altKey, shiftKey, detail: 1, view: window });

@@ -4,6 +4,8 @@
   <tag></tag>
 </template>
 
-<script setup></script>
+<script setup>
+import Tag from '../components/tag.vue';
+</script>
 
 <style lang="less" scoped></style>

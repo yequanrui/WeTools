@@ -41,10 +41,38 @@ const toggleClass = (target, cls, toggle = false) => {
 // 触发键盘事件
 const keyEvent = (key, ctrlKey = false, altKey = false, shiftKey = false) => {
   const ke = new KeyboardEvent('keydown', { ctrlKey, altKey, shiftKey, detail: 1, view: window });
+  // key是键盘对应键的code值
   Object.defineProperty(ke, 'key', { value: key });
   document.dispatchEvent(ke);
 };
-// 从localStorage获取值（值是整型或布尔型）
+// 通过浏览器协议打开工具
+const openProtocol = (protocolName) => {
+  const winFeatures = [
+    'left=0', // 新窗口距离屏幕左侧的像素数
+    'top=-50', // 新窗口距离屏幕上侧的像素数
+    'width=0', // 新窗口的宽度
+    'height=0', // 新窗口的高度
+    'innerWidth=0', // 新窗口的内部宽度
+    'innerHeight=0', // 新窗口的内部高度
+    'outerWidth=0', // 新窗口的外部宽度
+    'outerHeight=0', // 新窗口的外部高度
+    'centerscreen=no', // 是否在屏幕中央打开
+    'fullscreen=no', // 是否全屏
+    'titlebar=no', // 是否显示标题栏
+    'toolbar=no', // 是否显示工具栏
+    'menubar=no', // 是否显示菜单栏
+    'location=no', // 是否显示地址栏
+    'status=no', // 是否显示是否显示状态栏
+    'scrollbars=no', // 是否显示滚动条
+    'resizable=no', // 窗口是否可调整大小
+    'director=no', // 是否显示目录栏
+    'help=no', // 是否显示帮助按钮
+    'minimizedbutton=no', // 是否显示最小化按钮
+    'maximizedbutton=no', // 是否显示最大化按钮
+  ];
+  window.open(`${protocolName}://`, protocolName, winFeatures.join(',')).close();
+};
+// 从localStorage获取值（值是整型或布尔型），没有或异常时取默认值
 const getLocalByDefault = (key, defaultValue) => {
   let value = localStorage.getItem(key);
   try {
@@ -150,9 +178,11 @@ const wtConfirm = (content) => window.Pedestal.callMethod('method://pedestal/con
  * @returns {Promise<void>}
  */
 const wtNotifyPrompt = async ({ title, inputType = 'text', inputTestId, placeholders, defaultValue, maxLength = 1e5, callback }) => {
-  const newProc = new Promise((resolve, reject) => {
+  const newProc = new Promise((resolve) => {
     const d = window.Pedestal.callMethod('method://pedestal/notifyPrompt', {
-      dialogId: Date.now(), title, inputParam: { inputType, placeholders, inputTestId, maxLength, defaultValue },
+      dialogId: Date.now(),
+      title,
+      inputParam: { inputType, placeholders, inputTestId, maxLength, defaultValue },
     });
     setTimeout(() => {
       if (inputTestId) {
@@ -200,5 +230,18 @@ const openExternal = (url) => {
   try {
     electron.shell.openExternal(url);
   } catch (e) {}
+};
+// endregion
+// region 特性方法
+// 生成资源默认路径
+const basePath = (index, path = 'assets/', padPath = '../') => path.padStart(index * padPath.length + path.length, padPath);
+// 生成样式表路径
+const stylePath = (index, viewID) => `${basePath(index)}css/${viewID}.css`;
+// 视频背景列表
+let videoList = [];
+// 获取视频显示名
+const setVideoName = (langCode, video) => {
+  video.name = langCode === DEFAULT_LANGUAGE_CODE ? video.cnName : video.enName;
+  !video.name && (video.name = video.fileName);
 };
 // endregion

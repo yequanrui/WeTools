@@ -1,6 +1,21 @@
 // region 公共参数
 const DEFAULT_LANGUAGE_CODE = '2052';
 const devList = [];
+const STORAGE_LIST = {
+  videoBgPath: 'videoBgPath',
+};
+const LANGUAGE_MAP = {
+  2052: {
+    'custom-bg': '自定义背景',
+    'close-bg': '关闭背景',
+    'more-bg': '更多背景',
+  },
+  1028: {
+    'custom-bg': 'Custom Background',
+    'close-bg': 'Close Background',
+    'more-bg': 'More Background',
+  },
+};
 // endregion
 // region 公共方法
 // 阻止事件冒泡
@@ -65,10 +80,10 @@ const openProtocol = (protocolName) => {
     'status=no', // 是否显示是否显示状态栏
     'scrollbars=no', // 是否显示滚动条
     'resizable=no', // 窗口是否可调整大小
-    'director=no', // 是否显示目录栏
+    'directories=no', // 是否显示目录栏
     'help=no', // 是否显示帮助按钮
-    'minimizedbutton=no', // 是否显示最小化按钮
-    'maximizedbutton=no', // 是否显示最大化按钮
+    'minmizedbutton=no', // 是否显示最小化按钮
+    'maxmizedbutton=no', // 是否显示最大化按钮
   ];
   window.open(`${protocolName}://`, protocolName, winFeatures.join(',')).close();
 };
@@ -243,5 +258,30 @@ let videoList = [];
 const setVideoName = (langCode, video) => {
   video.name = langCode === DEFAULT_LANGUAGE_CODE ? video.cnName : video.enName;
   !video.name && (video.name = video.fileName);
+};
+// 初始化视频背景列表
+const initVideoList = (langCode = DEFAULT_LANGUAGE_CODE) => {
+  const videoBgPath = localStorage.getItem(STORAGE_LIST.videoBgPath);
+  videoList = getData(videoBgPath) || [];
+  if (videoList.length) {
+    for (let i = 0; i < videoList.length; i++) {
+      const vb = videoList[i];
+      setVideoName(langCode, vb);
+      if (!vb.children) {
+        continue;
+      }
+      for (let j = 0; j < vb.children.length; j++) {
+        const child = vb.children[j];
+        setVideoName(langCode, child);
+      }
+    }
+  }
+  const subVideoList = [
+    { value: 'custom-bg', show: true },
+    { value: 'close-bg', show: true },
+    { value: 'more-bg', show: true },
+  ];
+  subVideoList.forEach((sv) => (sv.name = LANGUAGE_MAP[langCode][sv.value]));
+  videoList.push(...subVideoList);
 };
 // endregion

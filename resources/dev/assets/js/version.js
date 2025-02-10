@@ -4,7 +4,7 @@ const VERSION = {
   current_welink: () => {
     let version = '';
     try {
-      // 从全局参数里获取当前暗转的WeLink版本
+      // 从全局参数里获取当前安装的WeLink版本
       version = window.CLIENTCONFIG.ACS_SOFTWAREVERSION_VALUE;
     } catch (e) {}
     return version;

@@ -19,7 +19,7 @@ const LANGUAGE_MAP = {
 // endregion
 // region 公共方法
 // 阻止事件冒泡
-const stopProp = (e) => e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true);
+const stopProp = (e) => (e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true));
 // 给head对象添加元素
 const appendToHead = (element) => {
   if (!element) return;
@@ -82,8 +82,8 @@ const openProtocol = (protocolName) => {
     'resizable=no', // 窗口是否可调整大小
     'directories=no', // 是否显示目录栏
     'help=no', // 是否显示帮助按钮
-    'minmizedbutton=no', // 是否显示最小化按钮
-    'maxmizedbutton=no', // 是否显示最大化按钮
+    'minmizebutton=no', // 是否显示最小化按钮
+    'maxmizebutton=no', // 是否显示最大化按钮
   ];
   window.open(`${protocolName}://`, protocolName, winFeatures.join(',')).close();
 };

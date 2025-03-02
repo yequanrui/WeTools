@@ -1,7 +1,9 @@
-import { resolve } from 'path';
-import { defineConfig, bytecodePlugin, externalizeDepsPlugin, splitVendorChunkPlugin } from 'electron-vite';
+import { TinyVueSingleResolver } from '@opentiny/unplugin-tiny-vue';
 import vue from '@vitejs/plugin-vue';
-import autoImportPlugin from '@opentiny/unplugin-tiny-vue';
+import { bytecodePlugin, defineConfig, externalizeDepsPlugin } from 'electron-vite';
+import { resolve } from 'path';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
 
 const prefix = `monaco-editor/esm/vs`;
 
@@ -29,7 +31,15 @@ export default defineConfig({
       },
       extensions: ['.js', '.jsx', '.vue'],
     },
-    plugins: [splitVendorChunkPlugin(), vue(), autoImportPlugin('vite')],
+    plugins: [
+      vue(),
+      Components({
+        resolvers: [TinyVueSingleResolver],
+      }),
+      AutoImport({
+        resolvers: [TinyVueSingleResolver],
+      }),
+    ],
     define: {
       'process.env': { ...process.env, TINY_MODE: 'pc' },
     },

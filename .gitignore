@@ -2,6 +2,7 @@ node_modules
 dist
 out
 .DS_Store
+.eslintcache
 *.log*
 .vitepress/cache
 .vitepress/dist

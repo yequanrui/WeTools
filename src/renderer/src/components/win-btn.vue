@@ -27,8 +27,8 @@
 </template>
 
 <script setup>
+import { IconClose, IconCustom, IconLanguage, IconPanelMax, IconPanelMini, IconPanelNormal } from '@opentiny/vue-icon';
 import { getCurrentInstance, ref } from 'vue';
-import { IconCustom, IconLanguage, IconPanelMini, IconPanelMax, IconPanelNormal, IconClose } from '@opentiny/vue-icon';
 
 const TinyIconCustom = IconCustom();
 const TinyIconLanguage = IconLanguage();
@@ -91,6 +91,7 @@ const winHandle = (opera) => {
   margin-right: 10px;
   width: 24px;
   height: 24px;
+  line-height: 24px;
   border-radius: var(--common-border-radius);
   text-align: center;
   cursor: pointer;

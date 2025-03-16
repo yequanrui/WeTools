@@ -16,12 +16,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import { IconInfo } from '@opentiny/vue-icon';
+import { ref } from 'vue';
 
 const links = ref([
   { label: 'github', value: 'https://github.com/yequanrui/WeTools' },
   { label: 'gitee', value: 'https://gitee.com/yequanrui/WeTools' },
+  { label: 'gitcode', value: 'https://gitcode.com/yequanrui/WeTools' },
   { label: 'checkUpdate', value: 'checkUpdate' },
 ]);
 const TinyIconInfo = IconInfo();
@@ -86,7 +87,7 @@ function confirmUpdate() {
 
 <style lang="less" scoped>
 #about-btn {
-  padding: 3px;
+  padding: 1px;
   width: 24px;
   height: 24px;
   border-radius: var(--common-border-radius);

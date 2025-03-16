@@ -117,6 +117,7 @@ const treeChange = (data) => {
 
     .tiny-tree {
       height: 100%;
+      filter: opacity(.8);
     }
 
     a,

@@ -1,6 +1,6 @@
 const VERSION = {
-  theme: '4.48.0', // 主题版本
-  welink: '7.48.6', // 适配的WeLink版本
+  theme: '4.50.0', // 主题版本
+  welink: '7.50.3', // 适配的WeLink版本
   current_welink: () => {
     let version = '';
     try {

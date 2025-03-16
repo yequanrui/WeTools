@@ -48,10 +48,4 @@ const itemClick = (e) => emits('itemClick', e.itemData);
     fill: var(--body-text);
   }
 }
-
-.tiny-dropdown-item.selected {
-  background-color: var(--ti-dropdown-item-hover-bg-color);
-  color: var(--ti-dropdown-item-hover-text-color);
-  border-radius: var(--ti-dropdown-item-border-radius);
-}
 </style>

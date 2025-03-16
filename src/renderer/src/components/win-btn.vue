@@ -44,7 +44,7 @@ const langs = ref([
   { label: 'chinese', value: 'zh-CN', divided: true },
   { label: 'english', value: 'en-US' },
 ]);
-let currentLang = ref(langs.value[0]);
+let currentLang = ref(langs.value[0].value);
 /**
  * 切换语言
  * @param {*} lang 语言
@@ -62,7 +62,7 @@ const themes = ref([
   { label: 'light', value: 'light', divided: true },
   { label: 'dark', value: 'dark' },
 ]);
-let currentTheme = ref(themes.value[0]);
+let currentTheme = ref(themes.value[0].value);
 /**
  * 切换主题
  * @param {*} theme 主题

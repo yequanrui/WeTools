@@ -285,3 +285,9 @@ const initVideoList = (langCode = DEFAULT_LANGUAGE_CODE) => {
   videoList.push(...subVideoList);
 };
 // endregion
+(() => {
+  const script = document.currentScript || document.scripts[document.scripts.length - 1];
+  const scriptSrc = script.src;
+  const index = scriptSrc.lastIndexOf('../') + 1;
+  console.log(`index: ${index}\nname: ${script.dataset.name}`);
+})();

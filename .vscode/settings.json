@@ -17,5 +17,6 @@
       "savePathReplacementPairs": null
     }
   ],
-  "liveSassCompile.settings.generateMap": false
+  "liveSassCompile.settings.generateMap": false,
+  "minify.minifyExistingOnSave": true
 }

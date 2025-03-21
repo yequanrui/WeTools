@@ -1,14 +1,15 @@
 {
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "i18n-ally.localesPaths": ["src/renderer/src/i18n"],
+  "liveSassCompile.settings.forceBaseDirectory": "/resources",
   "liveSassCompile.settings.formats": [
     {
       "extensionName": ".css",
@@ -18,5 +19,8 @@
     }
   ],
   "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.rootIsWorkspace": false,
+  "liveSassCompile.settings.showOutputWindowOn": "Warning",
+  "liveSassCompile.settings.watchOnLaunch": true,
   "minify.minifyExistingOnSave": true
 }

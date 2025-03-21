@@ -7,13 +7,13 @@ settings:
 dependencies:
   '@electron-toolkit/preload':
     specifier: ^3.0.1
-    version: 3.0.1(electron@35.0.2)
+    version: 3.0.1(electron@35.0.3)
   '@electron-toolkit/utils':
     specifier: ^4.0.0
-    version: 4.0.0(electron@35.0.2)
+    version: 4.0.0(electron@35.0.3)
   '@opentiny/vue':
-    specifier: ^3.21.2
-    version: 3.21.2(echarts@5.6.0)
+    specifier: ^3.21.3
+    version: 3.21.3(echarts@5.6.0)
   '@opentiny/vue-locale':
     specifier: ^3.21.0
     version: 3.21.0
@@ -50,14 +50,14 @@ devDependencies:
     specifier: ^1.11.0
     version: 1.11.0
   '@vitejs/plugin-vue':
-    specifier: ^5.2.1
-    version: 5.2.1(vite@6.2.2)(vue@3.5.13)
+    specifier: ^5.2.3
+    version: 5.2.3(vite@6.2.2)(vue@3.5.13)
   '@vue/eslint-config-prettier':
     specifier: ^10.2.0
     version: 10.2.0(eslint@9.22.0)(prettier@3.5.3)
   electron:
-    specifier: ^35.0.2
-    version: 35.0.2
+    specifier: ^35.0.3
+    version: 35.0.3
   electron-builder:
     specifier: ^25.1.8
     version: 25.1.8(electron-builder-squirrel-windows@25.1.8)
@@ -518,20 +518,20 @@ packages:
       globals: 15.15.0
     dev: true
 
-  /@electron-toolkit/preload@3.0.1(electron@35.0.2):
+  /@electron-toolkit/preload@3.0.1(electron@35.0.3):
     resolution: {integrity: sha512-EzoQmpK8jqqU8YnM5jRe0GJjGVJPke2KtANqz8QtN2JPT96ViOvProBdK5C6riCm0j1T8jjAGVQCZLQy9OVoIA==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 35.0.2
+      electron: 35.0.3
     dev: false
 
-  /@electron-toolkit/utils@4.0.0(electron@35.0.2):
+  /@electron-toolkit/utils@4.0.0(electron@35.0.3):
     resolution: {integrity: sha512-qXSntwEzluSzKl4z5yFNBknmPGjPa3zFhE4mp9+h0cgokY5ornAeP+CJQDBhKsL1S58aOQfcwkD3NwLZCl+64g==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 35.0.2
+      electron: 35.0.3
     dev: false
 
   /@electron/asar@3.2.18:
@@ -4033,8 +4033,8 @@ packages:
       '@opentiny/vue-theme': 3.21.2
     dev: false
 
-  /@opentiny/vue@3.21.2(echarts@5.6.0):
-    resolution: {integrity: sha512-WKi0M1/LUo/ZMGVT45N8IihWzetGmMiyckWuEmFxwyt9KEk3mGXZjn91GLzZElnFXkbe0Zp+nApMEX1EM1CRBQ==}
+  /@opentiny/vue@3.21.3(echarts@5.6.0):
+    resolution: {integrity: sha512-WekaOI8HN/uZvJqFwj3e9FgcopYRQPLZdFTFxt75cDOi3U3zslWuMmz9UTZppPjncQRwQkW28dup5CuxhfkuZQ==}
     dependencies:
       '@opentiny/vue-action-menu': 3.21.0
       '@opentiny/vue-action-sheet': 3.21.0
@@ -4648,8 +4648,8 @@ packages:
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
     dev: true
 
-  /@vitejs/plugin-vue@5.2.1(vite@5.4.14)(vue@3.5.13):
-    resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
+  /@vitejs/plugin-vue@5.2.3(vite@5.4.14)(vue@3.5.13):
+    resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
@@ -4659,8 +4659,8 @@ packages:
       vue: 3.5.13
     dev: true
 
-  /@vitejs/plugin-vue@5.2.1(vite@6.2.2)(vue@3.5.13):
-    resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
+  /@vitejs/plugin-vue@5.2.3(vite@6.2.2)(vue@3.5.13):
+    resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
@@ -6004,8 +6004,8 @@ packages:
       - supports-color
     dev: true
 
-  /electron@35.0.2:
-    resolution: {integrity: sha512-jo8S4GfBpVIBDGitUrv+Vo/I/ZEEs6IvWprG2KJlxayYIKpufulbQaxDt78cC/79FwFo8MA0JOIwx/b9r5NRag==}
+  /electron@35.0.3:
+    resolution: {integrity: sha512-kjQAYEWXSr2TyK19IZoF85dzFIBaYuX7Yp/C+34b5Y/jmI2z270CGie+RjmEGMMitsy0G8YJKftukhYMuWlK6g==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
@@ -9207,7 +9207,7 @@ packages:
       '@shikijs/transformers': 2.1.0
       '@shikijs/types': 2.1.0
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.2.1(vite@5.4.14)(vue@3.5.13)
+      '@vitejs/plugin-vue': 5.2.3(vite@5.4.14)(vue@3.5.13)
       '@vue/devtools-api': 7.7.1
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.5.0

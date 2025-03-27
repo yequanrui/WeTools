@@ -37,7 +37,7 @@ insert_final_newline = true
 ## 设置为true以删除换行符之前的任何空格字符，设置为false以确保不会。
 trim_trailing_whitespace = true
 
-[*.ts]
+[{*.js,*.ts}]
 quote_type = single
 
 [*.md]

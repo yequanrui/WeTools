@@ -1,5 +1,7 @@
 ---
 layout: page
+title: Team
+titleTemplate: WeTools
 ---
 
 <script setup>

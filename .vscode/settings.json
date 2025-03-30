@@ -8,7 +8,10 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "i18n-ally.localesPaths": ["src/renderer/src/i18n"],
+  "i18n-ally.keyStyle": "nested",
+  "i18n-ally.localesPaths": [
+    "src/renderer/src/i18n"
+  ],
   "liveSassCompile.settings.forceBaseDirectory": "/resources",
   "liveSassCompile.settings.formats": [
     {

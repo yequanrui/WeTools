@@ -1,14 +1,16 @@
 import { defineConfig } from 'vitepress';
 import config from '../package.json';
+import { nav } from './nav.js';
+import { sidebar } from './sidebar.js';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'zh-CN', // 设置语言
+  lang: 'zh', // 设置语言
   title: config.productName, // 网站标题
   description: config.description, // 网站描述
-  srcDir: 'docs', // 设置 docs 文件夹为源码文件夹
   base: `/${config.productName}/`, // 设置网站根路径
-  head: [['link', { rel: 'icon', type: 'image/png', href: 'assets/img/logo.png' }]], // 设置网页头部
+  srcDir: 'docs', // 设置 docs 文件夹为源码文件夹
+  head: [['link', { rel: 'icon', type: 'image/png', href: './logo.png' }]], // 设置网页头部
   sitemap: {
     hostname: `${config.homepage}/${config.productName}/`,
     lastmodDateOnly: false,
@@ -16,7 +18,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由
-    logo: 'assets/img/logo.png', // 网站Logo
+    logo: './logo.png', // 网站Logo
     siteTitle: config.productName, // 网站标题
     search: {
       provider: 'local',
@@ -38,47 +40,27 @@ export default defineConfig({
               },
             },
           },
+          en: {
+            translations: {
+              button: {
+                buttonText: 'Search',
+                buttonAriaLabel: 'Search for documents',
+              },
+              modal: {
+                noResultsText: 'No results',
+                resetButtonTitle: 'Clear condition',
+                footer: {
+                  selectText: 'Select',
+                  navigateText: 'Switch',
+                },
+              },
+            },
+          },
         },
       },
     }, // 搜索配置
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Team', link: '/team' },
-      {
-        text: 'Guides',
-        items: [
-          { text: 'Markdown Examples', link: '/guides/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/guides/api-examples' },
-        ],
-      },
-    ],
-    sidebar: {
-      '/guides/': [
-        {
-          text: 'Guides',
-          collapsed: false,
-          items: [
-            { text: 'Index', link: '/guides/' },
-            { text: 'Markdown Examples', link: '/guides/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/guides/api-examples' },
-          ],
-        },
-      ],
-      '/packages/': [
-        {
-          text: 'Packages',
-          collapsed: false,
-          items: [
-            { text: 'Index', link: '/packages/' },
-            { text: 'WeLink-Themes-Blue 1.0.0', link: '/packages/WeLink-Themes-Blue-1.0.0' },
-          ],
-        },
-      ],
-    },
-    socialLinks: [
-      { icon: 'github', link: config.repository.url },
-      { icon: 'npm', link: 'https://www.npmjs.com/~yequanrui' },
-    ], // 社交链接
+    nav,
+    sidebar,
     editLink: {
       pattern: config.repository.url.replace('.git', '/edit/master/docs/:path'),
       text: 'Edit this page on GitHub',
@@ -98,5 +80,6 @@ export default defineConfig({
       copyright: 'Copyright © 2021-present Quanrui Ye',
     }, // 底部信息
   }, // 主题配置
+  locales,
   lastUpdated: true, // 显示最后更新时间
 });

@@ -9,8 +9,8 @@ import { VPTeamPage, VPTeamPageTitle, VPTeamPageSection, VPTeamMembers } from 'v
 
 const coreMembers = [{
   avatar: 'https://avatars.githubusercontent.com/u/26866409?v=4',
-  name: '叶权瑞',
-  title: '创建者',
+  name: 'Quanrui Ye',
+  title: 'Creator',
   links: [
     { icon: 'github', link: 'https://github.com/yequanrui' },
     { icon: 'npm', link: 'https://www.npmjs.com/~yequanrui' }
@@ -22,11 +22,11 @@ const members = []
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>WeTools</template>
-    <template #lead>基于 <a target="_blank" href="https://opentiny.design/tiny-vue">TinyVue</a> 的 <a target="_blank" href="https://cn.electron-vite.org">Electron-Vite</a> 应用程序</template>
+    <template #lead>An <a target="_blank" href="https://cn.electron-vite.org">Electron-Vite</a> application with <a target="_blank" href="https://opentiny.design/tiny-vue">TinyVue</a></template>
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="coreMembers" />
   <VPTeamPageSection>
-    <template #title>成员</template>
+    <template #title>Members</template>
     <template #members>
       <VPTeamMembers size="small" :members="members" />
     </template>

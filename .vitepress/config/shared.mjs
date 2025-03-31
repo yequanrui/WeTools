@@ -1,20 +1,17 @@
 import { defineConfig } from 'vitepress';
 import { groupIconMdPlugin } from 'vitepress-plugin-group-icons';
 import config from '../package.json';
-import { search as enSearch } from './en';
-import { search as zhSearch } from './zh';
+import { search as enSearch } from './en.js';
+import { search as zhSearch } from './zh.js';
 
 export const shared = defineConfig({
-  title: 'VitePress',
-
+  title: config.productName, // 网站标题
   rewrites: {
-    'en/:rest*': ':rest*',
+    'zh/:rest*': ':rest*',
   },
-
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
-
   markdown: {
     math: true,
     codeTransformers: [
@@ -31,22 +28,7 @@ export const shared = defineConfig({
       md.renderer.rules.fence = function (tokens, idx, options, env, self) {
         const { localeIndex = 'root' } = env;
         const codeCopyButtonTitle = (() => {
-          switch (localeIndex) {
-            case 'es':
-              return 'Copiar código';
-            case 'fa':
-              return 'کپی کد';
-            case 'ko':
-              return '코드 복사';
-            case 'pt':
-              return 'Copiar código';
-            case 'ru':
-              return 'Скопировать код';
-            case 'zh':
-              return '复制代码';
-            default:
-              return 'Copy code';
-          }
+          localeIndex = localeIndex === 'en' ? 'Copy Code' : '复制代码';
         })();
         return fence(tokens, idx, options, env, self).replace(
           '<button title="Copy Code" class="copy"></button>',

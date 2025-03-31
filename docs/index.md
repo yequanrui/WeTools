@@ -31,11 +31,11 @@ features:
     link: https://www.huaweicloud.com/product/welink.html
   - icon: 🪅
     title: WeLink 显眼包
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: 1. 支持通过html代码自定义消息样式<br>2. 支持白名单和黑名单控制自定义消息的显示
     link: https://www.huaweicloud.com/product/welink.html
   - icon: 😊
     title: WeLink 表情包
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: 1. 管理和扩展WeLink的表情包<br>2. 支持在线搜索表情
     link: https://www.huaweicloud.com/product/welink.html
 ---
 

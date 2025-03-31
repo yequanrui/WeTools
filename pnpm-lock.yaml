@@ -45,13 +45,13 @@ devDependencies:
     version: 3.0.0(eslint@9.23.0)(prettier@3.5.3)
   '@opentiny/unplugin-tiny-vue':
     specifier: ^1.0.0
-    version: 1.0.0(vite@6.2.3)(vue@3.5.13)
+    version: 1.0.0(vite@6.2.4)(vue@3.5.13)
   '@rushstack/eslint-patch':
     specifier: ^1.11.0
     version: 1.11.0
   '@vitejs/plugin-vue':
     specifier: ^5.2.3
-    version: 5.2.3(vite@6.2.3)(vue@3.5.13)
+    version: 5.2.3(vite@6.2.4)(vue@3.5.13)
   '@vue/eslint-config-prettier':
     specifier: ^10.2.0
     version: 10.2.0(eslint@9.23.0)(prettier@3.5.3)
@@ -63,7 +63,7 @@ devDependencies:
     version: 26.0.12(electron-builder-squirrel-windows@26.0.12)
   electron-vite:
     specifier: ^3.1.0
-    version: 3.1.0(vite@6.2.3)
+    version: 3.1.0(vite@6.2.4)
   eslint:
     specifier: ^9.23.0
     version: 9.23.0
@@ -86,8 +86,8 @@ devDependencies:
     specifier: ^28.4.1
     version: 28.4.1(vue@3.5.13)
   vite:
-    specifier: ^6.2.3
-    version: 6.2.3(less@4.2.2)
+    specifier: ^6.2.4
+    version: 6.2.4(less@4.2.2)
   vitepress:
     specifier: ^1.6.3
     version: 1.6.3(@algolia/client-search@5.23.0)(less@4.2.2)(search-insights@2.17.3)
@@ -1357,13 +1357,13 @@ packages:
     resolution: {integrity: sha512-KsVNZwCstMJec2vM/uMff9jj/nNHXCchiwGGU4+MGP1nRwg7Hkj8pjgJQh/tJR6+AEKPY/h+TewRM3S6KBtn5g==}
     dev: false
 
-  /@opentiny/unplugin-tiny-vue@1.0.0(vite@6.2.3)(vue@3.5.13):
+  /@opentiny/unplugin-tiny-vue@1.0.0(vite@6.2.4)(vue@3.5.13):
     resolution: {integrity: sha512-ES1KRpUBUgQlB4BdhNsMpuiuUyjfkWF/SZrN0mUdGonNBvCne9Y3G12OQtXKOEMWMfMOYxJol/E4gvoZLa0ETg==}
     peerDependencies:
       vite: '>=4'
     dependencies:
       unplugin-vue-components: 0.26.0(vue@3.5.13)
-      vite: 6.2.3(less@4.2.2)
+      vite: 6.2.4(less@4.2.2)
     transitivePeerDependencies:
       - '@babel/parser'
       - '@nuxt/kit'
@@ -4480,14 +4480,14 @@ packages:
       vue: 3.5.13
     dev: true
 
-  /@vitejs/plugin-vue@5.2.3(vite@6.2.3)(vue@3.5.13):
+  /@vitejs/plugin-vue@5.2.3(vite@6.2.4)(vue@3.5.13):
     resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 6.2.3(less@4.2.2)
+      vite: 6.2.4(less@4.2.2)
       vue: 3.5.13
     dev: true
 
@@ -5709,7 +5709,7 @@ packages:
       - supports-color
     dev: false
 
-  /electron-vite@3.1.0(vite@6.2.3):
+  /electron-vite@3.1.0(vite@6.2.4):
     resolution: {integrity: sha512-M7aAzaRvSl5VO+6KN4neJCYLHLpF/iWo5ztchI/+wMxIieDZQqpbCYfaEHHHPH6eupEzfvZdLYdPdmvGqoVe0Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5726,7 +5726,7 @@ packages:
       esbuild: 0.25.1
       magic-string: 0.30.17
       picocolors: 1.1.1
-      vite: 6.2.3(less@4.2.2)
+      vite: 6.2.4(less@4.2.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8794,8 +8794,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@6.2.3(less@4.2.2):
-    resolution: {integrity: sha512-IzwM54g4y9JA/xAeBPNaDXiBF8Jsgl3VBQ2YQ/wOY6fyW3xMdSoltIV3Bo59DErdqdE6RxUfv8W69DvUorE4Eg==}
+  /vite@6.2.4(less@4.2.2):
+    resolution: {integrity: sha512-veHMSew8CcRzhL5o8ONjy8gkfmFJAd5Ac16oxBUjlwgX3Gq2Wqr+qNC3TjPIpy7TPV/KporLga5GT9HqdrCizw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -9117,7 +9117,7 @@ packages:
     dev: true
 
   github.com/electron/node-gyp/06b29aafb7708acef8b3669835c8a7857ebc92d2:
-    resolution: {tarball: https://codeload.github.com/electron/node-gyp/tar.gz/06b29aafb7708acef8b3669835c8a7857ebc92d2}
+    resolution: {commit: 06b29aafb7708acef8b3669835c8a7857ebc92d2, repo: git+ssh://git@github.com/electron/node-gyp.git, type: git}
     name: '@electron/node-gyp'
     version: 10.2.0-electron.1
     engines: {node: '>=12.13.0'}

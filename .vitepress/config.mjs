@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import config from '../package.json';
+import { locales } from './locales.js';
 import { nav } from './nav.js';
 import { sidebar } from './sidebar.js';
 

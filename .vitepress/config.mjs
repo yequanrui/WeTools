@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress';
 import config from '../package.json';
-import { locales } from './locales.js';
-import { nav } from './nav.js';
-import { sidebar } from './sidebar.js';
+import { locales } from './locales.mjs';
+import { nav } from './nav.mjs';
+import { sidebar } from './sidebar.mjs';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

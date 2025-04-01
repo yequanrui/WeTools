@@ -18,7 +18,7 @@ hero:
       link: /welink/themes/
     - theme: alt
       text: 显眼包
-      link: /welink/msg-style/
+      link: /welink/style-msg/
 
 features:
   - icon: 🎨

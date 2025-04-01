@@ -18,7 +18,7 @@ hero:
       link: /welink/themes/
     - theme: alt
       text: Msg Style
-      link: /welink/msg-style/
+      link: /welink/style-msg/
 
 features:
   - icon: 🎨

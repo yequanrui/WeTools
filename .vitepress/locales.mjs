@@ -1,6 +1,6 @@
 export const locales = {
   root: {
-    label: '中文',
+    label: '简体中文',
     lang: 'zh',
   },
   en: {

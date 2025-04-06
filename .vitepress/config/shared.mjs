@@ -1,12 +1,10 @@
 import { defineConfig } from 'vitepress';
-import config from '../package.json';
-import { locales } from './locales.mjs';
-import { nav } from './nav.mjs';
-import { sidebar } from './sidebar.mjs';
+import { groupIconMdPlugin } from 'vitepress-plugin-group-icons';
+import config from '../../package.json';
+import { search as enSearch } from './en.mjs';
+import { search as zhSearch } from './zh.mjs';
 
-// https://vitepress.dev/reference/site-config
-export default defineConfig({
-  lang: 'zh', // 设置语言
+export const shared = defineConfig({
   title: config.productName, // 网站标题
   description: config.description, // 网站描述
   base: `/${config.productName}/`, // 设置网站根路径
@@ -19,6 +17,32 @@ export default defineConfig({
   cleanUrls: true, // 生成简洁的URL，即去掉.html后缀
   metaChunk: true, // 将页面元数据提取到单独的JavaScript块中，而不是内联在初始HTML中
   lastUpdated: true, // 显示最后更新时间
+  markdown: {
+    math: true,
+    codeTransformers: [
+      // We use `[!!code` in demo to prevent transformation, here we revert it back.
+      {
+        postprocess(code) {
+          return code.replace(/\[\!\!code/g, '[!code');
+        },
+      },
+    ],
+    config(md) {
+      // TODO: remove when https://github.com/vuejs/vitepress/issues/4431 is fixed
+      const fence = md.renderer.rules.fence;
+      md.renderer.rules.fence = function (tokens, idx, options, env, self) {
+        let { localeIndex = 'root' } = env;
+        const codeCopyButtonTitle = (() => {
+          localeIndex = localeIndex === 'en' ? 'Copy Code' : '复制代码';
+        })();
+        return fence(tokens, idx, options, env, self).replace(
+          '<button title="Copy Code" class="copy"></button>',
+          `<button title="${codeCopyButtonTitle}" class="copy"></button>`
+        );
+      };
+      md.use(groupIconMdPlugin);
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由
@@ -32,43 +56,11 @@ export default defineConfig({
       provider: 'local',
       options: {
         locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档',
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换',
-                },
-              },
-            },
-          },
-          en: {
-            translations: {
-              button: {
-                buttonText: 'Search',
-                buttonAriaLabel: 'Search for documents',
-              },
-              modal: {
-                noResultsText: 'No results',
-                resetButtonTitle: 'Clear condition',
-                footer: {
-                  selectText: 'Select',
-                  navigateText: 'Switch',
-                },
-              },
-            },
-          },
+          ...zhSearch,
+          ...enSearch,
         },
       },
-    }, // 搜索配置
-    nav,
-    sidebar,
+    },
     editLink: {
       pattern: config.repository.url.replace('.git', '/edit/master/docs/:path'),
       text: 'Edit this page on GitHub',
@@ -87,6 +79,5 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2021-present Quanrui Ye',
     }, // 底部信息
-  }, // 主题配置
-  locales,
+  },
 });

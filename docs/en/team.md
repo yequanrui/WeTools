@@ -22,7 +22,7 @@ const members = []
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>WeTools</template>
-    <template #lead>An <a target="_blank" href="https://cn.electron-vite.org">Electron-Vite</a> application with <a target="_blank" href="https://opentiny.design/tiny-vue">TinyVue</a></template>
+    <template #lead>Some tools used in WeLink are included.</template>
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="coreMembers" />
   <VPTeamPageSection>

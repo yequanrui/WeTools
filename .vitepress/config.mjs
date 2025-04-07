@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitepress';
+import { groupIconMdPlugin } from 'vitepress-plugin-group-icons';
 import config from '../package.json';
+import { search as enSearch } from './config/en.mjs';
+import { search as zhSearch } from './config/zh.mjs';
 import { locales } from './locales.mjs';
 import { nav } from './nav.mjs';
 import { sidebar } from './sidebar.mjs';
@@ -11,7 +14,7 @@ export default defineConfig({
   description: config.description, // 网站描述
   base: `/${config.productName}/`, // 设置网站根路径
   srcDir: 'docs', // 设置 docs 文件夹为源码文件夹
-  head: [['link', { rel: 'icon', type: 'image/png', href: './logo.png' }]], // 设置网页头部
+  head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]], // 设置网页头部
   sitemap: {
     hostname: `${config.homepage}/${config.productName}/`,
     lastmodDateOnly: false,
@@ -19,51 +22,44 @@ export default defineConfig({
   cleanUrls: true, // 生成简洁的URL，即去掉.html后缀
   metaChunk: true, // 将页面元数据提取到单独的JavaScript块中，而不是内联在初始HTML中
   lastUpdated: true, // 显示最后更新时间
+  markdown: {
+    math: true,
+    codeTransformers: [
+      // We use `[!!code` in demo to prevent transformation, here we revert it back.
+      {
+        postprocess(code) {
+          return code.replace(/\[\!\!code/g, '[!code');
+        },
+      },
+    ],
+    config(md) {
+      // TODO: remove when https://github.com/vuejs/vitepress/issues/4431 is fixed
+      const fence = md.renderer.rules.fence;
+      md.renderer.rules.fence = function (tokens, idx, options, env, self) {
+        let { localeIndex = 'root' } = env;
+        const codeCopyButtonTitle = (() => {
+          localeIndex = localeIndex === 'en' ? 'Copy Code' : '复制代码';
+        })();
+        return fence(tokens, idx, options, env, self).replace(
+          '<button title="Copy Code" class="copy"></button>',
+          `<button title="${codeCopyButtonTitle}" class="copy"></button>`
+        );
+      };
+      md.use(groupIconMdPlugin);
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由
-    logo: './logo.png', // 网站Logo
+    logo: '/logo.png', // 网站Logo
     siteTitle: config.productName, // 网站标题
-    socialLinks: [
-      { icon: 'github', link: config.repository.url },
-      { icon: 'npm', link: 'https://www.npmjs.com/~yequanrui' },
-    ], // 社交链接
+    socialLinks: [{ icon: 'github', link: config.repository.url }], // 社交链接
     search: {
       provider: 'local',
       options: {
         locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档',
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换',
-                },
-              },
-            },
-          },
-          en: {
-            translations: {
-              button: {
-                buttonText: 'Search',
-                buttonAriaLabel: 'Search for documents',
-              },
-              modal: {
-                noResultsText: 'No results',
-                resetButtonTitle: 'Clear condition',
-                footer: {
-                  selectText: 'Select',
-                  navigateText: 'Switch',
-                },
-              },
-            },
-          },
+          ...zhSearch,
+          ...enSearch,
         },
       },
     }, // 搜索配置
@@ -85,7 +81,7 @@ export default defineConfig({
     }, // 重写路由
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2021-present Quanrui Ye',
+      copyright: `Copyright © 2022-present ${config.productName}`,
     }, // 底部信息
   }, // 主题配置
   locales,

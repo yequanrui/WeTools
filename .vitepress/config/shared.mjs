@@ -4,12 +4,13 @@ import config from '../../package.json';
 import { search as enSearch } from './en.mjs';
 import { search as zhSearch } from './zh.mjs';
 
+// https://vitepress.dev/reference/site-config
 export const shared = defineConfig({
   title: config.productName, // 网站标题
   description: config.description, // 网站描述
   base: `/${config.productName}/`, // 设置网站根路径
   srcDir: 'docs', // 设置 docs 文件夹为源码文件夹
-  head: [['link', { rel: 'icon', type: 'image/png', href: './logo.png' }]], // 设置网页头部
+  head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]], // 设置网页头部
   sitemap: {
     hostname: `${config.homepage}/${config.productName}/`,
     lastmodDateOnly: false,
@@ -46,12 +47,9 @@ export const shared = defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由
-    logo: './logo.png', // 网站Logo
+    logo: '/logo.png', // 网站Logo
     siteTitle: config.productName, // 网站标题
-    socialLinks: [
-      { icon: 'github', link: config.repository.url },
-      { icon: 'npm', link: 'https://www.npmjs.com/~yequanrui' },
-    ], // 社交链接
+    socialLinks: [{ icon: 'github', link: config.repository.url }], // 社交链接
     search: {
       provider: 'local',
       options: {
@@ -60,7 +58,7 @@ export const shared = defineConfig({
           ...enSearch,
         },
       },
-    },
+    }, // 搜索配置
     editLink: {
       pattern: config.repository.url.replace('.git', '/edit/master/docs/:path'),
       text: 'Edit this page on GitHub',
@@ -77,7 +75,7 @@ export const shared = defineConfig({
     }, // 重写路由
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2021-present Quanrui Ye',
+      copyright: `Copyright © 2022-present ${config.productName}`,
     }, // 底部信息
-  },
+  }, // 主题配置
 });

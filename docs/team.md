@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Team
+title: 团队成员
 titleTemplate: WeTools
 ---
 
@@ -22,7 +22,7 @@ const members = []
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>WeTools</template>
-    <template #lead>基于 <a target="_blank" href="https://opentiny.design/tiny-vue">TinyVue</a> 的 <a target="_blank" href="https://cn.electron-vite.org">Electron-Vite</a> 应用程序</template>
+    <template #lead>主要收录一些用于WeLink的工具集合</template>
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="coreMembers" />
   <VPTeamPageSection>

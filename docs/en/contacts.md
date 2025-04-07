@@ -3,18 +3,18 @@ title: Contacts
 titleTemplate: WeTools
 ---
 
-# 联系反馈
+# Contact Feedback
 
-## WeTools负责人
+## Person in charge of WeTools
 
 - WeLink_Themes: [yequanrui](mailto:yequanrui@qq.com)
 - WeLink_Msg_Style: [yequanrui](mailto:yequanrui@qq.com)
 
-## WeTools交流群
+## WeTools Exchange Group
 
-- 暂无
+- Not yet
 
-## 提Issue
+## Request or defect
 
 - WeLink_Themes: https://github.com/yequanrui/WeTools/issues
 - WeLink_Msg_Style: https://github.com/yequanrui/RuTools/issues

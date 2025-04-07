@@ -1,5 +1,5 @@
 ---
-title: Contacts
+title: 联系反馈
 titleTemplate: WeTools
 ---
 
@@ -14,7 +14,7 @@ titleTemplate: WeTools
 
 - 暂无
 
-## 提Issue
+## 提需求or缺陷
 
 - WeLink_Themes: https://github.com/yequanrui/WeTools/issues
 - WeLink_Msg_Style: https://github.com/yequanrui/RuTools/issues

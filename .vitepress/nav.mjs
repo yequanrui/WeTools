@@ -1,11 +1,6 @@
 export const nav = [
   { text: 'Home', link: '/' },
+  { text: 'Contacts', link: '/contacts' },
+  { text: 'Links', link: '/links' },
   { text: 'Team', link: '/team' },
-  {
-    text: 'Guides',
-    items: [
-      { text: 'Markdown Examples', link: '/guides/markdown-examples' },
-      { text: 'Runtime API Examples', link: '/guides/api-examples' },
-    ],
-  },
 ];

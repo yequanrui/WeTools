@@ -3,11 +3,11 @@
 layout: home
 
 title: WeTools
-titleTemplate: Toolsets for WeLink
+titleTemplate: Toolset for WeLink
 
 hero:
   name: WeTools
-  text: Toolsets for WeLink
+  text: Toolset for WeLink
   tagline: Some tools used in WeLink are included.
   image:
     src: /logo.png

@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress';
-import { groupIconMdPlugin } from 'vitepress-plugin-group-icons';
 import config from '../../package.json';
 import { search as enSearch } from './en.mjs';
 import { search as zhSearch } from './zh.mjs';
@@ -18,32 +17,6 @@ export const shared = defineConfig({
   cleanUrls: true, // 生成简洁的URL，即去掉.html后缀
   metaChunk: true, // 将页面元数据提取到单独的JavaScript块中，而不是内联在初始HTML中
   lastUpdated: true, // 显示最后更新时间
-  markdown: {
-    math: true,
-    codeTransformers: [
-      // We use `[!!code` in demo to prevent transformation, here we revert it back.
-      {
-        postprocess(code) {
-          return code.replace(/\[\!\!code/g, '[!code');
-        },
-      },
-    ],
-    config(md) {
-      // TODO: remove when https://github.com/vuejs/vitepress/issues/4431 is fixed
-      const fence = md.renderer.rules.fence;
-      md.renderer.rules.fence = function (tokens, idx, options, env, self) {
-        let { localeIndex = 'root' } = env;
-        const codeCopyButtonTitle = (() => {
-          localeIndex = localeIndex === 'en' ? 'Copy Code' : '复制代码';
-        })();
-        return fence(tokens, idx, options, env, self).replace(
-          '<button title="Copy Code" class="copy"></button>',
-          `<button title="${codeCopyButtonTitle}" class="copy"></button>`
-        );
-      };
-      md.use(groupIconMdPlugin);
-    },
-  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由

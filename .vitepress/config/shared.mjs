@@ -3,7 +3,6 @@ import config from '../../package.json';
 import { search as enSearch } from './en.mjs';
 import { search as zhSearch } from './zh.mjs';
 
-// https://vitepress.dev/reference/site-config
 export const shared = defineConfig({
   title: config.productName, // 网站标题
   description: config.description, // 网站描述
@@ -18,7 +17,6 @@ export const shared = defineConfig({
   metaChunk: true, // 将页面元数据提取到单独的JavaScript块中，而不是内联在初始HTML中
   lastUpdated: true, // 显示最后更新时间
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由
     logo: '/logo.png', // 网站Logo
     siteTitle: config.productName, // 网站标题

@@ -1,7 +1,5 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
 title: WeTools
 titleTemplate: Toolset for WeLink
 
@@ -41,4 +39,5 @@ features:
     details: 1. Manage and expand WeLink emoticons.<br>2. Supports online search for emoticons.
     link: /welink/emoji/
 ---
+
 <style></style>

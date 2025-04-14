@@ -33,7 +33,7 @@ jobs:
         with:
           fetch-depth: 0 # 如果未启用lastUpdated，则不需要
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3 # 安装pnpm并添加到环境变量
+        uses: pnpm/action-setup@v4 # 安装pnpm并添加到环境变量
         with:
           version: 8.6.12 # 指定需要的pnpm版本，或使用最新版本
       - name: Setup Node

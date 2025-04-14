@@ -6,7 +6,6 @@ import { locales } from './locales.mjs';
 import { nav } from './nav.mjs';
 import { sidebar } from './sidebar.mjs';
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh', // 设置语言
   title: config.productName, // 网站标题
@@ -22,11 +21,9 @@ export default defineConfig({
   metaChunk: true, // 将页面元数据提取到单独的JavaScript块中，而不是内联在初始HTML中
   lastUpdated: true, // 显示最后更新时间
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     i18nRouting: true, // 启用国际化路由
     logo: '/logo.png', // 网站Logo
     siteTitle: config.productName, // 网站标题
-    socialLinks: [{ icon: 'github', link: config.repository.url }], // 社交链接
     search: {
       provider: 'local',
       options: {
@@ -38,6 +35,7 @@ export default defineConfig({
     }, // 搜索配置
     nav,
     sidebar,
+    socialLinks: [{ icon: 'github', link: config.repository.url }], // 社交链接
     editLink: {
       pattern: config.repository.url.replace('.git', '/edit/master/docs/:path'),
       text: 'Edit this page on GitHub',

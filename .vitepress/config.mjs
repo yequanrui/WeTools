@@ -12,7 +12,7 @@ export default defineConfig({
   description: config.description, // 网站描述
   base: `/${config.productName}/`, // 设置网站根路径
   srcDir: 'docs', // 设置 docs 文件夹为源码文件夹
-  head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]], // 设置网页头部
+  head: [['link', { rel: 'icon', type: 'image/png', href: `/${config.productName}/logo.png` }]], // 设置网页头部
   sitemap: {
     hostname: `${config.homepage}/${config.productName}/`,
     lastmodDateOnly: false,
@@ -22,7 +22,7 @@ export default defineConfig({
   lastUpdated: true, // 显示最后更新时间
   themeConfig: {
     i18nRouting: true, // 启用国际化路由
-    logo: '/logo.png', // 网站Logo
+    logo: `/${config.productName}/logo.png`, // 网站Logo
     siteTitle: config.productName, // 网站标题
     search: {
       provider: 'local',

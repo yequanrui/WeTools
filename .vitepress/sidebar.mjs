@@ -4,8 +4,8 @@ export const sidebar = [
     collapsed: false,
     items: [
       { text: '使用文档', link: '/welink/themes/' },
-      { text: '问题解答', link: '/welink/themes/faq' },
-      { text: '更新日志', link: '/welink/themes/changelog' },
+      { text: '问题解答', link: '/welink/themes/faq/' },
+      { text: '更新日志', link: '/welink/themes/changelog/' },
     ],
   },
   {
@@ -16,6 +16,7 @@ export const sidebar = [
       // { text: 'WeLink群发卡片消息', link: '/welink/card-msg/' },
       { text: 'WeLink自定义html消息', link: '/welink/html-msg/' },
       { text: 'WeLink发送“显眼包”消息', link: '/welink/style-msg/' },
+      { text: 'WeLink自定义动态背景', link: '/welink/video-bg/' },
       { text: '调试WeLink界面样式', link: '/welink/dev-tools/' },
     ],
   },
@@ -23,11 +24,11 @@ export const sidebar = [
     text: 'Tools',
     collapsed: false,
     items: [
-      { text: '桌面工具', link: '/tools/desktop' },
-      { text: 'Win App', link: '/tools/windows' },
-      { text: '浏览器插件', link: '/tools/browser' },
-      { text: 'VSCode插件', link: '/tools/vscode' },
-      { text: 'Idea插件', link: '/tools/idea' },
+      { text: '桌面工具', link: '/tools/desktop/' },
+      { text: 'Win App', link: '/tools/windows/' },
+      { text: '浏览器插件', link: '/tools/browser/' },
+      { text: 'VSCode插件', link: '/tools/vscode/' },
+      { text: 'Idea插件', link: '/tools/idea/' },
     ],
   },
   {

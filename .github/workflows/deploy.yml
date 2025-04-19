@@ -39,7 +39,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*' # 指定Node.js版本
+          node-version: 18 # 指定Node.js版本
           cache: pnpm # npm / pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v5 # 在工作流程自动配置GithubPages

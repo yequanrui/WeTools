@@ -7,10 +7,10 @@ settings:
 dependencies:
   '@electron-toolkit/preload':
     specifier: ^3.0.1
-    version: 3.0.1(electron@35.1.5)
+    version: 3.0.1(electron@35.2.0)
   '@electron-toolkit/utils':
     specifier: ^4.0.0
-    version: 4.0.0(electron@35.1.5)
+    version: 4.0.0(electron@35.2.0)
   '@opentiny/vue':
     specifier: ^3.22.1
     version: 3.22.1
@@ -39,37 +39,37 @@ dependencies:
 devDependencies:
   '@electron-toolkit/eslint-config':
     specifier: ^2.1.0
-    version: 2.1.0(eslint@9.24.0)
+    version: 2.1.0(eslint@9.25.0)
   '@electron-toolkit/eslint-config-prettier':
     specifier: ^3.0.0
-    version: 3.0.0(eslint@9.24.0)(prettier@3.5.3)
+    version: 3.0.0(eslint@9.25.0)(prettier@3.5.3)
   '@opentiny/unplugin-tiny-vue':
     specifier: ^1.0.0
-    version: 1.0.0(vite@6.3.1)(vue@3.5.13)
+    version: 1.0.0(vite@6.3.2)(vue@3.5.13)
   '@rushstack/eslint-patch':
     specifier: ^1.11.0
     version: 1.11.0
   '@vitejs/plugin-vue':
     specifier: ^5.2.3
-    version: 5.2.3(vite@6.3.1)(vue@3.5.13)
+    version: 5.2.3(vite@6.3.2)(vue@3.5.13)
   '@vue/eslint-config-prettier':
     specifier: ^10.2.0
-    version: 10.2.0(eslint@9.24.0)(prettier@3.5.3)
+    version: 10.2.0(eslint@9.25.0)(prettier@3.5.3)
   electron:
-    specifier: ^35.1.5
-    version: 35.1.5
+    specifier: ^35.2.0
+    version: 35.2.0
   electron-builder:
     specifier: ^26.0.12
     version: 26.0.12(electron-builder-squirrel-windows@26.0.12)
   electron-vite:
     specifier: ^3.1.0
-    version: 3.1.0(vite@6.3.1)
+    version: 3.1.0(vite@6.3.2)
   eslint:
-    specifier: ^9.24.0
-    version: 9.24.0
+    specifier: ^9.25.0
+    version: 9.25.0
   eslint-plugin-vue:
     specifier: ^10.0.0
-    version: 10.0.0(eslint@9.24.0)(vue-eslint-parser@10.1.3)
+    version: 10.0.0(eslint@9.25.0)(vue-eslint-parser@10.1.3)
   husky:
     specifier: ^9.1.7
     version: 9.1.7
@@ -86,8 +86,8 @@ devDependencies:
     specifier: ^28.5.0
     version: 28.5.0(vue@3.5.13)
   vite:
-    specifier: ^6.3.1
-    version: 6.3.1(less@4.3.0)
+    specifier: ^6.3.2
+    version: 6.3.2(less@4.3.0)
   vitepress:
     specifier: ^2.0.0-alpha.4
     version: 2.0.0-alpha.4(@algolia/client-search@5.23.3)(less@4.3.0)(search-insights@2.17.3)
@@ -491,44 +491,44 @@ packages:
       - '@algolia/client-search'
     dev: true
 
-  /@electron-toolkit/eslint-config-prettier@3.0.0(eslint@9.24.0)(prettier@3.5.3):
+  /@electron-toolkit/eslint-config-prettier@3.0.0(eslint@9.25.0)(prettier@3.5.3):
     resolution: {integrity: sha512-YapmIOVkbYdHLuTa+ad1SAVtcqYL9A/SJsc7cxQokmhcwAwonGevNom37jBf9slXegcZ/Slh01I/JARG1yhNFw==}
     peerDependencies:
       eslint: '>= 9.0.0'
       prettier: '>= 3.0.0'
     dependencies:
-      eslint: 9.24.0
-      eslint-config-prettier: 10.1.2(eslint@9.24.0)
-      eslint-plugin-prettier: 5.2.6(eslint-config-prettier@10.1.2)(eslint@9.24.0)(prettier@3.5.3)
+      eslint: 9.25.0
+      eslint-config-prettier: 10.1.2(eslint@9.25.0)
+      eslint-plugin-prettier: 5.2.6(eslint-config-prettier@10.1.2)(eslint@9.25.0)(prettier@3.5.3)
       prettier: 3.5.3
     transitivePeerDependencies:
       - '@types/eslint'
     dev: true
 
-  /@electron-toolkit/eslint-config@2.1.0(eslint@9.24.0):
+  /@electron-toolkit/eslint-config@2.1.0(eslint@9.25.0):
     resolution: {integrity: sha512-F/r45x5wDHs8r2RSkXwcrMYo9X4lkc/W+ZTlWzOzjXn7ncirMqVo256BCAogeNBWIxd24ePsSwmJXELiQZUZUg==}
     peerDependencies:
       eslint: '>=9.0.0'
     dependencies:
       '@eslint/js': 9.24.0
-      eslint: 9.24.0
+      eslint: 9.25.0
       globals: 16.0.0
     dev: true
 
-  /@electron-toolkit/preload@3.0.1(electron@35.1.5):
+  /@electron-toolkit/preload@3.0.1(electron@35.2.0):
     resolution: {integrity: sha512-EzoQmpK8jqqU8YnM5jRe0GJjGVJPke2KtANqz8QtN2JPT96ViOvProBdK5C6riCm0j1T8jjAGVQCZLQy9OVoIA==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 35.1.5
+      electron: 35.2.0
     dev: false
 
-  /@electron-toolkit/utils@4.0.0(electron@35.1.5):
+  /@electron-toolkit/utils@4.0.0(electron@35.2.0):
     resolution: {integrity: sha512-qXSntwEzluSzKl4z5yFNBknmPGjPa3zFhE4mp9+h0cgokY5ornAeP+CJQDBhKsL1S58aOQfcwkD3NwLZCl+64g==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 35.1.5
+      electron: 35.2.0
     dev: false
 
   /@electron/asar@3.2.18:
@@ -882,13 +882,13 @@ packages:
     dev: true
     optional: true
 
-  /@eslint-community/eslint-utils@4.6.0(eslint@9.24.0):
+  /@eslint-community/eslint-utils@4.6.0(eslint@9.25.0):
     resolution: {integrity: sha512-WhCn7Z7TauhBtmzhvKpoQs0Wwb/kBcy4CwpuI0/eEIr2Lx2auxmulAzLr91wVZJaz47iUZdkXOK7WlAfxGKCnA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
-      eslint: 9.24.0
+      eslint: 9.25.0
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -911,13 +911,6 @@ packages:
   /@eslint/config-helpers@0.2.1:
     resolution: {integrity: sha512-RI17tsD2frtDu/3dmI7QRrD4bedNKPM08ziRYaC5AhkGrzIAJelm9kJU1TznK+apx6V+cqRz8tfpEeG3oIyjxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    dev: true
-
-  /@eslint/core@0.12.0:
-    resolution: {integrity: sha512-cmrR6pytBuSMTaBweKoGMwu3EiHiEC+DoyupPmlZ0HxBJBtIxwe+j/E4XPIKNx+Q74c8lXKPwYawBf5glsTkHg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    dependencies:
-      '@types/json-schema': 7.0.15
     dev: true
 
   /@eslint/core@0.13.0:
@@ -946,6 +939,11 @@ packages:
 
   /@eslint/js@9.24.0:
     resolution: {integrity: sha512-uIY/y3z0uvOGX8cp1C2fiC4+ZmBhp6yZWkojtHL1YEMnRt1Y63HB9TM17proGEmeG7HeUY+UP36F0aknKYTpYA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    dev: true
+
+  /@eslint/js@9.25.0:
+    resolution: {integrity: sha512-iWhsUS8Wgxz9AXNfvfOPFSW4VfMXdVhp1hjkZVhXCrpgh/aLcc45rX6MPu+tIVUWDw0HfNwth7O28M1xDxNf9w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
@@ -1147,13 +1145,13 @@ packages:
       quill: 2.0.3
     dev: false
 
-  /@opentiny/unplugin-tiny-vue@1.0.0(vite@6.3.1)(vue@3.5.13):
+  /@opentiny/unplugin-tiny-vue@1.0.0(vite@6.3.2)(vue@3.5.13):
     resolution: {integrity: sha512-ES1KRpUBUgQlB4BdhNsMpuiuUyjfkWF/SZrN0mUdGonNBvCne9Y3G12OQtXKOEMWMfMOYxJol/E4gvoZLa0ETg==}
     peerDependencies:
       vite: '>=4'
     dependencies:
       unplugin-vue-components: 0.26.0(vue@3.5.13)
-      vite: 6.3.1(less@4.3.0)
+      vite: 6.3.2(less@4.3.0)
     transitivePeerDependencies:
       - '@babel/parser'
       - '@nuxt/kit'
@@ -3859,14 +3857,14 @@ packages:
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
     dev: true
 
-  /@vitejs/plugin-vue@5.2.3(vite@6.3.1)(vue@3.5.13):
+  /@vitejs/plugin-vue@5.2.3(vite@6.3.2)(vue@3.5.13):
     resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 6.3.1(less@4.3.0)
+      vite: 6.3.2(less@4.3.0)
       vue: 3.5.13
     dev: true
 
@@ -3932,15 +3930,15 @@ packages:
       rfdc: 1.4.1
     dev: true
 
-  /@vue/eslint-config-prettier@10.2.0(eslint@9.24.0)(prettier@3.5.3):
+  /@vue/eslint-config-prettier@10.2.0(eslint@9.25.0)(prettier@3.5.3):
     resolution: {integrity: sha512-GL3YBLwv/+b86yHcNNfPJxOTtVFJ4Mbc9UU3zR+KVoG7SwGTjPT+32fXamscNumElhcpXW3mT0DgzS9w32S7Bw==}
     peerDependencies:
       eslint: '>= 8.21.0'
       prettier: '>= 3.0.0'
     dependencies:
-      eslint: 9.24.0
-      eslint-config-prettier: 10.1.2(eslint@9.24.0)
-      eslint-plugin-prettier: 5.2.6(eslint-config-prettier@10.1.2)(eslint@9.24.0)(prettier@3.5.3)
+      eslint: 9.25.0
+      eslint-config-prettier: 10.1.2(eslint@9.25.0)
+      eslint-plugin-prettier: 5.2.6(eslint-config-prettier@10.1.2)(eslint@9.25.0)(prettier@3.5.3)
       prettier: 3.5.3
     transitivePeerDependencies:
       - '@types/eslint'
@@ -5043,7 +5041,7 @@ packages:
       - supports-color
     dev: false
 
-  /electron-vite@3.1.0(vite@6.3.1):
+  /electron-vite@3.1.0(vite@6.3.2):
     resolution: {integrity: sha512-M7aAzaRvSl5VO+6KN4neJCYLHLpF/iWo5ztchI/+wMxIieDZQqpbCYfaEHHHPH6eupEzfvZdLYdPdmvGqoVe0Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5060,7 +5058,7 @@ packages:
       esbuild: 0.25.2
       magic-string: 0.30.17
       picocolors: 1.1.1
-      vite: 6.3.1(less@4.3.0)
+      vite: 6.3.2(less@4.3.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5081,8 +5079,8 @@ packages:
       - supports-color
     dev: true
 
-  /electron@35.1.5:
-    resolution: {integrity: sha512-LolvbKKQUSCGvEwbEQNt1cxD1t+YYClDNwBIjn4d28KM8FSqUn9zJuf6AbqNA7tVs9OFl/EQpmg/m4lZV1hH8g==}
+  /electron@35.2.0:
+    resolution: {integrity: sha512-GHda7oCkN0pA23qzah735DEbRa06IPwlzP3uvjAmf9af8gxdj5i93JEHeQVGVmSVpd7sSb1pfecs9nz7B1q5ag==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
@@ -5227,16 +5225,16 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /eslint-config-prettier@10.1.2(eslint@9.24.0):
+  /eslint-config-prettier@10.1.2(eslint@9.25.0):
     resolution: {integrity: sha512-Epgp/EofAUeEpIdZkW60MHKvPyru1ruQJxPL+WIycnaPApuseK0Zpkrh/FwL9oIpQvIhJwV7ptOy0DWUjTlCiA==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 9.24.0
+      eslint: 9.25.0
     dev: true
 
-  /eslint-plugin-prettier@5.2.6(eslint-config-prettier@10.1.2)(eslint@9.24.0)(prettier@3.5.3):
+  /eslint-plugin-prettier@5.2.6(eslint-config-prettier@10.1.2)(eslint@9.25.0)(prettier@3.5.3):
     resolution: {integrity: sha512-mUcf7QG2Tjk7H055Jk0lGBjbgDnfrvqjhXh9t2xLMSCjZVcw9Rb1V6sVNXO0th3jgeO7zllWPTNRil3JW94TnQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -5250,27 +5248,27 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      eslint: 9.24.0
-      eslint-config-prettier: 10.1.2(eslint@9.24.0)
+      eslint: 9.25.0
+      eslint-config-prettier: 10.1.2(eslint@9.25.0)
       prettier: 3.5.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.3
     dev: true
 
-  /eslint-plugin-vue@10.0.0(eslint@9.24.0)(vue-eslint-parser@10.1.3):
+  /eslint-plugin-vue@10.0.0(eslint@9.25.0)(vue-eslint-parser@10.1.3):
     resolution: {integrity: sha512-XKckedtajqwmaX6u1VnECmZ6xJt+YvlmMzBPZd+/sI3ub2lpYZyFnsyWo7c3nMOQKJQudeyk1lw/JxdgeKT64w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
       vue-eslint-parser: ^10.0.0
     dependencies:
-      '@eslint-community/eslint-utils': 4.6.0(eslint@9.24.0)
-      eslint: 9.24.0
+      '@eslint-community/eslint-utils': 4.6.0(eslint@9.25.0)
+      eslint: 9.25.0
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.1.2
       semver: 7.7.1
-      vue-eslint-parser: 10.1.3(eslint@9.24.0)
+      vue-eslint-parser: 10.1.3(eslint@9.25.0)
       xml-name-validator: 4.0.0
     dev: true
 
@@ -5292,8 +5290,8 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
-  /eslint@9.24.0:
-    resolution: {integrity: sha512-eh/jxIEJyZrvbWRe4XuVclLPDYSYYYgLy5zXGGxD6j8zjSAxFEzI2fL/8xNq6O2yKqVt+eF2YhV+hxjV6UKXwQ==}
+  /eslint@9.25.0:
+    resolution: {integrity: sha512-MsBdObhM4cEwkzCiraDv7A6txFXEqtNXOb877TsSp2FCkBNl8JfVQrmiuDqC1IkejT6JLPzYBXx/xAiYhyzgGA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
     peerDependencies:
@@ -5302,13 +5300,13 @@ packages:
       jiti:
         optional: true
     dependencies:
-      '@eslint-community/eslint-utils': 4.6.0(eslint@9.24.0)
+      '@eslint-community/eslint-utils': 4.6.0(eslint@9.25.0)
       '@eslint-community/regexpp': 4.12.1
       '@eslint/config-array': 0.20.0
       '@eslint/config-helpers': 0.2.1
-      '@eslint/core': 0.12.0
+      '@eslint/core': 0.13.0
       '@eslint/eslintrc': 3.3.1
-      '@eslint/js': 9.24.0
+      '@eslint/js': 9.25.0
       '@eslint/plugin-kit': 0.2.8
       '@humanfs/node': 0.16.6
       '@humanwhocodes/module-importer': 1.0.1
@@ -8067,8 +8065,8 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite@6.3.1(less@4.3.0):
-    resolution: {integrity: sha512-kkzzkqtMESYklo96HKKPE5KKLkC1amlsqt+RjFMlX2AvbRB/0wghap19NdBxxwGZ+h/C6DLCrcEphPIItlGrRQ==}
+  /vite@6.3.2(less@4.3.0):
+    resolution: {integrity: sha512-ZSvGOXKGceizRQIZSz7TGJ0pS3QLlVY/9hwxVh17W3re67je1RKYzFHivZ/t0tubU78Vkyb9WnHPENSBCzbckg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -8136,7 +8134,7 @@ packages:
       '@shikijs/core': 3.2.2
       '@shikijs/transformers': 3.2.2
       '@shikijs/types': 3.2.2
-      '@vitejs/plugin-vue': 5.2.3(vite@6.3.1)(vue@3.5.13)
+      '@vitejs/plugin-vue': 5.2.3(vite@6.3.2)(vue@3.5.13)
       '@vue/devtools-api': 7.7.2
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.8.2
@@ -8145,7 +8143,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 7.1.2
       shiki: 3.2.2
-      vite: 6.3.1(less@4.3.0)
+      vite: 6.3.2(less@4.3.0)
       vue: 3.5.13
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -8178,14 +8176,14 @@ packages:
       - yaml
     dev: true
 
-  /vue-eslint-parser@10.1.3(eslint@9.24.0):
+  /vue-eslint-parser@10.1.3(eslint@9.25.0):
     resolution: {integrity: sha512-dbCBnd2e02dYWsXoqX5yKUZlOt+ExIpq7hmHKPb5ZqKcjf++Eo0hMseFTZMLKThrUk61m+Uv6A2YSBve6ZvuDQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
     dependencies:
       debug: 4.4.0
-      eslint: 9.24.0
+      eslint: 9.25.0
       eslint-scope: 8.3.0
       eslint-visitor-keys: 4.2.0
       espree: 10.3.0
@@ -8389,7 +8387,7 @@ packages:
     dev: true
 
   github.com/electron/node-gyp/06b29aafb7708acef8b3669835c8a7857ebc92d2:
-    resolution: {tarball: https://codeload.github.com/electron/node-gyp/tar.gz/06b29aafb7708acef8b3669835c8a7857ebc92d2}
+    resolution: {commit: 06b29aafb7708acef8b3669835c8a7857ebc92d2, repo: git+ssh://git@github.com/electron/node-gyp.git, type: git}
     name: '@electron/node-gyp'
     version: 10.2.0-electron.1
     engines: {node: '>=12.13.0'}

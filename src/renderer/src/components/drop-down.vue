@@ -2,10 +2,9 @@
   <tiny-dropdown :show-icon="!$slots.toggle" :trigger="trigger" @item-click="itemClick">
     <slot v-if="$slots.toggle" name="toggle"></slot>
     <template #dropdown>
-      <tiny-dropdown-menu>
+      <tiny-dropdown-menu checked-status>
         <tiny-dropdown-item v-for="(item, i) in items" :key="i" :label="$t(item.label)" :disabled="item.disabled"
-          :divided="item.divided" :item-data="item"
-          :class="{ selected: item.value === selectedItem?.value }"></tiny-dropdown-item>
+          :divided="item.divided" :item-data="item" :selected="item.value === selectedItem?.value"></tiny-dropdown-item>
       </tiny-dropdown-menu>
     </template>
   </tiny-dropdown>

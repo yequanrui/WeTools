@@ -61,6 +61,7 @@ const treeChange = (data) => {
 
 <style lang="less">
 @import './assets/css/styles.less';
+@import '@opentiny/vue-theme/dark-theme-index.css';
 
 #win {
   display: flex;

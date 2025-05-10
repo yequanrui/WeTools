@@ -42,7 +42,7 @@ jobs:
           node-version: 18 # 指定Node.js版本
           cache: pnpm # npm / pnpm / yarn
       - name: Setup Pages
-        uses: actions/configure-pages@v4 # 在工作流程自动配置GithubPages
+        uses: actions/configure-pages@v5 # 在工作流程自动配置GithubPages
       - name: Install dependencies
         run: pnpm install # npm ci / pnpm install / yarn install / bun install
       - name: Build with VitePress

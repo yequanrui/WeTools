@@ -41,7 +41,7 @@ export default defineConfig({
       }),
     ],
     define: {
-      'process.env': { ...process.env, TINY_MODE: 'pc' },
+      'process.env': { TINY_MODE: 'pc' },
     },
   },
 });

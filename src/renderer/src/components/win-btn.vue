@@ -30,12 +30,12 @@
 import { IconClose, IconCustom, IconLanguage, IconPanelMax, IconPanelMini, IconPanelNormal } from '@opentiny/vue-icon';
 import { getCurrentInstance, ref } from 'vue';
 
+const TinyIconClose = IconClose();
 const TinyIconCustom = IconCustom();
 const TinyIconLanguage = IconLanguage();
+const TinyIconPanelMax = IconPanelMax();
 const TinyIconPanelMini = IconPanelMini();
 const TinyIconPanelNormal = IconPanelNormal();
-const TinyIconPanelMax = IconPanelMax();
-const TinyIconClose = IconClose();
 
 //#region 语言切换
 const ctx = getCurrentInstance()?.ctx;
@@ -62,7 +62,7 @@ const themes = ref([
   { label: 'light', value: 'light', divided: true },
   { label: 'dark', value: 'dark' },
 ]);
-let currentTheme = ref(themes.value[0].value);
+const currentTheme = ref(themes.value[0].value);
 /**
  * 切换主题
  * @param {*} theme 主题
@@ -70,6 +70,8 @@ let currentTheme = ref(themes.value[0].value);
 async function changeTheme(theme) {
   currentTheme.value = theme;
   await window.api.changeTheme(theme.value);
+  const isDarkMode = theme.value === 'system' ? window.matchMedia('(prefers-color-scheme: dark)').matches : theme.value === 'dark';
+  isDarkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
 }
 //#endregion
 

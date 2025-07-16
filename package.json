@@ -39,7 +39,7 @@
     "electron-updater": "^6.6.2",
     "express": "^5.1.0",
     "monaco-editor": "^0.52.2",
-    "vue-i18n": "^11.1.8",
+    "vue-i18n": "^11.1.10",
     "vue-router": "4.5.1"
   },
   "devDependencies": {

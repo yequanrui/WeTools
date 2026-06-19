@@ -1,6 +1,6 @@
 import { TinyVueSingleResolver } from '@opentiny/unplugin-tiny-vue';
 import vue from '@vitejs/plugin-vue';
-import { bytecodePlugin, defineConfig, externalizeDepsPlugin } from 'electron-vite';
+import { defineConfig } from 'electron-vite';
 import { resolve } from 'path';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -9,14 +9,33 @@ const prefix = `monaco-editor/esm/vs`;
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin(), bytecodePlugin()],
+    build: {
+      bytecode: true,
+      externalizeDeps: true,
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'src/main/index.js'),
+        },
+      },
+    },
   },
   preload: {
-    plugins: [externalizeDepsPlugin(), bytecodePlugin()],
+    build: {
+      bytecode: true,
+      externalizeDeps: true,
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'src/preload/index.js'),
+        },
+      },
+    },
   },
   renderer: {
     build: {
       rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'src/renderer/index.html'),
+        },
         output: {
           manualChunks: {
             editorWorker: [`${prefix}/editor/editor.worker`],

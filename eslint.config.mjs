@@ -13,18 +13,18 @@ export default [
       parser: vueParser,
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
+          jsx: true,
         },
-        extraFileExtensions: ['.vue']
-      }
-    }
+        extraFileExtensions: ['.vue'],
+      },
+    },
   },
   {
     files: ['**/*.{js,jsx,vue}'],
     rules: {
       'vue/require-default-prop': 'off',
-      'vue/multi-word-component-names': 'off'
-    }
+      'vue/multi-word-component-names': 'off',
+    },
   },
-  eslintConfigPrettier
-]
+  eslintConfigPrettier,
+];

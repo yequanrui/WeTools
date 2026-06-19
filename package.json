@@ -36,11 +36,11 @@
     "@opentiny/vue": "~3.30.0",
     "@opentiny/vue-locale": "~3.30.0",
     "electron-store": "^8.2.0",
-    "electron-updater": "^6.8.3",
+    "electron-updater": "^6.8.9",
     "express": "^5.2.1",
     "monaco-editor": "^0.55.1",
-    "vue-i18n": "^11.3.0",
-    "vue-router": "5.0.4"
+    "vue-i18n": "^11.4.6",
+    "vue-router": "5.1.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^2.1.0",
@@ -48,20 +48,20 @@
     "@opentiny/unplugin-tiny-vue": "^1.0.0",
     "@vitejs/plugin-vue": "^6.0.5",
     "@vue/eslint-config-prettier": "^10.2.0",
-    "electron": "^41.1.1",
-    "electron-builder": "^26.8.1",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
     "electron-vite": "^5.0.0",
-    "eslint": "^10.2.0",
-    "eslint-plugin-vue": "^10.8.0",
+    "eslint": "^10.5.0",
+    "eslint-plugin-vue": "^10.9.2",
     "husky": "^9.1.7",
-    "less": "^4.6.4",
-    "prettier": "^3.8.1",
+    "less": "^4.6.6",
+    "prettier": "^3.8.4",
     "unplugin-auto-import": "^21.0.0",
-    "unplugin-vue-components": "^32.0.0",
-    "vite": "^7.3.1",
+    "unplugin-vue-components": "^32.1.0",
+    "vite": "^7.3.5",
     "vitepress": "^2.0.0-alpha.17",
-    "vue": "^3.5.32",
-    "vue-eslint-parser": "^10.4.0"
+    "vue": "^3.5.38",
+    "vue-eslint-parser": "^10.4.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
